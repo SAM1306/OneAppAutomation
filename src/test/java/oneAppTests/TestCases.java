@@ -127,6 +127,10 @@ public class TestCases extends BaseAppiumTest{
 
     @Test
     public void helpTesting() throws InterruptedException {
+        primaryActivity.dashboardButton.isDisplayed();
+        primaryActivity.dashboardButton.click();
+        Thread.sleep(6000L);
+
         dashboardFragmentPage.moreOptions.isDisplayed();
         dashboardFragmentPage.moreOptions.click();
         Thread.sleep(4000L);
@@ -187,7 +191,6 @@ public class TestCases extends BaseAppiumTest{
         primaryActivity.dashboardButton.click();
         Thread.sleep(6000L);
 
-        dashboardFragmentPage.sceneInfoButton.click();
         dashboardFragmentPage.sceneInfoButton.click();
         Thread.sleep(4000L);
 

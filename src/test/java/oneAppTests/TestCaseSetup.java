@@ -20,12 +20,12 @@ public class TestCaseSetup {
 
     DesiredCapabilities caps = new DesiredCapabilities();
 
-    caps.setCapability("deviceName", "98895a413650373549");
+    caps.setCapability("deviceName", "0738a0e100999b44");
     caps.setCapability("platformName", "Android");
-    caps.setCapability("platformVersion", "7.0");
+    caps.setCapability("platformVersion", "6.0");
     caps.setCapability("appPackage", "com.samsung.android.oneconnect");
     caps.setCapability("appActivity", "com.samsung.android.oneconnect.ui.SCMainActivity");
-    caps.setCapability("app", "/Users/smartthings/Downloads/User_apt_SmartThings_1.7.4_41_RC1_minApi_23_production_release.apk");
+    caps.setCapability("app", "/Users/sjain/Downloads/User_apt_SmartThings_smartThings_1.7.5_14_minApi_23_production_release.apk");
     caps.setCapability("noReset", "true");
     caps.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
     caps.setCapability("autoAcceptAlerts", true);
