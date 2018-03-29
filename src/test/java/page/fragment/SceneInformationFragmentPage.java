@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import page.BasePage;
 
 public class SceneInformationFragmentPage extends BasePage {
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "SceneInformationScreen";
 
     public SceneInformationFragmentPage(AppiumDriver driver) {
         super(driver);

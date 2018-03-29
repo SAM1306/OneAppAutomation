@@ -7,7 +7,7 @@ import page.BasePage;
 
 public class SupportedDevicesFragmentPage extends BasePage {
 
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "SupportedDevicesScreen";
 
     public SupportedDevicesFragmentPage(AndroidDriver driver) {
 

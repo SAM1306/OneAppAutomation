@@ -9,7 +9,7 @@ import page.BasePage;
 
 public class SmartthingsSettingsFragmentPage extends BasePage {
 
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "SmartthingsSettingsScreen";
 
     public SmartthingsSettingsFragmentPage(AndroidDriver driver) {
         super(driver);

@@ -9,7 +9,7 @@ import page.BasePage;
 
 public class SHMFragmentPage extends BasePage {
 
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "SHMScreen";
 
     public SHMFragmentPage(AndroidDriver driver) {
         super(driver);

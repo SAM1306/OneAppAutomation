@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import page.BasePage;
 
 public class AddActionsFragmentPage extends BasePage {
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "AddActionsScreen";
 
     public AddActionsFragmentPage(AppiumDriver driver) {
         super(driver);

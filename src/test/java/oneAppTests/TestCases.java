@@ -10,9 +10,9 @@ import page.view.ToolbarPage;
 import static org.junit.Assert.assertTrue;
 import static utility.Events.scrollAndClick;
 
-public class Caps extends BaseAppiumTest{
+public class TestCases extends BaseAppiumTest{
 
-    private static final String TEST_NAME = Caps.class.getName();
+    private static final String TEST_NAME = TestCases.class.getName();
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
     private String sceneName = "Test Scene";
