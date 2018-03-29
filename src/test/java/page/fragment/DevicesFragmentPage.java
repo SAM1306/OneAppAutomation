@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
 
 public class DevicesFragmentPage extends BasePage {
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "DevicesFragmentScreen";
 
     public DevicesFragmentPage(AndroidDriver driver) {
 

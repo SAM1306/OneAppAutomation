@@ -9,7 +9,7 @@ import page.BasePage;
 
 public class AddAutomationFragmentPage extends BasePage {
 
-    private static final String SCREEN_NAME = "DashboardScreen";
+    private static final String SCREEN_NAME = "AddAutomationScreen";
 
     public AddAutomationFragmentPage(AndroidDriver driver) {
 
