@@ -23,7 +23,7 @@ public class PrimaryActivity extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Dashboard']")
     public WebElement dashboardButton;
 
-    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Devices']")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Devices' and @resource-id='com.samsung.android.oneconnect:id/tab_text']")
     public WebElement devicesButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Automations']")
