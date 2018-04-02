@@ -1,4 +1,4 @@
-package oneAppTests.SceneTests;
+package oneAppTests.scenes;
 
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
@@ -6,7 +6,11 @@ import oneAppTests.TestCaseSetup;
 import org.junit.Before;
 import org.junit.Test;
 import page.activity.PrimaryActivity;
-import page.fragment.*;
+import page.fragment.dashboard.DashboardFragmentPage;
+import page.fragment.devices.DevicesFragmentPage;
+import page.fragment.devices.scenes.AddActionsFragmentPage;
+import page.fragment.devices.scenes.AddSceneFragmentPage;
+import page.fragment.devices.scenes.SceneInformationFragmentPage;
 
 import static org.junit.Assert.assertTrue;
 

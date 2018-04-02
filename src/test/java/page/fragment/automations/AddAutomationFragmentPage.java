@@ -1,4 +1,4 @@
-package page.fragment;
+package page.fragment.automations;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;

@@ -1,4 +1,4 @@
-package oneAppTests.RoomsTests;
+package oneAppTests.rooms;
 
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
@@ -6,9 +6,9 @@ import oneAppTests.TestCaseSetup;
 import org.junit.Before;
 import org.junit.Test;
 import page.activity.PrimaryActivity;
-import page.fragment.AddRoomFragmentPage;
-import page.fragment.DevicesFragmentPage;
-import page.fragment.RoomsFragmentPage;
+import page.fragment.devices.rooms.AddRoomFragmentPage;
+import page.fragment.devices.DevicesFragmentPage;
+import page.fragment.devices.rooms.RoomsFragmentPage;
 
 import static org.junit.Assert.assertTrue;
 

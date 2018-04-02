@@ -1,4 +1,4 @@
-package oneAppTests.AutomationsTests;
+package oneAppTests.automations;
 
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
@@ -6,7 +6,11 @@ import oneAppTests.TestCaseSetup;
 import org.junit.Before;
 import org.junit.Test;
 import page.activity.PrimaryActivity;
-import page.fragment.*;
+import page.fragment.automations.AddAutomationFragmentPage;
+import page.fragment.automations.AutomationsFragmentPage;
+import page.fragment.automations.SHMFragmentPage;
+import page.fragment.dashboard.DashboardFragmentPage;
+import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.view.ToolbarPage;
 
 import static org.junit.Assert.assertTrue;
