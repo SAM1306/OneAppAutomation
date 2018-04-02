@@ -1,4 +1,4 @@
-package page.fragment;
+package page.fragment.devices.scenes;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;

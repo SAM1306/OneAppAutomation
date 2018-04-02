@@ -1,4 +1,4 @@
-package oneAppTests.DevicesListTests;
+package oneAppTests.device_list;
 
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
@@ -6,7 +6,8 @@ import oneAppTests.TestCaseSetup;
 import org.junit.Before;
 import org.junit.Test;
 import page.activity.PrimaryActivity;
-import page.fragment.*;
+import page.fragment.dashboard.DashboardFragmentPage;
+import page.fragment.dashboard.SupportedDevicesFragmentPage;
 import page.view.ToolbarPage;
 
 public class DevicesListTests extends BaseAppiumTest {

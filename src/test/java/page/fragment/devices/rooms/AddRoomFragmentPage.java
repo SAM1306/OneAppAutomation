@@ -1,4 +1,4 @@
-package page.fragment;
+package page.fragment.devices.rooms;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
