@@ -16,6 +16,7 @@ public class AddSceneFragmentPage extends BasePage {
     public String getScreenName() {
         return SCREEN_NAME;
     }
+
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/edit_mode_name")
     public WebElement sceneNameTextBox;
 

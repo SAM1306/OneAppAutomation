@@ -27,8 +27,21 @@ public class DevicesFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Add scene']")
     public WebElement addSceneButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Add room']")
+    public WebElement addRoomButton;
+
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/mode_name_new")
     public WebElement createdScene;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.ImageView[2]")
+    public WebElement deviceDropdown;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Home']")
+    public WebElement homeLocationButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Edit']")
+    public WebElement editButton;
+
 
     public DevicesFragmentPage getDevicesFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
