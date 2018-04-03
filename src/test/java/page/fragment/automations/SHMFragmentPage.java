@@ -21,10 +21,10 @@ public class SHMFragmentPage extends BasePage {
         return SCREEN_NAME;
     }
 
-    @AndroidFindBy(xpath = "//*[@class='android.view.View' and @text='NEXT']")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='NEXT']")
     public WebElement nextButton;
 
-    @AndroidFindBy(xpath = "//*[@class='android.view.View' and @text='DONE']")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='DONE']")
     public WebElement doneButton;
 
     @AndroidFindBy(id = "siren_duration")
