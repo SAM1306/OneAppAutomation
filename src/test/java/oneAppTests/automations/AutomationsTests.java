@@ -59,6 +59,7 @@ public class AutomationsTests extends BaseAppiumTest{
         addAutomationFragmentPage.smartHomeMonitor.click();
 
         shmFragmentPage.getSHMFragmentPage();
+        //Thread.sleep(2000L);
         shmFragmentPage.nextButton.isDisplayed();
         shmFragmentPage.nextButton.click();
         shmFragmentPage.nextButton.click();
