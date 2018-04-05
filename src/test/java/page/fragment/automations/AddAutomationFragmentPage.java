@@ -30,8 +30,6 @@ public class AddAutomationFragmentPage extends BasePage {
 
     public SHMFragmentPage getSHMFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        //wait.until(ExpectedConditions.elementToBeClickable(By
-          //      .xpath("//*[@class='android.widget.TextView' and @text='Smart Home Monitor']")));
         wait.until(ExpectedConditions.elementToBeClickable(smartHomeMonitor));
         return new SHMFragmentPage((AndroidDriver) driver);
     }
