@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.Logger;
 
 public class PrimaryActivity extends BasePage {
 
@@ -31,4 +32,25 @@ public class PrimaryActivity extends BasePage {
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Delete']")
     public WebElement popUpDeleteButton;
+
+    public void getDashboardButton() {
+        Logger.logStep("Verify Dashboard Button is displayed");
+        dashboardButton.isDisplayed();
+        Logger.logStep("Click on Dashboard Button");
+        dashboardButton.click();
+    }
+
+    public void getDevicesButton() {
+        Logger.logStep("Verify Devices Button is displayed");
+        devicesButton.isDisplayed();
+        Logger.logStep("Click on Devices Button");
+        devicesButton.click();
+    }
+
+    public void getAutomationsButton() {
+        Logger.logStep("Verify Automations Button is displayed");
+        automationsButton.isDisplayed();
+        Logger.logStep("Click on Automations Button");
+        automationsButton.click();
+    }
 }

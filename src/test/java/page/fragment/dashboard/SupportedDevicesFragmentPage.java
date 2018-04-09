@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.Logger;
 
 public class SupportedDevicesFragmentPage extends BasePage {
 
@@ -25,4 +26,9 @@ public class SupportedDevicesFragmentPage extends BasePage {
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/easysetup_search_view")
     public WebElement searchBar;
+
+    public void verifySearchBarIsPresent() {
+        Logger.logStep("Verify Search Bar is displayed");
+        searchBar.isDisplayed();
+    }
 }

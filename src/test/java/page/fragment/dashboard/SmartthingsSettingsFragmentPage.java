@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
+import utility.Logger;
+
+import static junit.framework.TestCase.assertTrue;
 
 public class SmartthingsSettingsFragmentPage extends BasePage {
 
@@ -26,9 +29,12 @@ public class SmartthingsSettingsFragmentPage extends BasePage {
 
     public SmartthingsSettingsFragmentPage getSmartthingsSettingsFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        //wait.until(ExpectedConditions.elementToBeClickable(By
-         //       .xpath("//*[@class='android.widget.TextView' and @text='Samsung account']")));
         wait.until(ExpectedConditions.elementToBeClickable(samsungAccount));
         return new SmartthingsSettingsFragmentPage((AndroidDriver) driver);
+    }
+
+    public void verifySamsungAccountTextIsDisplayed() {
+        Logger.logStep("Verify Samsung Account text is displayed");
+        assertTrue(samsungAccount.isDisplayed());
     }
 }
