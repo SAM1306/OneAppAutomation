@@ -8,6 +8,7 @@ public class Logger {
 
 
     public static void logAction(final String msg) {
+        System.out.println("  " + suffix);
         System.out.println("  " + msg);
         System.out.println("  " + suffix);
     }

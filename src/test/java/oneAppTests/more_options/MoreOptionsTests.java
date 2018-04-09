@@ -11,8 +11,7 @@ import page.fragment.dashboard.HelpFragmentPage;
 import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.fragment.dashboard.SmartthingsSettingsFragmentPage;
 import page.view.ToolbarPage;
-
-import static org.junit.Assert.assertTrue;
+import utility.Logger;
 
 public class MoreOptionsTests extends BaseAppiumTest {
 
@@ -44,44 +43,34 @@ public class MoreOptionsTests extends BaseAppiumTest {
 
     @Test
     public void helpTesting() throws InterruptedException {
-        primaryActivity.dashboardButton.isDisplayed();
-        primaryActivity.dashboardButton.click();
-        Thread.sleep(6000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Help Option - Start");
 
-        dashboardFragmentPage.moreOptions.isDisplayed();
-        dashboardFragmentPage.moreOptions.click();
-        Thread.sleep(4000L);
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickHelpButton();
+        helpFragmentPage.verifyHelpMyQuestionIsDisplayed();
+        helpFragmentPage.verifyFAQIsDisplayed();
+        helpFragmentPage.verifyEmailCustomerServiceIsDisplayed();
+        helpFragmentPage.verifyCallCustomerServiceIsDisplayed();
+        helpFragmentPage.verifyReportProblemIsDisplayed();
+        toolbarPage.verifyandClickBackButton();
+        dashboardFragmentPage.verifySmartthingsLogoIsPresent();
 
-        moreOptionsFragmentPage.helpButton.isDisplayed();
-        moreOptionsFragmentPage.helpButton.click();
-
-        assertTrue(helpFragmentPage.myQuestions.isDisplayed());
-        assertTrue(helpFragmentPage.faq.isDisplayed());
-        assertTrue(helpFragmentPage.emailCustomerService.isDisplayed());
-        assertTrue(helpFragmentPage.callCustomerService.isDisplayed());
-        assertTrue(helpFragmentPage.reportProblem.isDisplayed());
-
-        toolbarPage.backArrow.isDisplayed();
-        toolbarPage.backArrow.click();
-
-        dashboardFragmentPage.smartthingsLogo.isDisplayed();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Help Option - End");
     }
 
     @Test
     public void settingsTesting() throws InterruptedException {
-        dashboardFragmentPage.moreOptions.isDisplayed();
-        dashboardFragmentPage.moreOptions.click();
-        Thread.sleep(4000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - Start");
 
-        moreOptionsFragmentPage.settingsButton.isDisplayed();
-        moreOptionsFragmentPage.settingsButton.click();
-
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickSettingssButton();
         smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
-        assertTrue(smartthingsSettingsFragmentPage.samsungAccount.isDisplayed());
+        smartthingsSettingsFragmentPage.verifySamsungAccountTextIsDisplayed();
+        toolbarPage.verifyandClickBackButton();
+        dashboardFragmentPage.verifySmartthingsLogoIsPresent();
 
-        toolbarPage.backArrow.isDisplayed();
-        toolbarPage.backArrow.click();
-
-        dashboardFragmentPage.smartthingsLogo.isDisplayed();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
     }
 }

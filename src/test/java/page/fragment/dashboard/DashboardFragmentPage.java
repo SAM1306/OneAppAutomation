@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.Logger;
 
 public class DashboardFragmentPage extends BasePage {
 
@@ -45,5 +46,25 @@ public class DashboardFragmentPage extends BasePage {
 
     @AndroidFindBy(accessibility = "Scene information")
     public WebElement sceneInfoButton;
+
+    public void verifySmartthingsLogoIsPresent() {
+        Logger.logStep("Verify Smartthings Logo is displayed");
+        smartthingsLogo.isDisplayed();
+    }
+
+    public void verifyAndClickSupportedDevciesTile() throws InterruptedException {
+        Logger.logStep("Verify Supported Devices Tile is displayed");
+        supportedDevicesTiles.isDisplayed();
+        Logger.logStep("Click on Supported Devices Tile");
+        supportedDevicesTiles.click();
+        Thread.sleep(6000L);
+    }
+
+    public void verifyAndClickMoreOptionsButton() {
+        Logger.logStep("Verify More Options Button is displayed");
+        moreOptions.isDisplayed();
+        Logger.logStep("Click on More Options Button");
+        moreOptions.click();
+    }
 }
 

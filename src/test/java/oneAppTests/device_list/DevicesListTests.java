@@ -38,24 +38,14 @@ public class DevicesListTests extends BaseAppiumTest {
 
     @Test
     public void listSupportedDevices() throws InterruptedException {
-        Logger.logAction("Begin: listSupportedDevices() - Test_001");
-        Logger.logStep("Click on Dashboard Button");
-        primaryActivity.dashboardButton.click();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - Start");
 
-        Logger.logStep("Verify Supported Devices Button is displayed");
-        dashboardFragmentPage.supportedDevicesTiles.isDisplayed();
-        Logger.logStep("Click on Supported Devices Button Button");
-        dashboardFragmentPage.supportedDevicesTiles.click();
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickSupportedDevciesTile();
+        supportedDevicesFragmentPage.verifySearchBarIsPresent();
+        toolbarPage.verifyandClickBackButton();
+        dashboardFragmentPage.verifySmartthingsLogoIsPresent();
 
-        Thread.sleep(6000L);
-        Logger.logStep("Verify Search Bar is displayed");
-        supportedDevicesFragmentPage.searchBar.isDisplayed();
-
-        toolbarPage.backArrow.isDisplayed();
-        Logger.logStep("Click on Navigate Up Button");
-        toolbarPage.backArrow.click();
-
-        Logger.logStep("Verify Smartthings Logo is displayed");
-        dashboardFragmentPage.smartthingsLogo.isDisplayed();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - End");
     }
 }
