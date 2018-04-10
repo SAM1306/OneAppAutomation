@@ -36,7 +36,7 @@ public class AddSceneFragmentPage extends BasePage {
     public void verifyAndClickAddActionsButton() {
         Logger.logStep("Verify Add Actions Button is displayed");
         addActionsButton.isDisplayed();
-        Logger.logStep("Click on Add Actionss Button");
+        Logger.logStep("Click on Add Actions Button");
         addActionsButton.click();
     }
 
@@ -69,7 +69,7 @@ public class AddSceneFragmentPage extends BasePage {
     }
 
     public void addSceneName (String text) {
-        Logger.logStep("Adding Scene Name");
+        Logger.logStep("Adding \"" + text + "\" Scene Name");
         sceneNameTextBox.sendKeys(text);
         driver.hideKeyboard();
     }

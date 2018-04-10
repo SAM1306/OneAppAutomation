@@ -54,7 +54,7 @@ public class HelpFragmentPage extends BasePage {
     }
 
     public void verifyCallCustomerServiceIsDisplayed() {
-        Logger.logStep("Verify Call Cusotmer Service is displayed");
+        Logger.logStep("Verify Call Customer Service is displayed");
         assertTrue(callCustomerService.isDisplayed());
     }
 
