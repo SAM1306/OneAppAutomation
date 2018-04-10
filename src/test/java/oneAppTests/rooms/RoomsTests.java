@@ -6,11 +6,10 @@ import oneAppTests.TestCaseSetup;
 import org.junit.Before;
 import org.junit.Test;
 import page.activity.PrimaryActivity;
-import page.fragment.devices.rooms.AddRoomFragmentPage;
 import page.fragment.devices.DevicesFragmentPage;
+import page.fragment.devices.rooms.AddRoomFragmentPage;
 import page.fragment.devices.rooms.RoomsFragmentPage;
-
-import static org.junit.Assert.assertTrue;
+import utility.Logger;
 
 public class RoomsTests extends BaseAppiumTest {
 
@@ -39,47 +38,47 @@ public class RoomsTests extends BaseAppiumTest {
 
     @Test
     public void addRoomTest() throws InterruptedException {
-        primaryActivity.devicesButton.isDisplayed();
-        primaryActivity.devicesButton.click();
-        Thread.sleep(4000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Room Test - Start");
 
-        devicesFragmentPage.deviceDropdown.click();
-        devicesFragmentPage.homeLocationButton.click();
-
-        devicesFragmentPage.moreOptionsButton.click();
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyAndClickDeviceDropdownButton();
+        devicesFragmentPage.verifyAndClickHomeLocationButton();
+        devicesFragmentPage.verifyAndClickMoreOptionsButton();
         devicesFragmentPage.getDevicesFragmentPage();
-        devicesFragmentPage.addRoomButton.click();
+        devicesFragmentPage.verifyAndClickAddRoomButton();
 
-        addRoomFragmentPage.roomNameTextBox.isDisplayed();
-        addRoomFragmentPage.roomNameTextBox.sendKeys(roomName);
-        driver.hideKeyboard();
-        addRoomFragmentPage.outletButton.isDisplayed();
-        addRoomFragmentPage.outletButton.click();
-        addRoomFragmentPage.saveButton.click();
-        assertTrue(roomsFragmentPage.createdRoom.isDisplayed());
+        addRoomFragmentPage.verifyAndClickRoomNameTextBox();
+        addRoomFragmentPage.addSceneName(roomName);
+        addRoomFragmentPage.verifyAndClickOutletTile();
+        addRoomFragmentPage.verifyAndClickSaveButton();
+        roomsFragmentPage.verifyCreatedRoom();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Room Test - End");
     }
 
     @Test
     public void aeditRoomTest() throws InterruptedException {
-        primaryActivity.devicesButton.isDisplayed();
-        primaryActivity.devicesButton.click();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Room Test - Start");
 
-        devicesFragmentPage.moreOptionsButton.click();
-        devicesFragmentPage.editButton.click();
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyAndClickMoreOptionsButton();
+        devicesFragmentPage.verifyAndClickEditButton();
+        roomsFragmentPage.verifyAndClickManageDevicesButtonButton();
 
-        roomsFragmentPage.manageDevicesButton.isDisplayed();
-        roomsFragmentPage.manageDevicesButton.click();
-        addRoomFragmentPage.multiPurposeSensorButton.isDisplayed();
-        addRoomFragmentPage.multiPurposeSensorButton.click();
-        addRoomFragmentPage.saveButton.click();
-        assertTrue(roomsFragmentPage.verifyMultiPurposeSencor.isDisplayed());
+        addRoomFragmentPage.verifyAndClickMutliPurposeSensorTile();
+        addRoomFragmentPage.verifyAndClickSaveButton();
+        roomsFragmentPage.verifyMultiPurposeSensor();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Room Test - End");
     }
 
     @Test
     public void deleteRoomTest() throws InterruptedException {
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Room Test - Start");
 
-        roomsFragmentPage.deleteRoomButton.isDisplayed();
-        roomsFragmentPage.deleteRoomButton.click();
-        roomsFragmentPage.confirmDeleteButton.click();
+        roomsFragmentPage.verifyAndClickDeleteButton();
+        roomsFragmentPage.verifyAndClickConfirmDeleteButtonButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Room Test - End");
     }
 }

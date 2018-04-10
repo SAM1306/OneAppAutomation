@@ -26,10 +26,18 @@ public class ToolbarPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_fragment_action_button")
     public WebElement deleteButton;
 
-    public void verifyandClickBackButton() {
+    public void verifyAndClickBackButton() {
         Logger.logStep("Verify Back Button is displayed");
         backArrow.isDisplayed();
         Logger.logStep("Click on Back Button");
         backArrow.click();
+    }
+
+    public void verifyAndClickDeleteButton() throws InterruptedException {
+        Logger.logStep("Verify Delete Button is displayed");
+        deleteButton.isDisplayed();
+        Logger.logStep("Click on Delete Button");
+        deleteButton.click();
+        Thread.sleep(3000L);
     }
 }

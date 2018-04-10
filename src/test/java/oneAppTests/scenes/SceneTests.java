@@ -11,8 +11,7 @@ import page.fragment.devices.DevicesFragmentPage;
 import page.fragment.devices.scenes.AddActionsFragmentPage;
 import page.fragment.devices.scenes.AddSceneFragmentPage;
 import page.fragment.devices.scenes.SceneInformationFragmentPage;
-
-import static org.junit.Assert.assertTrue;
+import utility.Logger;
 
 public class SceneTests extends BaseAppiumTest{
 
@@ -45,54 +44,56 @@ public class SceneTests extends BaseAppiumTest{
 
     @Test
     public void sceneCreateTest() throws InterruptedException {
-        primaryActivity.devicesButton.click();
-        Thread.sleep(4000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Scene Test - Start");
 
-        devicesFragmentPage.moreOptionsButton.click();
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyAndClickMoreOptionsButton();
         devicesFragmentPage.getDevicesFragmentPage();
-        devicesFragmentPage.addSceneButton.click();
+        devicesFragmentPage.verifyAndClickAddSceneButton();
+        addSceneFragmentPage.verifyAndClickSceneNameTextBox();
+        addSceneFragmentPage.addSceneName(sceneName);
+        addSceneFragmentPage.verifyAndClickAddActionsButton();
 
-        addSceneFragmentPage.sceneNameTextBox.sendKeys(sceneName);
-        addSceneFragmentPage.addActionsButton.click();
+        addActionsFragmentPage.verifyAndClickOutletButton();
+        addActionsFragmentPage.verifyAndClickOnRadioButton();
+        addActionsFragmentPage.verifyAndClickDoneButton();
+        addActionsFragmentPage.verifyAndClickSaveButton();
+        devicesFragmentPage.verifyCreatedSceneIsDisplayed();
 
-        addActionsFragmentPage.outletButton.click();
-        addActionsFragmentPage.onRadioButton.click();
-        addActionsFragmentPage.doneButton.click();
-        addActionsFragmentPage.saveButton.click();
-        assertTrue(devicesFragmentPage.createdScene.isDisplayed());
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Scene Test - End");
     }
 
     @Test
     public void sceneDeleteTest() throws InterruptedException {
-        primaryActivity.dashboardButton.click();
-        Thread.sleep(6000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - Start");
 
-        dashboardFragmentPage.sceneInfoButton.click();
-        Thread.sleep(4000L);
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifySceneInfoButton();
+        dashboardFragmentPage.clickSceneInfoButton();
+        sceneInformationFragmentPage.verifyAndClickEditButton();
+        addSceneFragmentPage.verifyAndClickDeleteButton();
+        addSceneFragmentPage.verifyAndClickConfirmDeleteButton();
 
-        sceneInformationFragmentPage.editButton.click();
-
-        addSceneFragmentPage.deleteButton.click();
-        addSceneFragmentPage.confirmDeleteButton.click();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - End");
     }
 
     @Test
     public void sceneEditTest() throws InterruptedException {
-        primaryActivity.dashboardButton.click();
-        Thread.sleep(6000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Scene Test - Start");
 
-        dashboardFragmentPage.sceneInfoButton.click();
-        Thread.sleep(4000L);
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifySceneInfoButton();
+        dashboardFragmentPage.clickSceneInfoButton();
+        sceneInformationFragmentPage.verifyAndClickEditButton();
+        addSceneFragmentPage.verifyAndClickRemoveButton();
+        addSceneFragmentPage.verifyAndClickAddActionsButton();
 
-        sceneInformationFragmentPage.editButton.click();
+        addActionsFragmentPage.verifyAndClickOutletButton();
+        addActionsFragmentPage.verifyAndClickOnRadioButton();
+        addActionsFragmentPage.verifyAndClickDoneButton();
+        addActionsFragmentPage.verifyAndClickSaveButton();
+        dashboardFragmentPage.verifySceneInfoButton();
 
-        addSceneFragmentPage.removeButton.click();
-        addSceneFragmentPage.addActionsButton.click();
-
-        addActionsFragmentPage.outletButton.click();
-        addActionsFragmentPage.onRadioButton.click();
-        addActionsFragmentPage.doneButton.click();
-        addActionsFragmentPage.saveButton.click();
-        assertTrue(dashboardFragmentPage.sceneInfoButton.isDisplayed());
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Scene Test - End");
     }
 }

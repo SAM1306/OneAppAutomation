@@ -12,8 +12,8 @@ import page.fragment.automations.SHMFragmentPage;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.view.ToolbarPage;
+import utility.Logger;
 
-import static org.junit.Assert.assertTrue;
 import static utility.Events.scrollAndClick;
 
 public class AutomationsTests extends BaseAppiumTest{
@@ -48,48 +48,36 @@ public class AutomationsTests extends BaseAppiumTest{
 
     @Test
     public void automationASetUp() throws InterruptedException {
-        primaryActivity.automationsButton.isDisplayed();
-        primaryActivity.automationsButton.click();
-        Thread.sleep(10000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - Start");
 
-        automationsFragmentPage.addAutomationButton.isDisplayed();
-        automationsFragmentPage.addAutomationButton.click();
-
-        addAutomationFragmentPage.smartHomeMonitor.isDisplayed();
-        addAutomationFragmentPage.smartHomeMonitor.click();
-
+        primaryActivity.getAutomationsButton();
+        automationsFragmentPage.verifyAndClickAddAutomationButton();
+        addAutomationFragmentPage.verifySHMButtonIsPresent();
+        addAutomationFragmentPage.clickSHMButton();
         shmFragmentPage.getSHMFragmentPage();
-        //Thread.sleep(2000L);
-        shmFragmentPage.nextButton.isDisplayed();
-        shmFragmentPage.nextButton.click();
-        shmFragmentPage.nextButton.click();
-        shmFragmentPage.sirenDurationTextBox.click();
-        shmFragmentPage.sirenDurationTextBox.sendKeys("1");
-        shmFragmentPage.doneButton.isDisplayed();
-        shmFragmentPage.doneButton.click();
-        Thread.sleep(2000L);
-
+        shmFragmentPage.verifyAndClickNextButton();
+        shmFragmentPage.verifyAndClickNextButton();
+        shmFragmentPage.verifyAndClickSirenDurationTextBox();
+        shmFragmentPage.addSirenDuration("1");
+        shmFragmentPage.verifyAndClickDoneButton();
         scrollAndClick("ALLOW");
         addAutomationFragmentPage.getSHMFragmentPage();
-        assertTrue(addAutomationFragmentPage.smartHomeMonitor.isDisplayed());
+        addAutomationFragmentPage.verifySHMButtonIsPresent();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
     }
 
     @Test
     public void automationDelete() throws  InterruptedException {
-        primaryActivity.automationsButton.isDisplayed();
-        primaryActivity.automationsButton.click();
-        Thread.sleep(6000L);
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete SHM Automation - Start");
 
-        dashboardFragmentPage.moreOptions.isDisplayed();
-        dashboardFragmentPage.moreOptions.click();
+        primaryActivity.getAutomationsButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickDeleteButton();
+        automationsFragmentPage.verifyAndClickSHMButton();
+        toolbarPage.verifyAndClickDeleteButton();
+        primaryActivity.verifyAndClickPopUpDeleteButton();
 
-        moreOptionsFragmentPage.deleteButton.click();
-
-        automationsFragmentPage.smartHomeMonitorButton.isDisplayed();
-        automationsFragmentPage.smartHomeMonitorButton.click();
-
-        toolbarPage.deleteButton.click();
-        Thread.sleep(3000L);
-        primaryActivity.popUpDeleteButton.click();
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete SHM Automation - End");
     }
 }
