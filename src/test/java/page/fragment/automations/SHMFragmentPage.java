@@ -60,7 +60,7 @@ public class SHMFragmentPage extends BasePage {
     }
 
     public void addSirenDuration (String text) {
-        Logger.logStep("Adding Siren Duration");
+        Logger.logStep("Adding \"" + text + "\" minute Siren Duration");
         sirenDurationTextBox.sendKeys(text);
         driver.hideKeyboard();
     }

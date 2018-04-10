@@ -39,9 +39,9 @@ public class AddRoomFragmentPage extends BasePage {
     }
 
     public void verifyAndClickMutliPurposeSensorTile() {
-        Logger.logStep("Verify Mutli Purpose Sensor is displayed");
+        Logger.logStep("Verify Multi Purpose Sensor is displayed");
         multiPurposeSensorButton.isDisplayed();
-        Logger.logStep("Click on Mutli Purpose Sensor");
+        Logger.logStep("Click on Multi Purpose Sensor");
         multiPurposeSensorButton.click();
     }
 
@@ -59,8 +59,8 @@ public class AddRoomFragmentPage extends BasePage {
         roomNameTextBox.click();
     }
 
-    public void addSceneName (String text) {
-        Logger.logStep("Adding Room Name");
+    public void addRoomName (String text) {
+        Logger.logStep("Adding \"" + text + "\" Room Name");
         roomNameTextBox.sendKeys(text);
         driver.hideKeyboard();
     }

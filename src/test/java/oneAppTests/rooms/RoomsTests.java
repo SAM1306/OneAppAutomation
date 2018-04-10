@@ -48,7 +48,7 @@ public class RoomsTests extends BaseAppiumTest {
         devicesFragmentPage.verifyAndClickAddRoomButton();
 
         addRoomFragmentPage.verifyAndClickRoomNameTextBox();
-        addRoomFragmentPage.addSceneName(roomName);
+        addRoomFragmentPage.addRoomName(roomName);
         addRoomFragmentPage.verifyAndClickOutletTile();
         addRoomFragmentPage.verifyAndClickSaveButton();
         roomsFragmentPage.verifyCreatedRoom();
