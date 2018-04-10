@@ -4,6 +4,9 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.Logger;
+
+import static junit.framework.TestCase.assertTrue;
 
 public class RoomsFragmentPage extends BasePage {
     private static final String SCREEN_NAME = "RoomsScreen";
@@ -31,7 +34,36 @@ public class RoomsFragmentPage extends BasePage {
     public WebElement confirmDeleteButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Multipurpose Sensor']")
-    public WebElement verifyMultiPurposeSencor;
+    public WebElement verifyMultiPurposeSensor;
 
+    public void verifyAndClickDeleteButton() {
+        Logger.logStep("Verify Delete Button is displayed");
+        deleteRoomButton.isDisplayed();
+        Logger.logStep("Click on Delete Button");
+        deleteRoomButton.click();
+    }
 
+    public void verifyAndClickConfirmDeleteButtonButton() {
+        Logger.logStep("Verify Confirm Delete Button is displayed");
+        confirmDeleteButton.isDisplayed();
+        Logger.logStep("Click on Confirm Delete Button");
+        confirmDeleteButton.click();
+    }
+
+    public void verifyMultiPurposeSensor() {
+        Logger.logStep("Verify Multi Purpose Sensor is displayed");
+        verifyMultiPurposeSensor.isDisplayed();
+    }
+
+    public void verifyAndClickManageDevicesButtonButton() {
+        Logger.logStep("Verify Manage Devices Button is displayed");
+        manageDevicesButton.isDisplayed();
+        Logger.logStep("Click on Manage Devices Button");
+        manageDevicesButton.click();
+    }
+
+    public void verifyCreatedRoom() {
+        Logger.logStep("Verify Created Room is displayed");
+        assertTrue(createdRoom.isDisplayed());
+    }
 }

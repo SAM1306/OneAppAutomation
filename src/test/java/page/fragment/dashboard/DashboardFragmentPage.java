@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.Logger;
 
+import static junit.framework.TestCase.assertTrue;
+
 public class DashboardFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "DashboardScreen";
@@ -65,6 +67,17 @@ public class DashboardFragmentPage extends BasePage {
         moreOptions.isDisplayed();
         Logger.logStep("Click on More Options Button");
         moreOptions.click();
+    }
+
+    public void verifySceneInfoButton() throws InterruptedException {
+        Logger.logStep("Verify Scene Info Button is displayed");
+        assertTrue(sceneInfoButton.isDisplayed());
+    }
+
+    public void clickSceneInfoButton() throws InterruptedException {
+        Logger.logStep("Click on Scene Info Button");
+        sceneInfoButton.click();
+        Thread.sleep(4000L);
     }
 }
 

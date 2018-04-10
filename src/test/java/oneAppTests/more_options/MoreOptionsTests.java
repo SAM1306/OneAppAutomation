@@ -53,7 +53,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         helpFragmentPage.verifyEmailCustomerServiceIsDisplayed();
         helpFragmentPage.verifyCallCustomerServiceIsDisplayed();
         helpFragmentPage.verifyReportProblemIsDisplayed();
-        toolbarPage.verifyandClickBackButton();
+        toolbarPage.verifyAndClickBackButton();
         dashboardFragmentPage.verifySmartthingsLogoIsPresent();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Help Option - End");
@@ -68,7 +68,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         moreOptionsFragmentPage.verifyAndClickSettingssButton();
         smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifySamsungAccountTextIsDisplayed();
-        toolbarPage.verifyandClickBackButton();
+        toolbarPage.verifyAndClickBackButton();
         dashboardFragmentPage.verifySmartthingsLogoIsPresent();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");

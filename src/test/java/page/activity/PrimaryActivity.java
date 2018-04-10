@@ -33,24 +33,34 @@ public class PrimaryActivity extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Delete']")
     public WebElement popUpDeleteButton;
 
-    public void getDashboardButton() {
+    public void getDashboardButton() throws InterruptedException {
         Logger.logStep("Verify Dashboard Button is displayed");
         dashboardButton.isDisplayed();
         Logger.logStep("Click on Dashboard Button");
         dashboardButton.click();
+        Thread.sleep(4000L);
     }
 
-    public void getDevicesButton() {
+    public void getDevicesButton() throws InterruptedException {
         Logger.logStep("Verify Devices Button is displayed");
         devicesButton.isDisplayed();
         Logger.logStep("Click on Devices Button");
         devicesButton.click();
+        Thread.sleep(4000L);
     }
 
-    public void getAutomationsButton() {
+    public void getAutomationsButton() throws InterruptedException {
         Logger.logStep("Verify Automations Button is displayed");
         automationsButton.isDisplayed();
         Logger.logStep("Click on Automations Button");
         automationsButton.click();
+        Thread.sleep(4000L);
+    }
+
+    public void verifyAndClickPopUpDeleteButton() {
+        Logger.logStep("Verify Pop Up is displayed");
+        popUpDeleteButton.isDisplayed();
+        Logger.logStep("Click on Pop Up Button");
+        popUpDeleteButton.click();
     }
 }

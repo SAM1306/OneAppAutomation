@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.Logger;
 
 public class AutomationsFragmentPage extends BasePage {
 
@@ -31,4 +32,23 @@ public class AutomationsFragmentPage extends BasePage {
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Home Monitor']")
     public WebElement smartHomeMonitorButton;
+
+    public void verifyAutomationPageTitleIsPresent() {
+        Logger.logStep("Verify Automation Page Title is displayed");
+        automationsTitle.isDisplayed();
+    }
+
+    public void verifyAndClickAddAutomationButton() {
+        Logger.logStep("Verify Add Automation Button is displayed");
+        addAutomationButton.isDisplayed();
+        Logger.logStep("Click on Add Automation Button");
+        addAutomationButton.click();
+    }
+
+    public void verifyAndClickSHMButton() {
+        Logger.logStep("Verify SHM Button is displayed");
+        smartHomeMonitorButton.isDisplayed();
+        Logger.logStep("Click on SHM Button");
+        smartHomeMonitorButton.click();
+    }
 }

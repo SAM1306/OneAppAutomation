@@ -43,7 +43,7 @@ public class DevicesListTests extends BaseAppiumTest {
         primaryActivity.getDashboardButton();
         dashboardFragmentPage.verifyAndClickSupportedDevciesTile();
         supportedDevicesFragmentPage.verifySearchBarIsPresent();
-        toolbarPage.verifyandClickBackButton();
+        toolbarPage.verifyAndClickBackButton();
         dashboardFragmentPage.verifySmartthingsLogoIsPresent();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - End");

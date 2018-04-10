@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
+import utility.Logger;
 
 public class SHMFragmentPage extends BasePage {
 
@@ -32,9 +33,35 @@ public class SHMFragmentPage extends BasePage {
 
     public SHMFragmentPage getSHMFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        //wait.until(ExpectedConditions.elementToBeClickable(By
-         //       .xpath("//*[@class='android.view.View' and @text='NEXT']")));
         wait.until(ExpectedConditions.elementToBeClickable(nextButton));
         return new SHMFragmentPage((AndroidDriver) driver);
+    }
+
+    public void verifyAndClickNextButton() {
+        Logger.logStep("Verify Next Button is displayed");
+        nextButton.isDisplayed();
+        Logger.logStep("Click on Next Button");
+        nextButton.click();
+    }
+
+    public void verifyAndClickDoneButton() throws InterruptedException {
+        Logger.logStep("Verify Done Button is displayed");
+        doneButton.isDisplayed();
+        Logger.logStep("Click on Done Button");
+        doneButton.click();
+        Thread.sleep(2000L);
+    }
+
+    public void verifyAndClickSirenDurationTextBox() {
+        Logger.logStep("Verify Siren Duration Text Box is displayed");
+        sirenDurationTextBox.isDisplayed();
+        Logger.logStep("Click on Siren Duration Text Box");
+        sirenDurationTextBox.click();
+    }
+
+    public void addSirenDuration (String text) {
+        Logger.logStep("Adding Siren Duration");
+        sirenDurationTextBox.sendKeys(text);
+        driver.hideKeyboard();
     }
 }

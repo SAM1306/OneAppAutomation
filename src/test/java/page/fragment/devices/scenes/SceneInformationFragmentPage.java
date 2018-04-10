@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.Logger;
 
 public class SceneInformationFragmentPage extends BasePage {
     private static final String SCREEN_NAME = "SceneInformationScreen";
@@ -24,4 +25,11 @@ public class SceneInformationFragmentPage extends BasePage {
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/mode_name_new")
     public WebElement createdScene;
+
+    public void verifyAndClickEditButton() {
+        Logger.logStep("Verify Edit Button is displayed");
+        editButton.isDisplayed();
+        Logger.logStep("Click on Edit Button");
+        editButton.click();
+    }
 }
