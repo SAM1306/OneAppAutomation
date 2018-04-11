@@ -3,8 +3,8 @@ package oneAppTests.more_options;
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
 import oneAppTests.TestCaseSetup;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.dashboard.HelpFragmentPage;
@@ -13,6 +13,7 @@ import page.fragment.dashboard.SmartthingsSettingsFragmentPage;
 import page.view.ToolbarPage;
 import utility.Logger;
 
+@Test
 public class MoreOptionsTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = MoreOptionsTests.class.getName();
@@ -31,7 +32,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         return TEST_NAME;
     }
 
-    @Before
+    @BeforeTest
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);

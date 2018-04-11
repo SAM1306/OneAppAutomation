@@ -3,8 +3,8 @@ package oneAppTests.automations;
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
 import oneAppTests.TestCaseSetup;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.automations.AddAutomationFragmentPage;
 import page.fragment.automations.AutomationsFragmentPage;
@@ -16,6 +16,7 @@ import utility.Logger;
 
 import static utility.Events.scrollAndClick;
 
+@Test
 public class AutomationsTests extends BaseAppiumTest{
 
     private static final String TEST_NAME = AutomationsTests.class.getName();
@@ -35,7 +36,7 @@ public class AutomationsTests extends BaseAppiumTest{
         return TEST_NAME;
     }
 
-    @Before
+    @BeforeTest
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);
@@ -46,8 +47,8 @@ public class AutomationsTests extends BaseAppiumTest{
         moreOptionsFragmentPage = new MoreOptionsFragmentPage(driver);
     }
 
-    @Test
-    public void automationASetUp() throws InterruptedException {
+    @Test(priority=1)
+    public void addSHMAutomation() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - Start");
 
         primaryActivity.getAutomationsButton();
@@ -67,8 +68,8 @@ public class AutomationsTests extends BaseAppiumTest{
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
     }
 
-    @Test
-    public void automationDelete() throws  InterruptedException {
+    @Test(priority=2)
+    public void deleteSHMAutomation() throws  InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete SHM Automation - Start");
 
         primaryActivity.getAutomationsButton();

@@ -3,14 +3,15 @@ package oneAppTests.rooms;
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
 import oneAppTests.TestCaseSetup;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.devices.DevicesFragmentPage;
 import page.fragment.devices.rooms.AddRoomFragmentPage;
 import page.fragment.devices.rooms.RoomsFragmentPage;
 import utility.Logger;
 
+@Test
 public class RoomsTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = RoomsTests.class.getName();
@@ -28,7 +29,7 @@ public class RoomsTests extends BaseAppiumTest {
         return TEST_NAME;
     }
 
-    @Before
+    @BeforeTest
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
         devicesFragmentPage = new DevicesFragmentPage(driver);
@@ -36,7 +37,7 @@ public class RoomsTests extends BaseAppiumTest {
         roomsFragmentPage = new RoomsFragmentPage(driver);
     }
 
-    @Test
+    @Test(priority=1)
     public void addRoomTest() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Room Test - Start");
 
@@ -56,8 +57,8 @@ public class RoomsTests extends BaseAppiumTest {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Room Test - End");
     }
 
-    @Test
-    public void aeditRoomTest() throws InterruptedException {
+    @Test(priority=2)
+    public void editRoomTest() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Room Test - Start");
 
         primaryActivity.getDevicesButton();
@@ -72,7 +73,7 @@ public class RoomsTests extends BaseAppiumTest {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Room Test - End");
     }
 
-    @Test
+    @Test(priority=3)
     public void deleteRoomTest() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Room Test - Start");
 
