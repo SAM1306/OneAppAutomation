@@ -1,34 +1,31 @@
 package oneAppTests;
 
 import android.test.suitebuilder.annotation.LargeTest;
-import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.rules.TestName;
-import org.junit.runner.RunWith;
-import utility.CustomTestRunner;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 @LargeTest
-@RunWith(CustomTestRunner.class)
 public abstract class BaseAppiumTest {
 
-    private static AndroidDriver driver;
+    protected ExtentHtmlReporter uoHtmlReporter = null;
+    protected ExtentReports uoExtentReports = null;
+    protected ExtentTest uoLog = null;
 
-    @Before
-    public void setup() {
+    protected void startReport() {
+        uoHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/IDEAutomationReport.html");
+        uoExtentReports = new ExtentReports();
+        uoExtentReports.attachReporter(uoHtmlReporter);
+        uoExtentReports.setSystemInfo("Host Name", "Smartthings");
+        uoExtentReports.setSystemInfo("Environment", "Automation Testing");
+        uoExtentReports.setSystemInfo("User Name", "Saumil Jain");
     }
 
-    @After
-    public void teardown() {
-    }
+    protected void teardown() {
+        if(uoExtentReports != null)
+            uoExtentReports.flush();
 
-    @Rule
-    public TestName name = new TestName() {
-        public String getMethodName() {
-            return String.format("%s", super.getMethodName());
-        }
-    };
+    }
 
     public abstract String getTestName();
 }

@@ -3,8 +3,9 @@ package oneAppTests.scenes;
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
 import oneAppTests.TestCaseSetup;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.devices.DevicesFragmentPage;
@@ -13,6 +14,7 @@ import page.fragment.devices.scenes.AddSceneFragmentPage;
 import page.fragment.devices.scenes.SceneInformationFragmentPage;
 import utility.Logger;
 
+@Test
 public class SceneTests extends BaseAppiumTest{
 
     private static final String TEST_NAME = SceneTests.class.getName();
@@ -32,7 +34,7 @@ public class SceneTests extends BaseAppiumTest{
         return TEST_NAME;
     }
 
-    @Before
+    @BeforeTest
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);
@@ -42,7 +44,7 @@ public class SceneTests extends BaseAppiumTest{
         sceneInformationFragmentPage = new SceneInformationFragmentPage(driver);
     }
 
-    @Test
+    @Test(priority=1)
     public void sceneCreateTest() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Scene Test - Start");
 
@@ -63,7 +65,7 @@ public class SceneTests extends BaseAppiumTest{
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Scene Test - End");
     }
 
-    @Test
+    @Test(priority=3)
     public void sceneDeleteTest() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - Start");
 
@@ -77,7 +79,7 @@ public class SceneTests extends BaseAppiumTest{
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - End");
     }
 
-    @Test
+    @Test(priority=2)
     public void sceneEditTest() throws InterruptedException {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Scene Test - Start");
 
