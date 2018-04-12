@@ -1,14 +1,16 @@
 package page.fragment.automations;
 
+import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.testng.Assert.assertTrue;
 
 public class AddAutomationFragmentPage extends BasePage {
 
@@ -48,8 +50,10 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyAndClickCustomAutomationButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Custom Automation Button is displayed");
         Logger.logStep("Verify Custom Automation Button is displayed");
         customAutomationButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Custom Automation Button");
         Logger.logStep("Click on Custom Automation Button");
         customAutomationButton.click();
     }

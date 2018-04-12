@@ -11,6 +11,7 @@ import page.fragment.dashboard.HelpFragmentPage;
 import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.fragment.dashboard.SmartthingsSettingsFragmentPage;
 import page.view.ToolbarPage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 @Test
@@ -42,8 +43,9 @@ public class MoreOptionsTests extends BaseAppiumTest {
         smartthingsSettingsFragmentPage = new SmartthingsSettingsFragmentPage(driver);
     }
 
-    @Test
+    @Test(priority = 1)
     public void helpTesting() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("More Options Menu: Help Option");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Help Option - Start");
 
         primaryActivity.getDashboardButton();
@@ -60,8 +62,9 @@ public class MoreOptionsTests extends BaseAppiumTest {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Help Option - End");
     }
 
-    @Test
+    @Test(priority = 2)
     public void settingsTesting() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("More Options Menu: Settings Option");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - Start");
 
         primaryActivity.getDashboardButton();

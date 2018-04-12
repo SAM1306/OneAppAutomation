@@ -12,6 +12,7 @@ import page.fragment.devices.DevicesFragmentPage;
 import page.fragment.devices.scenes.AddActionsFragmentPage;
 import page.fragment.devices.scenes.AddSceneFragmentPage;
 import page.fragment.devices.scenes.SceneInformationFragmentPage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 @Test
@@ -46,6 +47,7 @@ public class SceneTests extends BaseAppiumTest{
 
     @Test(priority=1)
     public void sceneCreateTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Add Scene");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Scene Test - Start");
 
         primaryActivity.getDevicesButton();
@@ -67,6 +69,7 @@ public class SceneTests extends BaseAppiumTest{
 
     @Test(priority=3)
     public void sceneDeleteTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Delete Scene");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - Start");
 
         primaryActivity.getDashboardButton();
@@ -81,6 +84,7 @@ public class SceneTests extends BaseAppiumTest{
 
     @Test(priority=2)
     public void sceneEditTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Edit Scene");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Scene Test - Start");
 
         primaryActivity.getDashboardButton();

@@ -12,6 +12,7 @@ import page.fragment.automations.SHMFragmentPage;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.view.ToolbarPage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 import static utility.Events.scrollAndClick;
@@ -49,6 +50,7 @@ public class AutomationsTests extends BaseAppiumTest{
 
     @Test(priority=1)
     public void addSHMAutomation() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Automtions: Add SHM Automation");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - Start");
 
         primaryActivity.getAutomationsButton();
@@ -70,6 +72,7 @@ public class AutomationsTests extends BaseAppiumTest{
 
     @Test(priority=2)
     public void deleteSHMAutomation() throws  InterruptedException {
+        ExtentTestManager.getTest().setDescription("Delete SHM Automation");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete SHM Automation - Start");
 
         primaryActivity.getAutomationsButton();

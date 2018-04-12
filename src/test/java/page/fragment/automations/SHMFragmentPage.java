@@ -1,11 +1,13 @@
 package page.fragment.automations;
 
+import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 public class SHMFragmentPage extends BasePage {
@@ -38,28 +40,35 @@ public class SHMFragmentPage extends BasePage {
     }
 
     public void verifyAndClickNextButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Next Button is displayed");
         Logger.logStep("Verify Next Button is displayed");
         nextButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Next Button");
         Logger.logStep("Click on Next Button");
         nextButton.click();
     }
 
     public void verifyAndClickDoneButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Done Button is displayed");
         Logger.logStep("Verify Done Button is displayed");
         doneButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
         Logger.logStep("Click on Done Button");
         doneButton.click();
         Thread.sleep(2000L);
     }
 
     public void verifyAndClickSirenDurationTextBox() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Siren Duration Text Box is displayed");
         Logger.logStep("Verify Siren Duration Text Box is displayed");
         sirenDurationTextBox.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Siren Duration Text Box");
         Logger.logStep("Click on Siren Duration Text Box");
         sirenDurationTextBox.click();
     }
 
     public void addSirenDuration (String text) {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Adding \"" + text + "\" minute Siren Duration");
         Logger.logStep("Adding \"" + text + "\" minute Siren Duration");
         sirenDurationTextBox.sendKeys(text);
         driver.hideKeyboard();

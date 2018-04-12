@@ -1,9 +1,11 @@
 package page.activity;
 
+import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 public class PrimaryActivity extends BasePage {
@@ -34,32 +36,40 @@ public class PrimaryActivity extends BasePage {
     public WebElement popUpDeleteButton;
 
     public void getDashboardButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Dashboard Button is displayed");
         Logger.logStep("Verify Dashboard Button is displayed");
         dashboardButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Dashboard Button");
         Logger.logStep("Click on Dashboard Button");
         dashboardButton.click();
         Thread.sleep(4000L);
     }
 
     public void getDevicesButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Device Button is displayed");
         Logger.logStep("Verify Devices Button is displayed");
         devicesButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Devices Button");
         Logger.logStep("Click on Devices Button");
         devicesButton.click();
         Thread.sleep(4000L);
     }
 
     public void getAutomationsButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Automations Button is displayed");
         Logger.logStep("Verify Automations Button is displayed");
         automationsButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Automations Button");
         Logger.logStep("Click on Automations Button");
         automationsButton.click();
         Thread.sleep(4000L);
     }
 
     public void verifyAndClickPopUpDeleteButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Pop Up Delete Button is displayed");
         Logger.logStep("Verify Pop Up is displayed");
         popUpDeleteButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Pop Up Delete Button");
         Logger.logStep("Click on Pop Up Button");
         popUpDeleteButton.click();
     }
