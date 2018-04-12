@@ -12,44 +12,14 @@
 			<class name="pages.Dashboard"/>
 		</classes> 
 	</test>
-	
+	<test name="Devices">
+		<classes>
+			<class name="pages.Devices"/>
+		</classes> 
+	</test>
+	<test name="Scenes">
+		<classes>
+			<class name="pages.Scenes"/>
+		</classes> 
+	</test>
 </suite>
-
-
-<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > -->
- 
-<!-- <suite name="pages" verbose="1" > -->
-<!--   <test name="Automation"   > -->
-<!--     <packages> -->
-<!--       <package name="pages" /> -->
-<!--    </packages> -->
-<!--  </test> -->
-<!-- </suite> -->
-
-
-
-<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > -->
-
-<!-- <suite name="pages"> -->
-<!-- 	<test name="Automation"> -->
-<!-- 		<classes> -->
-<!-- 		    <class name="pages.Dashboard"> -->
-<!-- 				<methods> -->
-<!-- 				    <include name="verifyDashboardtab" /> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 			<class name="pages.Automation"> -->
-<!-- 				<methods> -->
-<!-- 				    <include name="verifyAutomationtab" /> -->
-<!-- 					<include name="CreateAutomation" /> -->
-<!-- 					<include name="DeleteAutomation" /> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 			<class name="pages.Devices"> -->
-<!-- 				<methods> -->
-<!-- 				    <include name="verifyDevicetab" /> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 		</classes> -->
-<!--   </test> -->
-<!--  </suite> -->
