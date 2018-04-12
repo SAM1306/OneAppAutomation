@@ -1,12 +1,14 @@
 package page.fragment.devices.rooms;
 
+import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.testng.Assert.assertTrue;
 
 public class RoomsFragmentPage extends BasePage {
     private static final String SCREEN_NAME = "RoomsScreen";
@@ -37,32 +39,40 @@ public class RoomsFragmentPage extends BasePage {
     public WebElement verifyMultiPurposeSensor;
 
     public void verifyAndClickDeleteButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Delete Button");
         Logger.logStep("Verify Delete Button is displayed");
         deleteRoomButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Delete Button");
         Logger.logStep("Click on Delete Button");
         deleteRoomButton.click();
     }
 
     public void verifyAndClickConfirmDeleteButtonButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Confirm Delete Button is displayed");
         Logger.logStep("Verify Confirm Delete Button is displayed");
         confirmDeleteButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Confirm Delete Button");
         Logger.logStep("Click on Confirm Delete Button");
         confirmDeleteButton.click();
     }
 
     public void verifyMultiPurposeSensor() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Multi Purpose Sensor is displayed");
         Logger.logStep("Verify Multi Purpose Sensor is displayed");
-        verifyMultiPurposeSensor.isDisplayed();
+        assertTrue(verifyMultiPurposeSensor.isDisplayed());
     }
 
     public void verifyAndClickManageDevicesButtonButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Manage Devices Button is displayed");
         Logger.logStep("Verify Manage Devices Button is displayed");
         manageDevicesButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Manage Devices Button");
         Logger.logStep("Click on Manage Devices Button");
         manageDevicesButton.click();
     }
 
     public void verifyCreatedRoom() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Created Room is displayed");
         Logger.logStep("Verify Created Room is displayed");
         assertTrue(createdRoom.isDisplayed());
     }

@@ -3,13 +3,13 @@ package oneAppTests.device_list;
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
 import oneAppTests.TestCaseSetup;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.dashboard.SupportedDevicesFragmentPage;
 import page.view.ToolbarPage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 @Test
@@ -31,15 +31,15 @@ public class DevicesListTests extends BaseAppiumTest {
 
     @BeforeTest
     public void setUp() {
-        startReport();
         primaryActivity = new PrimaryActivity(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);
         supportedDevicesFragmentPage = new SupportedDevicesFragmentPage(driver);
         toolbarPage = new ToolbarPage(driver);
     }
 
-    @Test
+    @Test(priority = 1)
     public void listSupportedDevices() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("List Supported Devices");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - Start");
 
         primaryActivity.getDashboardButton();
@@ -50,10 +50,4 @@ public class DevicesListTests extends BaseAppiumTest {
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - End");
     }
-
-    @AfterTest
-    public void close() {
-        teardown();
-    }
-
 }

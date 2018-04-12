@@ -1,9 +1,11 @@
 package page.fragment.devices.scenes;
 
+import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 public class SceneInformationFragmentPage extends BasePage {
@@ -27,8 +29,10 @@ public class SceneInformationFragmentPage extends BasePage {
     public WebElement createdScene;
 
     public void verifyAndClickEditButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Edit Button is displayed");
         Logger.logStep("Verify Edit Button is displayed");
         editButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Edit Button");
         Logger.logStep("Click on Edit Button");
         editButton.click();
     }

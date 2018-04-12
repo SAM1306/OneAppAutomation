@@ -1,31 +1,27 @@
 package oneAppTests;
 
 import android.test.suitebuilder.annotation.LargeTest;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 @LargeTest
 public abstract class BaseAppiumTest {
 
-    protected ExtentHtmlReporter uoHtmlReporter = null;
-    protected ExtentReports uoExtentReports = null;
-    protected ExtentTest uoLog = null;
+    public AppiumDriver driver;
 
-    protected void startReport() {
-        uoHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/IDEAutomationReport.html");
-        uoExtentReports = new ExtentReports();
-        uoExtentReports.attachReporter(uoHtmlReporter);
-        uoExtentReports.setSystemInfo("Host Name", "Smartthings");
-        uoExtentReports.setSystemInfo("Environment", "Automation Testing");
-        uoExtentReports.setSystemInfo("User Name", "Saumil Jain");
+    @BeforeClass
+    protected void setup() {
     }
 
-    protected void teardown() {
-        if(uoExtentReports != null)
-            uoExtentReports.flush();
-
+    @AfterClass
+    public void teardown () {
     }
 
     public abstract String getTestName();
+
+    public WebDriver getDriver() {
+        return driver;
+    }
 }

@@ -9,6 +9,7 @@ import page.activity.PrimaryActivity;
 import page.fragment.devices.DevicesFragmentPage;
 import page.fragment.devices.rooms.AddRoomFragmentPage;
 import page.fragment.devices.rooms.RoomsFragmentPage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 @Test
@@ -39,6 +40,7 @@ public class RoomsTests extends BaseAppiumTest {
 
     @Test(priority=1)
     public void addRoomTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Rooms: Add Room");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Room Test - Start");
 
         primaryActivity.getDevicesButton();
@@ -59,6 +61,7 @@ public class RoomsTests extends BaseAppiumTest {
 
     @Test(priority=2)
     public void editRoomTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Rooms: Edit Room");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Room Test - Start");
 
         primaryActivity.getDevicesButton();
@@ -75,6 +78,7 @@ public class RoomsTests extends BaseAppiumTest {
 
     @Test(priority=3)
     public void deleteRoomTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Rooms: Delete Room");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Room Test - Start");
 
         roomsFragmentPage.verifyAndClickDeleteButton();

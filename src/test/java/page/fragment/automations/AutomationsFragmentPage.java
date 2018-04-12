@@ -1,9 +1,11 @@
 package page.fragment.automations;
 
+import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
+import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 public class AutomationsFragmentPage extends BasePage {
@@ -34,20 +36,25 @@ public class AutomationsFragmentPage extends BasePage {
     public WebElement smartHomeMonitorButton;
 
     public void verifyAutomationPageTitleIsPresent() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Automation Page Title is displayed");
         Logger.logStep("Verify Automation Page Title is displayed");
         automationsTitle.isDisplayed();
     }
 
     public void verifyAndClickAddAutomationButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Automation Button is displayed");
         Logger.logStep("Verify Add Automation Button is displayed");
         addAutomationButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Automation Button");
         Logger.logStep("Click on Add Automation Button");
         addAutomationButton.click();
     }
 
     public void verifyAndClickSHMButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM Button is displayed");
         Logger.logStep("Verify SHM Button is displayed");
         smartHomeMonitorButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on SHM Button");
         Logger.logStep("Click on SHM Button");
         smartHomeMonitorButton.click();
     }
