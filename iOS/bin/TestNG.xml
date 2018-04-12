@@ -1,0 +1,55 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" name="pages">
+	<test name="Automation">
+		<classes>
+			<class name="pages.Automation"/>
+		</classes> 
+	</test>
+	
+	<test name="Dashboard">
+		<classes>
+			<class name="pages.Dashboard"/>
+		</classes> 
+	</test>
+	
+</suite>
+
+
+<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > -->
+ 
+<!-- <suite name="pages" verbose="1" > -->
+<!--   <test name="Automation"   > -->
+<!--     <packages> -->
+<!--       <package name="pages" /> -->
+<!--    </packages> -->
+<!--  </test> -->
+<!-- </suite> -->
+
+
+
+<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > -->
+
+<!-- <suite name="pages"> -->
+<!-- 	<test name="Automation"> -->
+<!-- 		<classes> -->
+<!-- 		    <class name="pages.Dashboard"> -->
+<!-- 				<methods> -->
+<!-- 				    <include name="verifyDashboardtab" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 			<class name="pages.Automation"> -->
+<!-- 				<methods> -->
+<!-- 				    <include name="verifyAutomationtab" /> -->
+<!-- 					<include name="CreateAutomation" /> -->
+<!-- 					<include name="DeleteAutomation" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 			<class name="pages.Devices"> -->
+<!-- 				<methods> -->
+<!-- 				    <include name="verifyDevicetab" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!--   </test> -->
+<!--  </suite> -->
