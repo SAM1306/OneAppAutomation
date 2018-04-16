@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" name="pages">
+	<test name="Automation">
+		<classes>
+			<class name="pages.Automation"/>
+		</classes> 
+	</test>
+	
+	<test name="Dashboard">
+		<classes>
+			<class name="pages.Dashboard"/>
+		</classes> 
+	</test>
+	<test name="Devices">
+		<classes>
+			<class name="pages.Devices"/>
+		</classes> 
+	</test>
+	<test name="Scenes">
+		<classes>
+			<class name="pages.Scenes"/>
+		</classes> 
+	</test>
+</suite>
