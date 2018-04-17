@@ -87,6 +87,12 @@ public class DevicesFragmentPage extends BasePage {
         assertTrue(createdScene.isDisplayed());
     }
 
+    public void clickCreatedSceneButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click Created Scene Button");
+        Logger.logStep("Click Created Scene Button");
+        createdScene.click();
+    }
+
     public void verifyAndClickHomeLocationButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Home Location Button is displayed");
         Logger.logStep("Verify Home Location Button is displayed");

@@ -22,6 +22,7 @@ public class SceneTests extends BaseAppiumTest{
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
     private String sceneName = "Test Scene";
+    private String newSceneName = "New Scene";
 
     private DashboardFragmentPage dashboardFragmentPage;
     private PrimaryActivity primaryActivity;
@@ -61,25 +62,11 @@ public class SceneTests extends BaseAppiumTest{
         addActionsFragmentPage.verifyAndClickOutletButton();
         addActionsFragmentPage.verifyAndClickOnRadioButton();
         addActionsFragmentPage.verifyAndClickDoneButton();
+        addSceneFragmentPage.verifyAndClickShortcutOnDashbaordButton();
         addActionsFragmentPage.verifyAndClickSaveButton();
         devicesFragmentPage.verifyCreatedSceneIsDisplayed();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add Scene Test - End");
-    }
-
-    @Test(priority=3)
-    public void sceneDeleteTest() throws InterruptedException {
-        ExtentTestManager.getTest().setDescription("Scenes: Delete Scene");
-        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - Start");
-
-        primaryActivity.getDashboardButton();
-        dashboardFragmentPage.verifySceneInfoButton();
-        dashboardFragmentPage.clickSceneInfoButton();
-        sceneInformationFragmentPage.verifyAndClickEditButton();
-        addSceneFragmentPage.verifyAndClickDeleteButton();
-        addSceneFragmentPage.verifyAndClickConfirmDeleteButton();
-
-        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - End");
     }
 
     @Test(priority=2)
@@ -87,8 +74,8 @@ public class SceneTests extends BaseAppiumTest{
         ExtentTestManager.getTest().setDescription("Scenes: Edit Scene");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Scene Test - Start");
 
-        primaryActivity.getDashboardButton();
-        dashboardFragmentPage.verifySceneInfoButton();
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyCreatedSceneIsDisplayed();
         dashboardFragmentPage.clickSceneInfoButton();
         sceneInformationFragmentPage.verifyAndClickEditButton();
         addSceneFragmentPage.verifyAndClickRemoveButton();
@@ -101,5 +88,69 @@ public class SceneTests extends BaseAppiumTest{
         dashboardFragmentPage.verifySceneInfoButton();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Edit Scene Test - End");
+    }
+
+    @Test(priority=3)
+    public void addSceneToDashboard() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Add a Scene as a Favorite to the Dashboard");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add a Scene as a Favorite to the Dashboard - Start");
+
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyCreatedSceneIsDisplayed();
+        dashboardFragmentPage.clickSceneInfoButton();
+        sceneInformationFragmentPage.verifyAndClickEditButton();
+        addSceneFragmentPage.verifyAndClickShortcutOnDashbaordButton();
+        addActionsFragmentPage.verifyAndClickSaveButton();
+        devicesFragmentPage.verifyCreatedSceneIsDisplayed();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add a Scene as a Favorite to the Dashboard - End");
+    }
+
+    @Test(priority=4)
+    public void personalizeSceneTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Personalize a Scene");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Personalize a Scene - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifySceneInfoButton();
+        dashboardFragmentPage.clickSceneInfoButton();
+        sceneInformationFragmentPage.verifyAndClickEditButton();
+        addSceneFragmentPage.addSceneName(newSceneName);
+        addSceneFragmentPage.verifyAndClickSceneIconButton();
+        addSceneFragmentPage.verifyAndClickSceneIconDisplayButton();
+        addActionsFragmentPage.verifyAndClickSaveButton();
+        dashboardFragmentPage.verifySceneNameButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Personalize a Scene - End");
+    }
+
+    @Test(priority=5)
+    public void activateSceneTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Activate Scene");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Activate Scene Test - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifySceneNameButton();
+        dashboardFragmentPage.clickSceneNameButton();
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyCreatedSceneIsDisplayed();
+        devicesFragmentPage.clickCreatedSceneButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Activate Scene Test - End");
+    }
+
+    @Test(priority=6)
+    public void sceneDeleteTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Scenes: Delete Scene");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifySceneInfoButton();
+        dashboardFragmentPage.clickSceneInfoButton();
+        sceneInformationFragmentPage.verifyAndClickEditButton();
+        addSceneFragmentPage.verifyAndClickDeleteButton();
+        addSceneFragmentPage.verifyAndClickConfirmDeleteButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Scene Test - End");
     }
 }

@@ -73,6 +73,9 @@ public class DashboardFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Close']")
     public WebElement closeButton;
 
+    @AndroidFindBy(accessibility = "New Scene")
+    public WebElement sceneButton;
+
     @AndroidFindBy(id = "android:id/alertTitle")
     public WebElement alertPopUp;
 
@@ -112,6 +115,19 @@ public class DashboardFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Scene Info Button");
         Logger.logStep("Click on Scene Info Button");
         sceneInfoButton.click();
+        Thread.sleep(4000L);
+    }
+
+    public void verifySceneNameButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Scene Name Button is displayed");
+        Logger.logStep("Verify Scene Name Button is displayed");
+        assertTrue(sceneButton.isDisplayed());
+    }
+
+    public void clickSceneNameButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Scene Name Button");
+        Logger.logStep("Click on Scene Name Button");
+        sceneButton.click();
         Thread.sleep(4000L);
     }
 

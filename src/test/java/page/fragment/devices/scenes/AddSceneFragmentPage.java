@@ -35,6 +35,15 @@ public class AddSceneFragmentPage extends BasePage {
     @AndroidFindBy(accessibility = "Remove")
     public WebElement removeButton;
 
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rules_show_main_touch_area")
+    public WebElement shortcutOnDashboardButton;
+
+    @AndroidFindBy(accessibility = "Scene icon")
+    public WebElement sceneIconButton;
+
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/add_mode_icon_01")
+    public WebElement sceneIconDisplayButton;
+
     public void verifyAndClickAddActionsButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Actions Button is displayed");
         Logger.logStep("Verify Add Actions Button is displayed");
@@ -85,5 +94,32 @@ public class AddSceneFragmentPage extends BasePage {
         Logger.logStep("Adding \"" + text + "\" Scene Name");
         sceneNameTextBox.sendKeys(text);
         driver.hideKeyboard();
+    }
+
+    public void verifyAndClickShortcutOnDashbaordButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Shortcut On Dashbaord Button is displayed");
+        Logger.logStep("Verify Shortcut On Dashbaord Button is displayed");
+        shortcutOnDashboardButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Shortcut On Dashbaord Button");
+        Logger.logStep("Click on Shortcut On Dashbaord Button");
+        shortcutOnDashboardButton.click();
+    }
+
+    public void verifyAndClickSceneIconButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Scene Icon Button is displayed");
+        Logger.logStep("Verify Scene Icon Button is displayed");
+        sceneIconButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Scene Icon Button");
+        Logger.logStep("Click on Scene Icon Button");
+        sceneIconButton.click();
+    }
+
+    public void verifyAndClickSceneIconDisplayButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Scene Icon Display Button is displayed");
+        Logger.logStep("Verify Scene Icon Display Button is displayed");
+        sceneIconDisplayButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Scene Icon Display Button");
+        Logger.logStep("Click on Scene Icon Display Button");
+        sceneIconDisplayButton.click();
     }
 }

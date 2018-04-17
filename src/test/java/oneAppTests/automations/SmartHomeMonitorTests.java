@@ -11,6 +11,7 @@ import page.fragment.automations.AutomationsFragmentPage;
 import page.fragment.automations.SHMConfigurePage;
 import page.fragment.automations.SHMFragmentPage;
 import page.fragment.dashboard.DashboardFragmentPage;
+import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
@@ -29,6 +30,7 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
     private AutomationsFragmentPage automationsFragmentPage;
     private AddAutomationFragmentPage addAutomationFragmentPage;
     private SHMConfigurePage shmConfigurePage;
+    private MoreOptionsFragmentPage moreOptionsFragmentPage;
     private SHMFragmentPage shmFragmentPage;
     private ToolbarPage toolbarPage;
 
@@ -44,6 +46,7 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         automationsFragmentPage = new AutomationsFragmentPage(driver);
         addAutomationFragmentPage = new AddAutomationFragmentPage(driver);
         shmConfigurePage = new SHMConfigurePage(driver);
+        moreOptionsFragmentPage = new MoreOptionsFragmentPage(driver);
         shmFragmentPage = new SHMFragmentPage(driver);
         toolbarPage = new ToolbarPage(driver);
     }
@@ -119,5 +122,20 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         shmFragmentPage.verifySHMPageTitleIsDisplayed();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: View/Edit SHM Security - End");
+    }
+
+    @Test(priority=4)
+    public void deleteSHMAutomation() throws  InterruptedException {
+        ExtentTestManager.getTest().setDescription("Delete SHM Automation");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete SHM Automation - Start");
+
+        primaryActivity.getAutomationsButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickDeleteButton();
+        automationsFragmentPage.verifyAndClickSHMButton();
+        toolbarPage.verifyAndClickDeleteButton();
+        primaryActivity.verifyAndClickPopUpDeleteButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete SHM Automation - End");
     }
 }
