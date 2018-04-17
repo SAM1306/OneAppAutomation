@@ -43,10 +43,10 @@ public class AddAutomationFragmentPage extends BasePage {
         smartHomeMonitor.click();
     }
 
-    public SHMFragmentPage getSHMFragmentPage() {
+    public SHMConfigurePage getSHMFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(smartHomeMonitor));
-        return new SHMFragmentPage((AndroidDriver) driver);
+        return new SHMConfigurePage((AndroidDriver) driver);
     }
 
     public void verifyAndClickCustomAutomationButton() {

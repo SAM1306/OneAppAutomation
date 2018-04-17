@@ -3,6 +3,7 @@ package page.fragment.dashboard;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
@@ -51,6 +52,31 @@ public class DashboardFragmentPage extends BasePage {
     @AndroidFindBy(accessibility = "Scene information")
     public WebElement sceneInfoButton;
 
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/armed_away_button")
+    public WebElement armedAwayButton;
+
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/dis_armed_button")
+    public WebElement disArmedButton;
+
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/armed_stay_button")
+    public WebElement armedStayButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Home Monitor']")
+    public WebElement shmTitle;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Not monitoring']")
+    public WebElement notMonitoringText;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Everything's OK']")
+    public WebElement everythingOkayText;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Close']")
+    public WebElement closeButton;
+
+    @AndroidFindBy(id = "android:id/alertTitle")
+    public WebElement alertPopUp;
+
+
     public void verifySmartthingsLogoIsPresent() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Smartthings Logo is displayed");
         Logger.logStep("Verify Smartthings Logo is displayed");
@@ -87,6 +113,74 @@ public class DashboardFragmentPage extends BasePage {
         Logger.logStep("Click on Scene Info Button");
         sceneInfoButton.click();
         Thread.sleep(4000L);
+    }
+
+    public void verifySHMTitleIsDisplayed() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM title is displayed");
+        Logger.logStep("Verify SHM title is displayed");
+        assertTrue(shmTitle.isDisplayed());
+    }
+
+    public void clickSHMTitle() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click SHM title");
+        Logger.logStep("Click SHM title");
+        shmTitle.click();
+    }
+
+    public void verifyNonMonitoringTextIsDisplayed() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Non Monitoring Text is displayed");
+        Logger.logStep("Verify Non Monitoring Text is displayed");
+        assertTrue(notMonitoringText.isDisplayed());
+    }
+
+    public void verifyEverythingOkTextIsDisplayed() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Everything Ok is displayed");
+        Logger.logStep("Verify Everything Ok is displayed");
+        assertTrue(everythingOkayText.isDisplayed());
+    }
+
+    public void verifyAndClickArmedStayButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Armed Stay Button is displayed");
+        Logger.logStep("Verify Armed Stay Button is displayed");
+        armedStayButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Armed Stay Button");
+        Logger.logStep("Click on Armed Stay Button");
+        armedStayButton.click();
+    }
+
+    public void verifyAndClickArmedAwayButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Armed Away Button is displayed");
+        Logger.logStep("Verify Armed Away Button is displayed");
+        armedAwayButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Armed Away Button");
+        Logger.logStep("Click on Armed Away Button");
+        armedAwayButton.click();
+    }
+
+    public void verifyAndClickDisarmedButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Disarmed Button is displayed");
+        Logger.logStep("Verify Disarmed Button is displayed");
+        disArmedButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Disarmed Button");
+        Logger.logStep("Click on Disarmed Button");
+        disArmedButton.click();
+    }
+
+    public void proceedSHMViewIfNecessary() throws InterruptedException {
+        if(isSHMViewDisplayed()) {
+            closeButton.click();
+        } else {
+            verifySHMTitleIsDisplayed();
+        }
+    }
+
+    public boolean isSHMViewDisplayed() {
+        try {
+            alertPopUp.isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }
 
