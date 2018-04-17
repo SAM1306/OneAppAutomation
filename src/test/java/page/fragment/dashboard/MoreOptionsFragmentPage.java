@@ -25,7 +25,7 @@ public class MoreOptionsFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Settings']")
     public WebElement settingsButton;
 
-    @AndroidFindBy(id = "//*[@class='android.widget.TextView' and @text='Manage Dashboard']")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Manage Dashboard']")
     public WebElement manageDashbaord;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Delete']")

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.automations.AddAutomationFragmentPage;
 import page.fragment.automations.AutomationsFragmentPage;
-import page.fragment.automations.SHMFragmentPage;
+import page.fragment.automations.SHMConfigurePage;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.dashboard.MoreOptionsFragmentPage;
 import page.view.ToolbarPage;
@@ -29,7 +29,7 @@ public class AutomationsTests extends BaseAppiumTest{
     private ToolbarPage toolbarPage;
     private AutomationsFragmentPage automationsFragmentPage;
     private AddAutomationFragmentPage addAutomationFragmentPage;
-    private SHMFragmentPage shmFragmentPage;
+    private SHMConfigurePage shmConfigurePage;
     private MoreOptionsFragmentPage moreOptionsFragmentPage;
 
     @Override
@@ -44,7 +44,7 @@ public class AutomationsTests extends BaseAppiumTest{
         toolbarPage = new ToolbarPage(driver);
         automationsFragmentPage = new AutomationsFragmentPage(driver);
         addAutomationFragmentPage = new AddAutomationFragmentPage(driver);
-        shmFragmentPage = new SHMFragmentPage(driver);
+        shmConfigurePage = new SHMConfigurePage(driver);
         moreOptionsFragmentPage = new MoreOptionsFragmentPage(driver);
     }
 
@@ -57,12 +57,12 @@ public class AutomationsTests extends BaseAppiumTest{
         automationsFragmentPage.verifyAndClickAddAutomationButton();
         addAutomationFragmentPage.verifySHMButtonIsPresent();
         addAutomationFragmentPage.clickSHMButton();
-        shmFragmentPage.getSHMFragmentPage();
-        shmFragmentPage.verifyAndClickNextButton();
-        shmFragmentPage.verifyAndClickNextButton();
-        shmFragmentPage.verifyAndClickSirenDurationTextBox();
-        shmFragmentPage.addSirenDuration("1");
-        shmFragmentPage.verifyAndClickDoneButton();
+        shmConfigurePage.getSHMFragmentPage();
+        shmConfigurePage.verifyAndClickNextButton();
+        shmConfigurePage.verifyAndClickNextButton();
+        shmConfigurePage.verifyAndClickSirenDurationTextBox();
+        shmConfigurePage.addSirenDuration("1");
+        shmConfigurePage.verifyAndClickDoneButton();
         scrollAndClick("ALLOW");
         addAutomationFragmentPage.getSHMFragmentPage();
         addAutomationFragmentPage.verifySHMButtonIsPresent();

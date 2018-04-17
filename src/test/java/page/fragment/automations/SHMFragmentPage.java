@@ -4,17 +4,18 @@ import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+
+import static org.testng.Assert.assertTrue;
 
 public class SHMFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "SHMScreen";
 
     public SHMFragmentPage(AndroidDriver driver) {
+
         super(driver);
         loadPage();
     }
@@ -24,53 +25,59 @@ public class SHMFragmentPage extends BasePage {
         return SCREEN_NAME;
     }
 
-    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='NEXT']")
-    public WebElement nextButton;
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/shm_main_actionbar_title")
+    public WebElement shmPageTitle;
 
-    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='DONE']")
-    public WebElement doneButton;
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/shm_banner_away_icon")
+    public WebElement armedAwaySHMButton;
 
-    @AndroidFindBy(id = "siren_duration")
-    public WebElement sirenDurationTextBox;
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/shm_banner_stay_icon")
+    public WebElement armedStaySHMButton;
 
-    public SHMFragmentPage getSHMFragmentPage() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(nextButton));
-        return new SHMFragmentPage((AndroidDriver) driver);
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/shm_banner_disarmed_icon")
+    public WebElement disarmedSHMButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Settings']")
+    public WebElement settingsSHMButton;
+
+    public void verifySHMPageTitleIsDisplayed() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM page title is displayed");
+        Logger.logStep("Verify SHM page title is displayed");
+        assertTrue(shmPageTitle.isDisplayed());
+    }
+    public void verifyAndClickSettingsButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Settings Button is displayed");
+        Logger.logStep("Verify Settings Button is displayed");
+        settingsSHMButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Settings Button");
+        Logger.logStep("Click on Settings Button");
+        settingsSHMButton.click();
     }
 
-    public void verifyAndClickNextButton() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Next Button is displayed");
-        Logger.logStep("Verify Next Button is displayed");
-        nextButton.isDisplayed();
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Next Button");
-        Logger.logStep("Click on Next Button");
-        nextButton.click();
+    public void verifyAndClickSHMArmedStayButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM Armed Stay Button is displayed");
+        Logger.logStep("Verify SHM Armed Stay Button is displayed");
+        armedStaySHMButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on SHM Armed Stay Button");
+        Logger.logStep("Click on SHM Armed Stay Button");
+        armedStaySHMButton.click();
     }
 
-    public void verifyAndClickDoneButton() throws InterruptedException {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Done Button is displayed");
-        Logger.logStep("Verify Done Button is displayed");
-        doneButton.isDisplayed();
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
-        Logger.logStep("Click on Done Button");
-        doneButton.click();
-        Thread.sleep(2000L);
+    public void verifyAndClickSHMArmedAwayButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM Armed Away Button is displayed");
+        Logger.logStep("Verify SHM Armed Away Button is displayed");
+        armedAwaySHMButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on SHM Armed Away Button");
+        Logger.logStep("Click on SHM Armed Away Button");
+        armedAwaySHMButton.click();
     }
 
-    public void verifyAndClickSirenDurationTextBox() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Siren Duration Text Box is displayed");
-        Logger.logStep("Verify Siren Duration Text Box is displayed");
-        sirenDurationTextBox.isDisplayed();
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Siren Duration Text Box");
-        Logger.logStep("Click on Siren Duration Text Box");
-        sirenDurationTextBox.click();
-    }
-
-    public void addSirenDuration (String text) {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Adding \"" + text + "\" minute Siren Duration");
-        Logger.logStep("Adding \"" + text + "\" minute Siren Duration");
-        sirenDurationTextBox.sendKeys(text);
-        driver.hideKeyboard();
+    public void verifyAndClickSHMDisarmedButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM Disarmed Button is displayed");
+        Logger.logStep("Verify SHM Disarmed Button is displayed");
+        disarmedSHMButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on SHM Disarmed Button");
+        Logger.logStep("Click on SHM Disarmed Button");
+        disarmedSHMButton.click();
     }
 }
