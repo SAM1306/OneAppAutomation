@@ -21,7 +21,7 @@ import static utility.Events.scrollAndClick;
 @Test
 public class SmartHomeMonitorTests extends BaseAppiumTest {
 
-    private static final String TEST_NAME = AutomationsTests.class.getName();
+    private static final String TEST_NAME = SmartHomeMonitorTests.class.getName();
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
 
