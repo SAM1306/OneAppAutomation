@@ -77,4 +77,20 @@ public class MoreOptionsTests extends BaseAppiumTest {
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
     }
+
+    @Test(priority = 4)
+    public void settingTestsVerification() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("More Options Menu: Settings Option");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickSettingssButton();
+        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
+        smartthingsSettingsFragmentPage.verifyWifiAndBluetoothAutoOnAndToggable();
+        smartthingsSettingsFragmentPage.verifyUseLocationInformationIsPresentAndToggable();
+        smartthingsSettingsFragmentPage.verifyAutoUpdateController();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
+    }
 }
