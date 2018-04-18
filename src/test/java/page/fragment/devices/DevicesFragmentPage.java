@@ -44,9 +44,17 @@ public class DevicesFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Home']")
     public WebElement homeLocationButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Add location']")
+    public WebElement addLocationButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Office']")
+    public WebElement officeLocationButton;
+
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Edit']")
     public WebElement editButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Office']")
+    public WebElement locationName;
 
     public DevicesFragmentPage getDevicesFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -102,6 +110,24 @@ public class DevicesFragmentPage extends BasePage {
         homeLocationButton.click();
     }
 
+    public void verifyAndClickAddLocationButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Location Button is displayed");
+        Logger.logStep("Verify Add Location Button is displayed");
+        addLocationButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Location Button");
+        Logger.logStep("Click on Add Location Button");
+        addLocationButton.click();
+    }
+
+    public void verifyAndClickOfficeLocationButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Office Location Button is displayed");
+        Logger.logStep("Verify Office Location Button is displayed");
+        officeLocationButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Office Location Button");
+        Logger.logStep("Click on Office Location Button");
+        officeLocationButton.click();
+    }
+
     public void verifyAndClickEditButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Edit Button is displayed");
         Logger.logStep("Verify Edit Button is displayed");
@@ -118,5 +144,11 @@ public class DevicesFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Device Dropdown Button");
         Logger.logStep("Click on Device Dropdown Button");
         deviceDropdown.click();
+    }
+
+    public void verifyCreatedLocationIsDisplayed() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Created Location is displayed");
+        Logger.logStep("Verify Created Location is displayed");
+        assertTrue(locationName.isDisplayed());
     }
 }

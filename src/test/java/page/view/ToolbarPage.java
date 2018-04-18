@@ -28,6 +28,9 @@ public class ToolbarPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_fragment_action_button")
     public WebElement deleteButton;
 
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/save_menu")
+    public WebElement saveButton;
+
     public void verifyAndClickBackButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Navigate Back Button is displayed");
         Logger.logStep("Verify Back Button is displayed");
@@ -45,5 +48,14 @@ public class ToolbarPage extends BasePage {
         Logger.logStep("Click on Delete Button");
         deleteButton.click();
         Thread.sleep(3000L);
+    }
+
+    public void verifyAndClickSaveButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Save Button is displayed");
+        Logger.logStep("Verify Save Button is displayed");
+        saveButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Save Button");
+        Logger.logStep("Click on Save Button");
+        saveButton.click();
     }
 }
