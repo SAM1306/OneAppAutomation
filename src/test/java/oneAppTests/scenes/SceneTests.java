@@ -22,6 +22,7 @@ public class SceneTests extends BaseAppiumTest{
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
     private String sceneName = "Test Scene";
+    private String editsceneName = "Edit Scene";
     private String newSceneName = "New Scene";
 
     private DashboardFragmentPage dashboardFragmentPage;
@@ -80,10 +81,11 @@ public class SceneTests extends BaseAppiumTest{
         sceneInformationFragmentPage.verifyAndClickEditButton();
         addSceneFragmentPage.verifyAndClickRemoveButton();
         addSceneFragmentPage.verifyAndClickAddActionsButton();
-
         addActionsFragmentPage.verifyAndClickOutletButton();
         addActionsFragmentPage.verifyAndClickOnRadioButton();
         addActionsFragmentPage.verifyAndClickDoneButton();
+        addSceneFragmentPage.verifyAndClickSceneNameTextBox();
+        addSceneFragmentPage.addSceneName(editsceneName);
         addActionsFragmentPage.verifyAndClickSaveButton();
         dashboardFragmentPage.verifySceneInfoButton();
 
@@ -115,6 +117,7 @@ public class SceneTests extends BaseAppiumTest{
         dashboardFragmentPage.verifySceneInfoButton();
         dashboardFragmentPage.clickSceneInfoButton();
         sceneInformationFragmentPage.verifyAndClickEditButton();
+        addSceneFragmentPage.verifyAndClickSceneNameTextBox();
         addSceneFragmentPage.addSceneName(newSceneName);
         addSceneFragmentPage.verifyAndClickSceneIconButton();
         addSceneFragmentPage.verifyAndClickSceneIconDisplayButton();

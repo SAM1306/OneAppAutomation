@@ -49,7 +49,6 @@ public class RoomsTests extends BaseAppiumTest {
         devicesFragmentPage.verifyAndClickMoreOptionsButton();
         devicesFragmentPage.getDevicesFragmentPage();
         devicesFragmentPage.verifyAndClickAddRoomButton();
-
         addRoomFragmentPage.verifyAndClickRoomNameTextBox();
         addRoomFragmentPage.addRoomName(roomName);
         addRoomFragmentPage.verifyAndClickOutletTile();
@@ -68,7 +67,6 @@ public class RoomsTests extends BaseAppiumTest {
         devicesFragmentPage.verifyAndClickMoreOptionsButton();
         devicesFragmentPage.verifyAndClickEditButton();
         roomsFragmentPage.verifyAndClickManageDevicesButtonButton();
-
         addRoomFragmentPage.verifyAndClickMutliPurposeSensorTile();
         addRoomFragmentPage.verifyAndClickSaveButton();
         roomsFragmentPage.verifyMultiPurposeSensor();
