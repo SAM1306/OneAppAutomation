@@ -96,6 +96,12 @@ public class DashboardFragmentPage extends BasePage {
         Thread.sleep(6000L);
     }
 
+    public void verifyMoreOptionsButtonIsDisplayed() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify More Options Button is displayed");
+        Logger.logStep("Verify More Options Button is displayed");
+        moreOptions.isDisplayed();
+    }
+
     public void verifyAndClickMoreOptionsButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify More Options Button is displayed");
         Logger.logStep("Verify More Options Button is displayed");
