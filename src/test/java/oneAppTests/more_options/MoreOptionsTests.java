@@ -78,8 +78,8 @@ public class MoreOptionsTests extends BaseAppiumTest {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
     }
 
-    @Test(priority = 4)
-    public void settingTestsVerification() throws InterruptedException {
+    @Test(priority = 3)
+    public void wiFiAndBluetoothVerificationTest() throws InterruptedException {
         ExtentTestManager.getTest().setDescription("More Options Menu: Settings Option");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - Start");
 
@@ -88,8 +88,38 @@ public class MoreOptionsTests extends BaseAppiumTest {
         moreOptionsFragmentPage.verifyAndClickSettingssButton();
         smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifyWifiAndBluetoothAutoOnAndToggable();
+        toolbarPage.verifyAndClickBackButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
+    }
+
+    @Test(priority = 4)
+    public void useLocationInformationVerificationTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("More Options Menu: Settings Option");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickSettingssButton();
+        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifyUseLocationInformationIsPresentAndToggable();
+        toolbarPage.verifyAndClickBackButton();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
+    }
+
+    @Test(priority = 5)
+    public void autoUpdateControllerVerificationTest() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("More Options Menu: Settings Option");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickMoreOptionsButton();
+        moreOptionsFragmentPage.verifyAndClickSettingssButton();
+        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifyAutoUpdateController();
+        toolbarPage.verifyAndClickBackButton();
+        toolbarPage.verifyAndClickBackButton();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Setting Option - End");
     }
