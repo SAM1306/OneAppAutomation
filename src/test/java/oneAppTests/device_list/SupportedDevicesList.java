@@ -1,0 +1,79 @@
+package oneAppTests.device_list;
+
+import io.appium.java_client.android.AndroidDriver;
+import oneAppTests.BaseAppiumTest;
+import oneAppTests.TestCaseSetup;
+import oneAppTests.automations.AutomationsTests;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import page.activity.PrimaryActivity;
+import page.fragment.dashboard.DashboardFragmentPage;
+import page.fragment.dashboard.SupportedDevicesFragmentPage;
+import utility.ExtentReports.ExtentTestManager;
+import utility.Logger;
+
+import static utility.Events.scrollTo;
+
+@Test
+public class SupportedDevicesList extends BaseAppiumTest {
+
+    private static final String TEST_NAME = AutomationsTests.class.getName();
+
+    private static AndroidDriver driver = TestCaseSetup.getDriver();
+
+    private PrimaryActivity primaryActivity;
+    private DashboardFragmentPage dashboardFragmentPage;
+    private SupportedDevicesFragmentPage supportedDevicesFragmentPage;
+
+    @Override
+    public String getTestName() {
+        return TEST_NAME;
+    }
+
+    @BeforeTest
+    public void setUp() {
+        primaryActivity = new PrimaryActivity(driver);
+        dashboardFragmentPage = new DashboardFragmentPage(driver);
+        supportedDevicesFragmentPage = new SupportedDevicesFragmentPage(driver);
+    }
+
+    @Test(priority = 1)
+    public void addSHMAutomation() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("List Supported Devices");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - Start");
+
+        primaryActivity.getDashboardButton();
+        dashboardFragmentPage.verifyAndClickSupportedDevciesTile();
+        supportedDevicesFragmentPage.verifyTVButtonIsPresent();
+        supportedDevicesFragmentPage.verifyAVButtonIsPresent();
+        supportedDevicesFragmentPage.verifyAirConditionerButtonIsPresent();
+        supportedDevicesFragmentPage.verifyWasherButtonIsPresent();
+        supportedDevicesFragmentPage.verifyRobotVacuumButtonIsPresent();
+        supportedDevicesFragmentPage.verifyRefrigeratorButtonIsPresent();
+        supportedDevicesFragmentPage.verifyOvenButtonIsPresent();
+        supportedDevicesFragmentPage.verifyRangeButtonIsPresent();
+        supportedDevicesFragmentPage.verifyCooktopButtonIsPresent();
+        supportedDevicesFragmentPage.verifyWiFiHubButtonIsPresent();
+        supportedDevicesFragmentPage.verifyBluRayButtonIsPresent();
+        supportedDevicesFragmentPage.verifyHubsButtonIsPresent();
+        supportedDevicesFragmentPage.verifyMoistureSensorButtonIsPresent();
+        supportedDevicesFragmentPage.verifyMotionSensorButtonIsPresent();
+        supportedDevicesFragmentPage.verifyMultiFunctionalSensorButtonIsPresent();
+        scrollTo("Valve");
+        supportedDevicesFragmentPage.verifyOpenClosedSensorButtonIsPresent();
+        supportedDevicesFragmentPage.verifyPresenceSensorButtonIsPresent();
+        supportedDevicesFragmentPage.verifyADTSecurityDevicesButtonIsPresent();
+        supportedDevicesFragmentPage.verifyCameraButtonIsPresent();
+        supportedDevicesFragmentPage.verifyDoorbellButtonIsPresent();
+        supportedDevicesFragmentPage.verifyLightBulbButtonIsPresent();
+        supportedDevicesFragmentPage.verifyLockButtonIsPresent();
+        supportedDevicesFragmentPage.verifyOutletButtonIsPresent();
+        supportedDevicesFragmentPage.verifySmokeDetectorSirenButtonIsPresent();
+        supportedDevicesFragmentPage.verifySpeakerButtonIsPresent();
+        supportedDevicesFragmentPage.verifySwitchDimmerButtonIsPresent();
+        supportedDevicesFragmentPage.verifyThermostatButtonIsPresent();
+        supportedDevicesFragmentPage.verifyValveButtonIsPresent();
+
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
+    }
+}
