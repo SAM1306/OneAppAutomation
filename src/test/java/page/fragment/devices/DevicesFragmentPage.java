@@ -26,6 +26,12 @@ public class DevicesFragmentPage extends BasePage {
         return SCREEN_NAME;
     }
 
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/add_device")
+    public WebElement addDeviceButton;
+
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/spinner_image_icon")
+    public WebElement deviceListFilterImage;
+
     @AndroidFindBy(accessibility = "More options")
     public WebElement moreOptionsButton;
 
@@ -47,6 +53,9 @@ public class DevicesFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Add location']")
     public WebElement addLocationButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='All devices']")
+    public WebElement allDevicesButton;
+
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Office']")
     public WebElement officeLocationButton;
 
@@ -60,6 +69,18 @@ public class DevicesFragmentPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(addSceneButton));
         return new DevicesFragmentPage((AndroidDriver) driver);
+    }
+
+    public void verifyAddDeviceButtonIsDisplayed() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Device Button is displayed");
+        Logger.logStep("Verify Add Device Button is displayed");
+        assertTrue(addDeviceButton.isDisplayed());
+    }
+
+    public void verifyDeviceListFilterImageIsDisplayed() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Device List Filter Image is displayed");
+        Logger.logStep("Verify Device List Filter Image is displayed");
+        assertTrue(deviceListFilterImage.isDisplayed());
     }
 
     public void verifyAndClickMoreOptionsButton() {
@@ -117,6 +138,18 @@ public class DevicesFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Location Button");
         Logger.logStep("Click on Add Location Button");
         addLocationButton.click();
+    }
+
+    public void verifyAddLocationButtonIsDisplayed() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Location Button is displayed");
+        Logger.logStep("Verify Add Location Button is displayed");
+        addLocationButton.isDisplayed();
+    }
+
+    public void verifyAllDevicesButtonIsDisplayed() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify All Device Button is displayed");
+        Logger.logStep("Verify All Device Button is displayed");
+        assertTrue(allDevicesButton.isDisplayed());
     }
 
     public void verifyAndClickOfficeLocationButton() {

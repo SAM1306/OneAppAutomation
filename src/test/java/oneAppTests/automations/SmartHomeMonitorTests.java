@@ -120,6 +120,7 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         shmConfigurePage.verifyAndClickDoneButton();
         scrollAndClick("ALLOW");
         shmFragmentPage.verifySHMPageTitleIsDisplayed();
+        toolbarPage.verifyAndClickBackButton();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: View/Edit SHM Security - End");
     }

@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.dashboard.DashboardFragmentPage;
-import page.fragment.dashboard.SupportedDevicesFragmentPage;
-import page.view.ToolbarPage;
+import page.fragment.devices.DeviceDetailFragmentPage;
+import page.fragment.devices.DevicesFragmentPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
@@ -19,10 +19,10 @@ public class DevicesListTests extends BaseAppiumTest {
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
 
+    private DevicesFragmentPage devicesFragmentPage;
     private DashboardFragmentPage dashboardFragmentPage;
-    private SupportedDevicesFragmentPage supportedDevicesFragmentPage;
+    private DeviceDetailFragmentPage deviceDetailFragmentPage;
     private PrimaryActivity primaryActivity;
-    private ToolbarPage toolbarPage;
 
     @Override
     public String getTestName() {
@@ -33,21 +33,34 @@ public class DevicesListTests extends BaseAppiumTest {
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);
-        supportedDevicesFragmentPage = new SupportedDevicesFragmentPage(driver);
-        toolbarPage = new ToolbarPage(driver);
+        devicesFragmentPage = new DevicesFragmentPage(driver);
+        deviceDetailFragmentPage = new DeviceDetailFragmentPage(driver);
     }
 
     @Test(priority = 1)
-    public void listSupportedDevices() throws InterruptedException {
-        ExtentTestManager.getTest().setDescription("List Supported Devices");
-        Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - Start");
+    public void deviceListContents() throws InterruptedException {
+        ExtentTestManager.getTest().setDescription("Device List Content");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Device List Content - Start");
 
+        primaryActivity.getDevicesButton();
+        devicesFragmentPage.verifyAddDeviceButtonIsDisplayed();
+        devicesFragmentPage.verifyDeviceListFilterImageIsDisplayed();
+        dashboardFragmentPage.verifyMoreOptionsButtonIsDisplayed();
+        deviceDetailFragmentPage.verifyOutletTileIsPresent();
+        deviceDetailFragmentPage.verifyMotionSensorTileIsPresent();
+        deviceDetailFragmentPage.verifyMultiPurposeSensorTileIsPresent();
+        deviceDetailFragmentPage.verifyWaterLeakSensorTileIsPresent();
+        deviceDetailFragmentPage.verifyWaterLeakSensorTileIsPresent();
+        deviceDetailFragmentPage.verifySengledBulbTileIsPresent();
+        deviceDetailFragmentPage.verifyHomeHubTileIsPresent();
+        devicesFragmentPage.verifyAndClickDeviceDropdownButton();
+        devicesFragmentPage.verifyAllDevicesButtonIsDisplayed();
+        devicesFragmentPage.verifyAddLocationButtonIsDisplayed();
+        devicesFragmentPage.verifyAndClickHomeLocationButton();
         primaryActivity.getDashboardButton();
-        dashboardFragmentPage.verifyAndClickSupportedDevciesTile();
-        supportedDevicesFragmentPage.verifySearchBarIsPresent();
-        toolbarPage.verifyAndClickBackButton();
-        dashboardFragmentPage.verifySmartthingsLogoIsPresent();
+        primaryActivity.getDevicesButton();
+        deviceDetailFragmentPage.verifyOutletTileIsPresent();
 
-        Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - End");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Device List Content - End");
     }
 }
