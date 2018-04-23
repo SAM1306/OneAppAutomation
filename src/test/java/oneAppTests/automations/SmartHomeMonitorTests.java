@@ -68,7 +68,7 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         shmConfigurePage.verifyAndClickDoneButton();
         scrollAndClick("ALLOW");
         addAutomationFragmentPage.getSHMFragmentPage();
-        addAutomationFragmentPage.verifySHMButtonIsPresent();
+        addAutomationFragmentPage.verifySHMIsCreated();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Configure Endpoint SHM Security - End");
     }

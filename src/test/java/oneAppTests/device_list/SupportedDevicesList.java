@@ -3,7 +3,6 @@ package oneAppTests.device_list;
 import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
 import oneAppTests.TestCaseSetup;
-import oneAppTests.automations.AutomationsTests;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -17,7 +16,7 @@ import static utility.Events.scrollTo;
 @Test
 public class SupportedDevicesList extends BaseAppiumTest {
 
-    private static final String TEST_NAME = AutomationsTests.class.getName();
+    private static final String TEST_NAME = SupportedDevicesList.class.getName();
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
 
@@ -38,7 +37,7 @@ public class SupportedDevicesList extends BaseAppiumTest {
     }
 
     @Test(priority = 1)
-    public void addSHMAutomation() throws InterruptedException {
+    public void deviceListCatalog() throws InterruptedException {
         ExtentTestManager.getTest().setDescription("List Supported Devices");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - Start");
 
@@ -68,7 +67,8 @@ public class SupportedDevicesList extends BaseAppiumTest {
         supportedDevicesFragmentPage.verifyLightBulbButtonIsPresent();
         supportedDevicesFragmentPage.verifyLockButtonIsPresent();
         supportedDevicesFragmentPage.verifyOutletButtonIsPresent();
-        supportedDevicesFragmentPage.verifySmokeDetectorSirenButtonIsPresent();
+        supportedDevicesFragmentPage.verifySmokeDetectorButtonIsPresent();
+        supportedDevicesFragmentPage.verifySirenButtonIsPresent();
         supportedDevicesFragmentPage.verifySpeakerButtonIsPresent();
         supportedDevicesFragmentPage.verifySwitchDimmerButtonIsPresent();
         supportedDevicesFragmentPage.verifyThermostatButtonIsPresent();

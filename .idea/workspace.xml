@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71aafe6e-29e3-4252-8bf7-70e932fbda50" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_appium_java_client_6_0_0_BETA2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_2_RELEASE.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestNG_one_app_automation.xml" afterPath="$PROJECT_DIR$/TestNG_one_app_automation.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationCatalog.java" afterPath="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationCatalog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationsTests.java" afterPath="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationsTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/oneAppTests/automations/SmartHomeMonitorTests.java" afterPath="$PROJECT_DIR$/src/test/java/oneAppTests/automations/SmartHomeMonitorTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/oneAppTests/device_list/DevicesListTests.java" afterPath="$PROJECT_DIR$/src/test/java/oneAppTests/device_list/DevicesListTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/DashboardFragmentPage.java" afterPath="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/DashboardFragmentPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/page/fragment/devices/DevicesFragmentPage.java" afterPath="$PROJECT_DIR$/src/test/java/page/fragment/devices/DevicesFragmentPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/oneAppTests/device_list/SupportedDevicesList.java" afterPath="$PROJECT_DIR$/src/test/java/oneAppTests/device_list/SupportedDevicesList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java" afterPath="$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java" afterPath="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java" />
     </list>
     <ignored path="BuildAutomation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,23 +39,52 @@
       <file leaf-file-name="DevicesListTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/device_list/DevicesListTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="615">
               <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#978#979#0" expanded="false" />
+                <element signature="e#1010#1011#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceDetailFragmentPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/devices/DeviceDetailFragmentPage.java">
+      <file leaf-file-name="SupportedDevicesList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/device_list/SupportedDevicesList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="130" column="43" selection-start-line="130" selection-start-column="43" selection-end-line="130" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="338">
+              <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AutomationCatalog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationCatalog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupportedDevicesFragmentPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="268" column="78" selection-start-line="268" selection-start-column="78" selection-end-line="268" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddAutomationFragmentPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="256" column="57" selection-start-line="256" selection-start-column="57" selection-end-line="256" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/utility/AutomationConstants.java" />
-        <option value="$PROJECT_DIR$/src/test/java/utility/CustomTestRunner.java" />
         <option value="$PROJECT_DIR$/src/test/java/utility/Logger.java" />
         <option value="$PROJECT_DIR$/src/main/resources/extent-config.xml.xsl" />
         <option value="$PROJECT_DIR$/src/main/resources/extent-config.xml" />
@@ -113,15 +136,12 @@
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/devices/scenes/AddActionsFragmentPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/devices/rooms/RoomsFragmentPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/devices/rooms/AddRoomFragmentPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/automations/AutomationsFragmentPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/HelpFragmentPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java" />
         <option value="$PROJECT_DIR$/TestNG_rooms_tests.xml" />
         <option value="$PROJECT_DIR$/TestNG_scene_tests.xml" />
         <option value="$PROJECT_DIR$/TestNG_automations_tests.xml" />
         <option value="$PROJECT_DIR$/TestNG_more_options_tests.xml" />
-        <option value="$PROJECT_DIR$/TestNG_one_app_automation.xml" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/MoreOptionsFragmentPage.java" />
         <option value="$PROJECT_DIR$/TestNG_smart_home_monitor_tests.xml" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/automations/SHMFragmentPage.java" />
@@ -133,9 +153,7 @@
         <option value="$PROJECT_DIR$/TestNG_location_tests.xml" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SmartthingsSettingsFragmentPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/oneAppTests/scenes/SceneTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/oneAppTests/automations/SmartHomeMonitorTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/oneAppTests/rooms/RoomsTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationsTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/activity/PrimaryActivity.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/automations/SHMConfigurePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/utility/Events.java" />
@@ -146,6 +164,13 @@
         <option value="$PROJECT_DIR$/src/test/java/oneAppTests/more_options/MoreOptionsTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/oneAppTests/device_list/DevicesListTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/fragment/devices/DeviceDetailFragmentPage.java" />
+        <option value="$PROJECT_DIR$/TestNG_one_app_automation.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/oneAppTests/automations/SmartHomeMonitorTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationsTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationCatalog.java" />
+        <option value="$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/oneAppTests/device_list/SupportedDevicesList.java" />
+        <option value="$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java" />
       </list>
     </option>
   </component>
@@ -172,9 +197,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
     <option name="y" value="23" />
-    <option name="width" value="1194" />
+    <option name="width" value="1440" />
     <option name="height" value="825" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -222,184 +246,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oneAppTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oneAppTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="more_options" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oneAppTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="device_list" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OneAppAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -411,11 +257,11 @@
     <property name="project.structure.side.proportion" value="0.3264368" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../appiumSampleTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestNG_supported_devices_catalog.xml" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
-  <component name="RunManager" selected="TestNG.DeviceListTests">
+  <component name="RunManager" selected="TestNG.AutomationCatalogTests">
     <configuration default="false" name="SceneTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -761,6 +607,34 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="false" name="SupportedDevciesCatalogTests" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="BuildAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestNG_supported_devices_catalog.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="VM_PARAMETERS" value="-ea -DdeviceName=0738a0e100999b44 -DplatformName=Android -DplatformVersion=6.0 -DappPackage=com.samsung.android.oneconnect -DappActivity=com.samsung.android.oneconnect.ui.SCMainActivity -Dapp=$USER_HOME$/Downloads/User_apt_SmartThings_smartThings_1.7.5_25_minApi_23_production_release.apk -DnoReset=true -DautoAcceptAlerts=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
     <configuration default="false" name="LocationTests" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="BuildAutomation" />
@@ -990,19 +864,49 @@
       <listeners />
       <method />
     </configuration>
-    <list size="12">
+    <configuration default="false" name="AutomationCatalogTests" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="BuildAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestNG_automation_catalog.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="VM_PARAMETERS" value="-ea -DdeviceName=0738a0e100999b44 -DplatformName=Android -DplatformVersion=6.0 -DappPackage=com.samsung.android.oneconnect -DappActivity=com.samsung.android.oneconnect.ui.SCMainActivity -Dapp=$USER_HOME$/Downloads/User_apt_SmartThings_smartThings_1.7.5_25_minApi_23_production_release.apk -DnoReset=true -DautoAcceptAlerts=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <list size="14">
       <item index="0" class="java.lang.String" itemvalue="JUnit.OneAppTests" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.LocationTests" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.SceneTests" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.RoomsTest" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.MoreOptionsTests" />
-      <item index="5" class="java.lang.String" itemvalue="TestNG.AutomationsTests" />
-      <item index="6" class="java.lang.String" itemvalue="TestNG.OneAppAutomationTests" />
-      <item index="7" class="java.lang.String" itemvalue="TestNG.DeviceListTests" />
-      <item index="8" class="java.lang.String" itemvalue="TestNG.SmartHomeMonitorTests" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.SceneTests" />
-      <item index="10" class="java.lang.String" itemvalue="JUnit.DevicesListTests" />
-      <item index="11" class="java.lang.String" itemvalue="JUnit.RoomsTests" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.SupportedDevciesCatalogTests" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.LocationTests" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.SceneTests" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.RoomsTest" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.MoreOptionsTests" />
+      <item index="6" class="java.lang.String" itemvalue="TestNG.AutomationsTests" />
+      <item index="7" class="java.lang.String" itemvalue="TestNG.OneAppAutomationTests" />
+      <item index="8" class="java.lang.String" itemvalue="TestNG.DeviceListTests" />
+      <item index="9" class="java.lang.String" itemvalue="TestNG.SmartHomeMonitorTests" />
+      <item index="10" class="java.lang.String" itemvalue="TestNG.AutomationCatalogTests" />
+      <item index="11" class="java.lang.String" itemvalue="JUnit.SceneTests" />
+      <item index="12" class="java.lang.String" itemvalue="JUnit.DevicesListTests" />
+      <item index="13" class="java.lang.String" itemvalue="JUnit.RoomsTests" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -1026,40 +930,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AutomationsTests - 2018.04.18 at 22h 08m 58s.xml">
-      <configuration name="AutomationsTests" configurationId="TestNG" />
+    <history-entry file="AutomationCatalogTests - 2018.04.23 at 10h 43m 28s.xml">
+      <configuration name="AutomationCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationsTests - 2018.04.18 at 22h 11m 48s.xml">
-      <configuration name="AutomationsTests" configurationId="TestNG" />
+    <history-entry file="AutomationCatalogTests - 2018.04.23 at 10h 46m 39s.xml">
+      <configuration name="AutomationCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationsTests - 2018.04.18 at 22h 13m 08s.xml">
-      <configuration name="AutomationsTests" configurationId="TestNG" />
+    <history-entry file="AutomationCatalogTests - 2018.04.23 at 10h 48m 09s.xml">
+      <configuration name="AutomationCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="DeviceListTests - 2018.04.19 at 13h 54m 13s.xml">
-      <configuration name="DeviceListTests" configurationId="TestNG" />
+    <history-entry file="AutomationCatalogTests - 2018.04.23 at 10h 49m 15s.xml">
+      <configuration name="AutomationCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="DeviceListTests - 2018.04.19 at 13h 57m 02s.xml">
-      <configuration name="DeviceListTests" configurationId="TestNG" />
+    <history-entry file="AutomationCatalogTests - 2018.04.23 at 10h 50m 50s.xml">
+      <configuration name="AutomationCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="DeviceListTests - 2018.04.19 at 13h 58m 32s.xml">
-      <configuration name="DeviceListTests" configurationId="TestNG" />
+    <history-entry file="OneAppAutomationTests - 2018.04.19 at 14h 52m 41s.xml">
+      <configuration name="OneAppAutomationTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="RoomsTest - 2018.04.18 at 15h 19m 55s.xml">
-      <configuration name="RoomsTest" configurationId="TestNG" />
+    <history-entry file="OneAppAutomationTests - 2018.04.19 at 15h 03m 28s.xml">
+      <configuration name="OneAppAutomationTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SmartHomeMonitorTests - 2018.04.18 at 14h 35m 53s.xml">
-      <configuration name="SmartHomeMonitorTests" configurationId="TestNG" />
+    <history-entry file="SupportedDevciesCatalogTests - 2018.04.19 at 15h 18m 55s.xml">
+      <configuration name="SupportedDevciesCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SmartHomeMonitorTests - 2018.04.18 at 14h 36m 39s.xml">
-      <configuration name="SmartHomeMonitorTests" configurationId="TestNG" />
+    <history-entry file="SupportedDevciesCatalogTests - 2018.04.20 at 09h 39m 26s.xml">
+      <configuration name="SupportedDevciesCatalogTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SmartHomeMonitorTests - 2018.04.18 at 14h 39m 36s.xml">
-      <configuration name="SmartHomeMonitorTests" configurationId="TestNG" />
+    <history-entry file="SupportedDevciesCatalogTests - 2018.04.23 at 10h 42m 17s.xml">
+      <configuration name="SupportedDevciesCatalogTests" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="23" width="1194" height="825" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="825" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1068,23 +972,23 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289855" sideWeight="0.5029455" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.319236" sideWeight="0.4970545" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32060027" sideWeight="0.4970545" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32469305" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32469305" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24131945" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39699864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1110,14 +1014,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/utility/ScreenShotUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExtentReports/12_04_2018_01_33_52.html" />
     <entry file="file://$PROJECT_DIR$/src/test/java/utility/Listeners/AnnotationTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1147,22 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/automations/AutomationsFragmentPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestNG_rooms_tests.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1176,14 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestNG_one_app_automation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1208,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,33 +1105,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/iOS/oneappiOSTests/Automation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/iOS/pageobjects/AutomationsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/devices/location.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/page/view/ToolbarPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,9 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1309,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="749">
           <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,17 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/automations/SmartHomeMonitorTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1335,7 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,17 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationsTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1409,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="142" column="50" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1433,7 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,7 +1261,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="31" column="91" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1449,7 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1118">
           <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1457,7 +1275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="91" column="69" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,23 +1286,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/device_list/DevicesListTests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/devices/DeviceDetailFragmentPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="1785">
+          <caret line="130" column="43" selection-start-line="130" selection-start-column="43" selection-end-line="130" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/devices/DeviceDetailFragmentPage.java">
+    <entry file="file://$PROJECT_DIR$/TestNG_one_app_automation.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="130" column="43" selection-start-line="130" selection-start-column="43" selection-end-line="130" selection-end-column="43" />
+        <state relative-caret-position="315">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/automations/SmartHomeMonitorTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationsTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/device_list/DevicesListTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#978#979#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/iOS/pageobjects/AutomationsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/iOS/oneappiOSTests/Automation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/automations/AutomationsFragmentPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/dashboard/SupportedDevicesFragmentPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="268" column="78" selection-start-line="268" selection-start-column="78" selection-end-line="268" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/device_list/SupportedDevicesList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/oneAppTests/automations/AutomationCatalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/page/fragment/automations/AddAutomationFragmentPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="256" column="57" selection-start-line="256" selection-start-column="57" selection-end-line="256" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

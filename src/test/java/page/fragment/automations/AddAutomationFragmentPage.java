@@ -78,10 +78,7 @@ public class AddAutomationFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Lights']")
     public WebElement smartLights;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
-            "FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android." +
-            "widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[5]/" +
-            "android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]")
     public WebElement smartLightsDeveloperInfo;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Controls your lights and switches based " +
@@ -164,6 +161,12 @@ public class AddAutomationFragmentPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_recommended_add_button")
     public WebElement customAutomationButton;
 
+    public void verifySHMIsCreated() {
+        ExtentTestManager.getTest().setDescription("Verify SHM Button is displayed");
+        Logger.logStep("Verify SHM Button is displayed");
+        assertTrue(smartHomeMonitor.isDisplayed());
+    }
+
     public void verifySHMButtonIsPresent() {
         ExtentTestManager.getTest().setDescription("Verify SHM Button is displayed");
         Logger.logStep("Verify SHM Button is displayed");
@@ -201,6 +204,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyReadyForRainIsPresent() {
+        scrollTo("Ready for Rain");
         Logger.logStep("Verify Ready For Rain Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Ready For Rain Button is displayed");
         assertTrue(readyForRain.isDisplayed());
@@ -213,6 +217,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifySmartLightsIsPresent() {
+        scrollTo("Smart Lights");
         Logger.logStep("Verify Smart Lights Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Lights Button is displayed");
         assertTrue(smartLights.isDisplayed());
@@ -225,7 +230,6 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyColorCoordinatorIsPresent() {
-        scrollTo("Keep me Cozy");
         Logger.logStep("Verify Color Coordinator Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Color Coordinator Button is displayed");
         assertTrue(colorCoordinator.isDisplayed());
@@ -238,7 +242,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyKeepMeCozyIsPresent() {
-        scrollTo("Keep me Cozy");
+        scrollTo("Thermostat Mode Director");
         Logger.logStep("Verify Keep me Cozy Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Keep me Cozy Button is displayed");
         assertTrue(keepMeCozy.isDisplayed());
@@ -251,7 +255,6 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyThermostatModeDirectorIsPresent() {
-        scrollTo("Thermostat Mode Director");
         Logger.logStep("Verify Thermostat Mode Director Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Thermostat Mode Director Button is displayed");
         assertTrue(thermostatModeDirector.isDisplayed());

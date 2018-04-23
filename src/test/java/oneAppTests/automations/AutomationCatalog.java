@@ -35,7 +35,7 @@ public class AutomationCatalog extends BaseAppiumTest {
     }
 
     @Test(priority = 1)
-    public void addSHMAutomation() throws InterruptedException {
+    public void automationCatalog() throws InterruptedException {
         ExtentTestManager.getTest().setDescription("Automtions: Add SHM Automation");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - Start");
 
