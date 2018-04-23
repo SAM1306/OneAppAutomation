@@ -9,6 +9,7 @@ import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 import static org.testng.Assert.assertTrue;
+import static utility.Events.scrollTo;
 
 public class SupportedDevicesFragmentPage extends BasePage {
 
@@ -100,8 +101,11 @@ public class SupportedDevicesFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Outlet']")
     public WebElement outletButton;
 
-    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smoke detector/Siren']")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smoke detector']")
     public WebElement smokeDetectorButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Siren']")
+    public WebElement sirenButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Speaker']")
     public WebElement speakerButton;
@@ -170,6 +174,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyCooktopButtonIsPresent() {
+        scrollTo("Cooktop");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Cooktop Button is displayed");
         Logger.logStep("Verify Cooktop Button is displayed");
         assertTrue(cookTopButton.isDisplayed());
@@ -236,6 +241,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyDoorbellButtonIsPresent() {
+        scrollTo("Doorbell");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Doorbell Button is displayed");
         Logger.logStep("Verify Doorbell Button is displayed");
         assertTrue(doorBellButton.isDisplayed());
@@ -259,10 +265,16 @@ public class SupportedDevicesFragmentPage extends BasePage {
         assertTrue(outletButton.isDisplayed());
     }
 
-    public void verifySmokeDetectorSirenButtonIsPresent() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Smoke Detector/Siren Button is displayed");
+    public void verifySmokeDetectorButtonIsPresent() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Smoke Detector Button is displayed");
         Logger.logStep("Verify Smoke Detector/Siren Button is displayed");
         assertTrue(smokeDetectorButton.isDisplayed());
+    }
+
+    public void verifySirenButtonIsPresent() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Siren Button is displayed");
+        Logger.logStep("Verify Smoke Detector/Siren Button is displayed");
+        assertTrue(sirenButton.isDisplayed());
     }
 
     public void verifySpeakerButtonIsPresent() {
@@ -278,6 +290,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyThermostatButtonIsPresent() {
+        scrollTo("Thermostat");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Thermostat Button is displayed");
         Logger.logStep("Verify Thermostat Button is displayed");
         assertTrue(thermostatButton.isDisplayed());
