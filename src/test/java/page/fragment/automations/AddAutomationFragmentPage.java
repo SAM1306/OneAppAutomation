@@ -315,9 +315,10 @@ public class AddAutomationFragmentPage extends BasePage {
         return new SHMConfigurePage((AndroidDriver) driver);
     }
 
-    public void verifyAndClickCustomAutomationButton() {
+    public void verifyAndClickCustomAutomationButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Custom Automation Button is displayed");
         Logger.logStep("Verify Custom Automation Button is displayed");
+        Thread.sleep(2000L);
         customAutomationButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Custom Automation Button");
         Logger.logStep("Click on Custom Automation Button");

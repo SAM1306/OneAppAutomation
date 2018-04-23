@@ -35,6 +35,12 @@ public class PrimaryActivity extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Delete']")
     public WebElement popUpDeleteButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='OK']")
+    public WebElement okButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Close']")
+    public WebElement closeButton;
+
     public void getDashboardButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Dashboard Button is displayed");
         Logger.logStep("Verify Dashboard Button is displayed");
@@ -72,5 +78,17 @@ public class PrimaryActivity extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Pop Up Delete Button");
         Logger.logStep("Click on Pop Up Button");
         popUpDeleteButton.click();
+    }
+
+    public void verifyAndClickOKButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on OK Button");
+        Logger.logStep("Click on OK Button");
+        okButton.click();
+    }
+
+    public void verifyAndClickCloseButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Close Button");
+        Logger.logStep("Click on Close Button");
+        closeButton.click();
     }
 }
