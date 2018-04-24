@@ -139,7 +139,7 @@ public class DeviceDetailFragmentPage extends BasePage {
     }
 
     public void verifyHomeHubTileIsPresent() {
-        scrollTo("Home Hub");
+        //scrollTo("Home Hub");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Home Hub Tile is displayed");
         Logger.logStep("Verify Home Hub Tile is displayed");
         assertTrue(homeHubTile.isDisplayed());

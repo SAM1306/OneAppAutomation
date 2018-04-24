@@ -35,6 +35,9 @@ public class AutomationsFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Home Monitor']")
     public WebElement smartHomeMonitorButton;
 
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_layout_item")
+    public WebElement customAutomationButton;
+
     public void verifyAutomationPageTitleIsPresent() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Automation Page Title is displayed");
         Logger.logStep("Verify Automation Page Title is displayed");
@@ -57,5 +60,14 @@ public class AutomationsFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on SHM Button");
         Logger.logStep("Click on SHM Button");
         smartHomeMonitorButton.click();
+    }
+
+    public void verifyAndClickCustomAutomationButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Custom Automation Button is displayed");
+        Logger.logStep("Verify Custom Automation Button is displayed");
+        customAutomationButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Custom Automation Button");
+        Logger.logStep("Click on Custom Automation Button");
+        customAutomationButton.click();
     }
 }

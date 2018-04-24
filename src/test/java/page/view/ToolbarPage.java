@@ -31,6 +31,15 @@ public class ToolbarPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/save_menu")
     public WebElement saveButton;
 
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/cancel_menu")
+    public WebElement cancelButton;
+
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_fragment_action_button")
+    public WebElement addButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Done']")
+    public WebElement doneButton;
+
     public void verifyAndClickBackButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Navigate Back Button is displayed");
         Logger.logStep("Verify Back Button is displayed");
@@ -57,5 +66,32 @@ public class ToolbarPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Save Button");
         Logger.logStep("Click on Save Button");
         saveButton.click();
+    }
+
+    public void verifyAndClickCancelButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Cancel Button is displayed");
+        Logger.logStep("Verify Cancel Button is displayed");
+        cancelButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Cancel Button");
+        Logger.logStep("Click on Cancel Button");
+        cancelButton.click();
+    }
+
+    public void verifyAndClickAddButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Button is displayed");
+        Logger.logStep("Verify Add Button is displayed");
+        addButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Button");
+        Logger.logStep("Click on Add Button");
+        addButton.click();
+    }
+
+    public void verifyAndClickDoneButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Done Button is displayed");
+        Logger.logStep("Verify Done Button is displayed");
+        doneButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
+        Logger.logStep("Click on Done Button");
+        doneButton.click();
     }
 }
