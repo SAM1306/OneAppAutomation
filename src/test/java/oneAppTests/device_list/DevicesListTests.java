@@ -50,8 +50,6 @@ public class DevicesListTests extends BaseAppiumTest {
         deviceDetailFragmentPage.verifyMotionSensorTileIsPresent();
         deviceDetailFragmentPage.verifyMultiPurposeSensorTileIsPresent();
         deviceDetailFragmentPage.verifyWaterLeakSensorTileIsPresent();
-        deviceDetailFragmentPage.verifyWaterLeakSensorTileIsPresent();
-        deviceDetailFragmentPage.verifyAeoticSirenTileIsPresent();
         deviceDetailFragmentPage.verifySengledBulbTileIsPresent();
         deviceDetailFragmentPage.verifyHomeHubTileIsPresent();
         devicesFragmentPage.verifyAndClickDeviceDropdownButton();

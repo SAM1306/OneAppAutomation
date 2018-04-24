@@ -168,6 +168,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyRangeButtonIsPresent() {
+        scrollTo("Range");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Range Button is displayed");
         Logger.logStep("Verify Range Button is displayed");
         assertTrue(rangeButton.isDisplayed());
