@@ -15,7 +15,7 @@ import utility.Logger;
 @Test
 public class AutomationCatalogTests extends BaseAppiumTest {
 
-    private static final String TEST_NAME = AutomationsTests.class.getName();
+    private static final String TEST_NAME = AutomationCatalogTests.class.getName();
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
 

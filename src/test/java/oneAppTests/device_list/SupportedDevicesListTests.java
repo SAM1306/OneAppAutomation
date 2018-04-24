@@ -41,8 +41,8 @@ public class SupportedDevicesListTests extends BaseAppiumTest {
 
     @Test(priority = 1)
     public void deviceListCatalog() throws InterruptedException {
-        ExtentTestManager.getTest().setDescription("List Supported Devices");
-        Logger.logAction(" \"" + TEST_NAME + "\"  Test: List Supported Devices - Start");
+        ExtentTestManager.getTest().setDescription("Supported Devices Catalog Tests");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Supported Devices Catalog - Start");
 
         primaryActivity.getDashboardButton();
         dashboardFragmentPage.verifyAndClickSupportedDevciesTile();
@@ -78,6 +78,6 @@ public class SupportedDevicesListTests extends BaseAppiumTest {
         supportedDevicesFragmentPage.verifyValveButtonIsPresent();
         toolbarPage.verifyAndClickBackButton();
 
-        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
+        Logger.logAction(" \"" + TEST_NAME + "\"  Test: Supported Devices Catalog - End");
     }
 }

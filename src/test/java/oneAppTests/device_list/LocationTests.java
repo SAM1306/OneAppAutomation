@@ -6,7 +6,6 @@ import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
-import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.devices.DevicesFragmentPage;
 import page.fragment.devices.locations.AddLocationFragmentPage;
 import page.view.ToolbarPage;
@@ -20,7 +19,6 @@ public class LocationTests extends BaseAppiumTest {
     private static AndroidDriver driver = TestCaseSetup.getDriver();
     private String locationName = "Office";
 
-    private DashboardFragmentPage dashboardFragmentPage;
     private DevicesFragmentPage devicesFragmentPage;
     private PrimaryActivity primaryActivity;
     private AddLocationFragmentPage addLocationFragmentPage;
@@ -34,7 +32,6 @@ public class LocationTests extends BaseAppiumTest {
     @BeforeTest
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
-        dashboardFragmentPage = new DashboardFragmentPage(driver);
         devicesFragmentPage = new DevicesFragmentPage(driver);
         addLocationFragmentPage = new AddLocationFragmentPage(driver);
         toolbarPage = new ToolbarPage(driver);
