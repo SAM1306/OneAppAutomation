@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.dashboard.DashboardFragmentPage;
 import page.fragment.dashboard.SupportedDevicesFragmentPage;
+import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
@@ -21,6 +22,7 @@ public class SupportedDevicesList extends BaseAppiumTest {
     private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private PrimaryActivity primaryActivity;
+    private ToolbarPage toolbarPage;
     private DashboardFragmentPage dashboardFragmentPage;
     private SupportedDevicesFragmentPage supportedDevicesFragmentPage;
 
@@ -32,6 +34,7 @@ public class SupportedDevicesList extends BaseAppiumTest {
     @BeforeTest
     public void setUp() {
         primaryActivity = new PrimaryActivity(driver);
+        toolbarPage = new ToolbarPage(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);
         supportedDevicesFragmentPage = new SupportedDevicesFragmentPage(driver);
     }
@@ -73,6 +76,7 @@ public class SupportedDevicesList extends BaseAppiumTest {
         supportedDevicesFragmentPage.verifySwitchDimmerButtonIsPresent();
         supportedDevicesFragmentPage.verifyThermostatButtonIsPresent();
         supportedDevicesFragmentPage.verifyValveButtonIsPresent();
+        toolbarPage.verifyAndClickBackButton();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
     }

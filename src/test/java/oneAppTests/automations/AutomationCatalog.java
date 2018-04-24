@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.automations.AddAutomationFragmentPage;
 import page.fragment.automations.AutomationsFragmentPage;
+import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
@@ -21,6 +22,7 @@ public class AutomationCatalog extends BaseAppiumTest {
     private PrimaryActivity primaryActivity;
     private AutomationsFragmentPage automationsFragmentPage;
     private AddAutomationFragmentPage addAutomationFragmentPage;
+    private ToolbarPage toolbarPage;
 
     @Override
     public String getTestName() {
@@ -32,6 +34,7 @@ public class AutomationCatalog extends BaseAppiumTest {
         primaryActivity = new PrimaryActivity(driver);
         automationsFragmentPage = new AutomationsFragmentPage(driver);
         addAutomationFragmentPage = new AddAutomationFragmentPage(driver);
+        toolbarPage = new ToolbarPage(driver);
     }
 
     @Test(priority = 1)
@@ -52,6 +55,7 @@ public class AutomationCatalog extends BaseAppiumTest {
         addAutomationFragmentPage.verifySmartWindowsIsPresent();
         addAutomationFragmentPage.verifySpeakerCompanionIsPresent();
         addAutomationFragmentPage.verifyDoorKnockerIsPresent();
+        toolbarPage.verifyAndClickBackButton();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
     }
