@@ -8,7 +8,7 @@
 
     <test name="AutomationsTests">
         <classes>
-            <class name="oneAppTests.automations.AutomationDIYRules"/>
+            <class name="oneAppTests.automations.AutomationDIYRulesTests"/>
         </classes>
     </test>
 </suite>

@@ -15,9 +15,9 @@ import utility.Logger;
 import static utility.Events.scrollTo;
 
 @Test
-public class SupportedDevicesList extends BaseAppiumTest {
+public class SupportedDevicesListTests extends BaseAppiumTest {
 
-    private static final String TEST_NAME = SupportedDevicesList.class.getName();
+    private static final String TEST_NAME = SupportedDevicesListTests.class.getName();
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();
 

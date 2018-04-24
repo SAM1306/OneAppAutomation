@@ -12,12 +12,12 @@
             <class name="oneAppTests.rooms.RoomsTests"/>
             <class name="oneAppTests.automations.AutomationsTests"/>
             <class name="oneAppTests.automations.SmartHomeMonitorTests"/>
-            <class name="oneAppTests.automations.AutomationCatalog"/>
-            <class name="oneAppTests.automations.AutomationDIYRules"/>
+            <class name="oneAppTests.automations.AutomationCatalogTests"/>
+            <class name="oneAppTests.automations.AutomationDIYRulesTests"/>
             <class name="oneAppTests.more_options.MoreOptionsTests"/>
             <class name="oneAppTests.device_list.DevicesListTests"/>
             <class name="oneAppTests.device_list.LocationTests"/>
-            <class name="oneAppTests.device_list.SupportedDevicesList"/>
+            <class name="oneAppTests.device_list.SupportedDevicesListTests"/>
         </classes>
     </test>
 </suite>
