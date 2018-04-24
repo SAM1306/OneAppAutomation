@@ -14,9 +14,9 @@ import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
-public class AutomationDIYRules extends BaseAppiumTest {
+public class AutomationDIYRulesTests extends BaseAppiumTest {
 
-    private static final String TEST_NAME = AutomationDIYRules.class.getName();
+    private static final String TEST_NAME = AutomationDIYRulesTests.class.getName();
     private String notificationMessage = "Test Custom Automation";
 
     private static AndroidDriver driver = TestCaseSetup.getDriver();

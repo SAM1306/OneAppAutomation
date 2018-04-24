@@ -13,7 +13,7 @@ import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
 @Test
-public class AutomationCatalog extends BaseAppiumTest {
+public class AutomationCatalogTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = AutomationsTests.class.getName();
 

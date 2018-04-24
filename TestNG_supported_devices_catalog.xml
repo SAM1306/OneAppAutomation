@@ -8,7 +8,7 @@
 
     <test name="DevicesListTests">
         <classes>
-            <class name="oneAppTests.device_list.SupportedDevicesList"/>
+            <class name="oneAppTests.device_list.SupportedDevicesListTests"/>
         </classes>
     </test>
 </suite>
