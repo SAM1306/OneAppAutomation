@@ -1,7 +1,7 @@
 package page.fragment.automations;
 
 import com.relevantcodes.extentreports.LogStatus;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
@@ -12,7 +12,7 @@ public class AddAutomationActionsFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "AutomationScreen";
 
-    public AddAutomationActionsFragmentPage(AndroidDriver driver) {
+    public AddAutomationActionsFragmentPage(AppiumDriver driver) {
 
         super(driver);
         loadPage();

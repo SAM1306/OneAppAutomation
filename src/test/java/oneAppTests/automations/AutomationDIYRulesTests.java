@@ -1,8 +1,6 @@
 package oneAppTests.automations;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -18,8 +16,6 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = AutomationDIYRulesTests.class.getName();
     private String notificationMessage = "Test Custom Automation";
-
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private DashboardFragmentPage dashboardFragmentPage;
     private PrimaryActivity primaryActivity;

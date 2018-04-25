@@ -1,9 +1,6 @@
 package oneAppTests.scenes;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
-
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -20,9 +17,8 @@ public class SceneTests extends BaseAppiumTest{
 
     private static final String TEST_NAME = SceneTests.class.getName();
 
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
     private String sceneName = "Test Scene";
-    private String editsceneName = "Edit Scene";
+    private String editSceneName = "Edit Scene";
     private String newSceneName = "New Scene";
 
     private DashboardFragmentPage dashboardFragmentPage;
@@ -85,7 +81,7 @@ public class SceneTests extends BaseAppiumTest{
         addActionsFragmentPage.verifyAndClickOnRadioButton();
         addActionsFragmentPage.verifyAndClickDoneButton();
         addSceneFragmentPage.verifyAndClickSceneNameTextBox();
-        addSceneFragmentPage.addSceneName(editsceneName);
+        addSceneFragmentPage.addSceneName(editSceneName);
         addActionsFragmentPage.verifyAndClickSaveButton();
         dashboardFragmentPage.verifySceneInfoButton();
 

@@ -1,8 +1,6 @@
 package oneAppTests.rooms;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -17,8 +15,6 @@ public class RoomsTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = RoomsTests.class.getName();
     private String roomName = "Test Room";
-
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private DevicesFragmentPage devicesFragmentPage;
     private PrimaryActivity primaryActivity;

@@ -1,8 +1,6 @@
 package oneAppTests.automations;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -16,8 +14,6 @@ import utility.Logger;
 public class AutomationCatalogTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = AutomationCatalogTests.class.getName();
-
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private PrimaryActivity primaryActivity;
     private AutomationsFragmentPage automationsFragmentPage;

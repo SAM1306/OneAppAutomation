@@ -1,8 +1,6 @@
 package oneAppTests.more_options;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -18,8 +16,6 @@ import utility.Logger;
 public class MoreOptionsTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = MoreOptionsTests.class.getName();
-
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private DashboardFragmentPage dashboardFragmentPage;
     private PrimaryActivity primaryActivity;
