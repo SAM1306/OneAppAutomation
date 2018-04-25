@@ -59,10 +59,7 @@ public class AddAutomationFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Arnaud']")
     public WebElement enhancedAutoDoorLockDeveloperInfo;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget" +
-            ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout" +
-            "/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget." +
-            "LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, 'Automatically locks a specific ')]")
     public WebElement enhancedAutoDoorLockAppInfo;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Ready for Rain']")
@@ -78,12 +75,10 @@ public class AddAutomationFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Lights']")
     public WebElement smartLights;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]")
     public WebElement smartLightsDeveloperInfo;
 
-    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Controls your lights and switches based " +
-            "on a variety of inputs including motion, open/close, presence, mode changes, specific times, sunrise/" +
-            "sunset, and more.']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, 'Controls your lights and switches based on')]")
     public WebElement smartLightsAppInfo;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Color Coordinator']")
@@ -92,10 +87,7 @@ public class AddAutomationFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Michael Struck']")
     public WebElement colorCoordinatorDeveloperInfo;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
-            "FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/" +
-            "android.widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget." +
-            "LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, 'Ties multiple colored ')]")
     public WebElement colorCoordinatorAppInfo;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Keep me Cozy']")
@@ -130,10 +122,7 @@ public class AddAutomationFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Eric Gideon']")
     public WebElement smartWindowsDeveloperInfo;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
-            "FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/" +
-            "android.widget.ScrollView/android.widget.LinearLayout/android.widget.ListView/android.widget." +
-            "LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, 'Compares two temperatures – indoor vs outdoor')]")
     public WebElement smartWindowsAppInfo;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Speaker Companion']")
@@ -220,6 +209,7 @@ public class AddAutomationFragmentPage extends BasePage {
         scrollTo("Smart Lights");
         Logger.logStep("Verify Smart Lights Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Lights Button is displayed");
+        scrollTo("Smart Lights");
         assertTrue(smartLights.isDisplayed());
         Logger.logStep("Verify Smart Lights Developer Info is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Lights Developer Info is displayed");
@@ -230,6 +220,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyColorCoordinatorIsPresent() {
+        scrollTo("Keep me Cozy");
         Logger.logStep("Verify Color Coordinator Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Color Coordinator Button is displayed");
         assertTrue(colorCoordinator.isDisplayed());
@@ -255,6 +246,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyThermostatModeDirectorIsPresent() {
+        scrollTo("Thermostat Mode Director");
         Logger.logStep("Verify Thermostat Mode Director Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Thermostat Mode Director Button is displayed");
         assertTrue(thermostatModeDirector.isDisplayed());
@@ -323,5 +315,12 @@ public class AddAutomationFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Custom Automation Button");
         Logger.logStep("Click on Custom Automation Button");
         customAutomationButton.click();
+    }
+
+    public void clickSmartLightigButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Smart Lights Button");
+        Logger.logStep("Click on Smart Lights Button");
+        scrollTo("Smart Lights");
+        smartLights.click();
     }
 }

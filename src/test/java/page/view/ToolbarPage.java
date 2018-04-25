@@ -37,8 +37,11 @@ public class ToolbarPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_fragment_action_button")
     public WebElement addButton;
 
-    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Done']")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='DONE']")
     public WebElement doneButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='NEXT']")
+    public WebElement nextButton;
 
     public void verifyAndClickBackButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Navigate Back Button is displayed");
@@ -93,5 +96,14 @@ public class ToolbarPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
         Logger.logStep("Click on Done Button");
         doneButton.click();
+    }
+
+    public void verifyAndClickNextButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Next Button is displayed");
+        Logger.logStep("Verify Next Button is displayed");
+        nextButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Next Button");
+        Logger.logStep("Click on Next Button");
+        nextButton.click();
     }
 }
