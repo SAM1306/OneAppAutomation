@@ -1,8 +1,7 @@
 package oneAppTests.automations;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -22,8 +21,6 @@ import static utility.Events.scrollAndClick;
 public class SmartHomeMonitorTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = SmartHomeMonitorTests.class.getName();
-
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private DashboardFragmentPage dashboardFragmentPage;
     private PrimaryActivity primaryActivity;

@@ -1,7 +1,7 @@
 package page.view;
 
 import com.relevantcodes.extentreports.LogStatus;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
@@ -12,7 +12,7 @@ public class ToolbarPage extends BasePage {
 
     private static final String SCREEN_NAME = "DashboardScreen";
 
-    public ToolbarPage(AndroidDriver driver) {
+    public ToolbarPage(AppiumDriver driver) {
         super(driver);
         loadPage();
     }

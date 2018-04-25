@@ -1,8 +1,6 @@
 package oneAppTests.device_list;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -16,7 +14,6 @@ public class LocationTests extends BaseAppiumTest {
 
     private static final String TEST_NAME = LocationTests.class.getName();
 
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
     private String locationName = "Office";
 
     private DevicesFragmentPage devicesFragmentPage;

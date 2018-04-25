@@ -9,7 +9,9 @@ import org.testng.annotations.BeforeClass;
 @LargeTest
 public abstract class BaseAppiumTest {
 
-    public AppiumDriver driver;
+    public static AppiumDriver DRIVER = TestCaseSetup.getDriver();
+
+    public AppiumDriver driver = DRIVER;
 
     @BeforeClass
     protected void setup() {

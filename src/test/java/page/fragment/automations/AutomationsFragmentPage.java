@@ -1,8 +1,9 @@
 package page.fragment.automations;
 
 import com.relevantcodes.extentreports.LogStatus;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
@@ -12,7 +13,7 @@ public class AutomationsFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "AutomationScreen";
 
-    public AutomationsFragmentPage(AndroidDriver driver) {
+    public AutomationsFragmentPage(AppiumDriver driver) {
 
         super(driver);
         loadPage();
@@ -35,6 +36,9 @@ public class AutomationsFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Home Monitor']")
     public WebElement smartHomeMonitorButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Add']")
+    public WebElement addButton;
+
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_layout_item")
     public WebElement customAutomationButton;
 
@@ -47,11 +51,26 @@ public class AutomationsFragmentPage extends BasePage {
     public void verifyAndClickAddAutomationButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Automation Button is displayed");
         Logger.logStep("Verify Add Automation Button is displayed");
+        if (isAddAutomationPresent()){
         addAutomationButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Automation Button");
         Logger.logStep("Click on Add Automation Button");
         addAutomationButton.click();
+        } else{
+            ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Button");
+            Logger.logStep("Click on Add Button");
+           addButton.click();
+        }
     }
+
+        public boolean isAddAutomationPresent() {
+            try {
+                addAutomationButton.isDisplayed();
+                return true;
+            } catch (NoSuchElementException e) {
+                return false;
+            }
+        }
 
     public void verifyAndClickSHMButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify SHM Button is displayed");
@@ -71,3 +90,4 @@ public class AutomationsFragmentPage extends BasePage {
         customAutomationButton.click();
     }
 }
+

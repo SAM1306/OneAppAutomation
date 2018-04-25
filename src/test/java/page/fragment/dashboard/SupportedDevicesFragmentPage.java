@@ -1,7 +1,7 @@
 package page.fragment.dashboard;
 
 import com.relevantcodes.extentreports.LogStatus;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
@@ -15,7 +15,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "SupportedDevicesScreen";
 
-    public SupportedDevicesFragmentPage(AndroidDriver driver) {
+    public SupportedDevicesFragmentPage(AppiumDriver driver) {
 
         super(driver);
         loadPage();

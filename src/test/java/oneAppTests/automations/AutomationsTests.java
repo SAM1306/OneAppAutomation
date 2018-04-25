@@ -1,8 +1,6 @@
 package oneAppTests.automations;
 
-import io.appium.java_client.android.AndroidDriver;
 import oneAppTests.BaseAppiumTest;
-import oneAppTests.TestCaseSetup;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -21,8 +19,6 @@ import static utility.Events.scrollAndClick;
 public class AutomationsTests extends BaseAppiumTest{
 
     private static final String TEST_NAME = AutomationsTests.class.getName();
-
-    private static AndroidDriver driver = TestCaseSetup.getDriver();
 
     private DashboardFragmentPage dashboardFragmentPage;
     private PrimaryActivity primaryActivity;
@@ -50,7 +46,7 @@ public class AutomationsTests extends BaseAppiumTest{
 
     @Test(priority=1)
     public void addSHMAutomation() throws InterruptedException {
-        ExtentTestManager.getTest().setDescription("Automtions: Add SHM Automation");
+        ExtentTestManager.getTest().setDescription("Automations: Add SHM Automation");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - Start");
 
         primaryActivity.getAutomationsButton();
