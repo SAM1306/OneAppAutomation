@@ -9,6 +9,11 @@ public class DashboardPage
 	By Dashboard=By.name("Dashboard");
     By Managedashboard=By.name("Manage dashboard");
     By Showallcards=By.name("Show all cards");
+    By Settings=By.name("Settings");
+    By Uselocationinformation=By.name("Use location information");
+    By Autoupdatedevicecontroller=By.name("Auto update device controller");
+    By Wifionly=By.name("Wi-Fi only");
+    By Wifiormobie=By.name("Wi-Fi or mobile data Data charges may apply.");
     
     public DashboardPage(WebDriver driver)
 	{
@@ -19,6 +24,30 @@ public class DashboardPage
     		boolean actual=driver.findElement(Dashboard).isDisplayed();
     		return(actual);
 	}
+    
+    public boolean verifywifionly()
+   	{
+       boolean actual=driver.findElement(Wifionly).isDisplayed();
+       return(actual);
+   	}
+    public boolean verifywifiormobile()
+   	{
+       boolean actual=driver.findElement(Wifiormobie).isDisplayed();
+       return(actual);
+   	}
+    public boolean verifyuselocationinfromation()
+    {
+    		boolean actual=driver.findElement(Uselocationinformation).isDisplayed();
+		return(actual);
+    }
+    public void clickonautoupdatedevicecontroller()
+    {
+    		driver.findElement(Autoupdatedevicecontroller).click();
+    }
+    public void clickonsettings()
+    {
+    		driver.findElement(Settings).click();
+    }
     public void clickondashboard()
     {
     		driver.findElement(Dashboard).click();

@@ -93,4 +93,9 @@ public class AutomationsPage
 		boolean actual=driver.findElement(Automations).isDisplayed();
 		return(actual);
 	}
+	public boolean verifyoff()
+	{
+		boolean actual=driver.findElement(Off).isDisplayed();
+		return(actual);
+	}
 }
