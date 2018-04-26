@@ -42,13 +42,26 @@ public class AutomationsFragmentPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_layout_item")
     public WebElement customAutomationButton;
 
+    @AndroidFindBy(accessibility = "More options")
+    public WebElement moreOptionsButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Delete']")
+    public WebElement deleteButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Smart Lighting']")
+    public WebElement smartLightingButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Delete']")
+    public WebElement confirmDeleteButton;
+
     public void verifyAutomationPageTitleIsPresent() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Automation Page Title is displayed");
         Logger.logStep("Verify Automation Page Title is displayed");
         automationsTitle.isDisplayed();
     }
 
-    public void verifyAndClickAddAutomationButton() {
+    public void verifyAndClickAddAutomationButton() throws InterruptedException {
+        Thread.sleep(4000L);
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Automation Button is displayed");
         Logger.logStep("Verify Add Automation Button is displayed");
         if (isAddAutomationPresent()){
@@ -89,5 +102,46 @@ public class AutomationsFragmentPage extends BasePage {
         Logger.logStep("Click on Custom Automation Button");
         customAutomationButton.click();
     }
-}
 
+    public void verifyAndClickMoreOptionstButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify More Options Button is displayed");
+        Logger.logStep("Verify More Options Button is displayed");
+        moreOptionsButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on More Options Button");
+        Logger.logStep("Click on More Options Button");
+        moreOptionsButton.click();
+    }
+
+    public void verifyAndClickDeleteButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Delete Button is displayed");
+        Logger.logStep("Verify Delete Button is displayed");
+        deleteButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Delete Button");
+        Logger.logStep("Click on Delete Button");
+        deleteButton.click();
+    }
+
+    public void verifyAndClickSmartLightingButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Smart Lighting Button is displayed");
+        Logger.logStep("Verify Smart Lighting Button is displayed");
+        smartLightingButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Smart Lighting Button");
+        Logger.logStep("Click on Smart Lighting Button");
+        smartLightingButton.click();
+    }
+
+    public void verifyAndClicConfirmkDeleteButton() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Confirm Delete Button is displayed");
+        Logger.logStep("Verify Confirm Delete Button is displayed");
+        confirmDeleteButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Confirm Delete Button");
+        Logger.logStep("Click on Confirm Delete Button");
+        confirmDeleteButton.click();
+    }
+
+    public void verifyAddAutomationButtonIsPresent() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add automation Button is displayed");
+        Logger.logStep("Verify Add Automation Button is displayed");
+        addAutomationButton.isDisplayed();
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmartLightingTests" >
+    <listeners>
+        <listener class-name="utility.Listeners.TestListener"/>
+        <listener class-name="utility.Listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <test name="SmartLightingTests">
+        <classes>
+            <class name="oneAppTests.automations.SmartLightingTests"/>
+        </classes>
+    </test>
+</suite>
