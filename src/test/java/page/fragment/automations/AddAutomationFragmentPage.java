@@ -2,7 +2,6 @@ package page.fragment.automations;
 
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,6 +16,9 @@ import static utility.Events.scrollTo;
 public class AddAutomationFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "AddAutomationScreen";
+    private String smartLightsApp = "Smart Lights";
+    private static final String SMART_HOME_MONITOR = "Smart Home Monitor";
+    private static final String SMART_LIGHTS = "smartLights";
 
     public AddAutomationFragmentPage(AppiumDriver driver) {
 
@@ -305,7 +307,7 @@ public class AddAutomationFragmentPage extends BasePage {
     public SHMConfigurePage getSHMFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(smartHomeMonitor));
-        return new SHMConfigurePage((AndroidDriver) driver);
+        return new SHMConfigurePage(driver);
     }
 
     public void verifyAndClickCustomAutomationButton() throws InterruptedException {
@@ -323,5 +325,23 @@ public class AddAutomationFragmentPage extends BasePage {
         Logger.logStep("Click on Smart Lights Button");
         scrollTo("Smart Lights");
         smartLights.click();
+    }
+
+    public void clickAutomationButton(String buttonName) {
+        Logger.logStep("Click on " + buttonName + " Button");
+        switch(buttonName) {
+            case SMART_HOME_MONITOR: {
+                smartHomeMonitor.click();
+                return;
+            }
+            case SMART_LIGHTS : {
+                scrollTo(smartLightsApp);
+                smartLights.click();
+                return;
+            }
+            default: {
+                throw new IllegalArgumentException("Button " + buttonName + " not supported");
+            }
+        }
     }
 }

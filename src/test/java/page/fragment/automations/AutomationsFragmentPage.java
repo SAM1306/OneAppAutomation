@@ -144,4 +144,10 @@ public class AutomationsFragmentPage extends BasePage {
         Logger.logStep("Verify Add Automation Button is displayed");
         addAutomationButton.isDisplayed();
     }
+
+    public void verifySmartLightingIsPresent(){
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Smart Lighting Button is displayed");
+        Logger.logStep("Verify Smart Lighting Button is displayed");
+        smartLightingButton.isDisplayed();
+    }
 }

@@ -11,6 +11,8 @@ import utility.Logger;
 public class SmartLightsFragmentPage extends BasePage {
 
     private static final String SCREEN_NAME = "AutomationScreen";
+    private static final String OUTLET = "Outlet";
+    private static final String MOTION = "Motion";
 
     public SmartLightsFragmentPage(AppiumDriver driver) {
 
@@ -45,9 +47,9 @@ public class SmartLightsFragmentPage extends BasePage {
     public WebElement motionSensorButton;
 
     public void verifyAndClickNewLightingAutomationButton() throws InterruptedException {
-        Thread.sleep(2000L);
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify new Lighting Automation Button is displayed");
         Logger.logStep("Verify new Lighting Automation Button is displayed");
+        Thread.sleep(4000L);
         newLightingAutomationButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on new Lighting Automation Button");
         Logger.logStep("Click on new Lighting Automation Button");
@@ -72,13 +74,42 @@ public class SmartLightsFragmentPage extends BasePage {
         outletButton.click();
     }
 
-    public void verifyAndClickSelectTriggerButton() {
+    public void clickDeviceButton(String buttonName) {
+        Logger.logStep("Click on " + buttonName + " Button");
+        switch(buttonName) {
+            case OUTLET : {
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Outlet Button is displayed");
+                Logger.logStep("Verify Outlet Button is displayed");
+                outletButton.isDisplayed();
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Outlet Button");
+                Logger.logStep("Click on Outlet Button");
+                outletButton.click();
+                return;
+            }
+            default: {
+                throw new IllegalArgumentException("Button " + buttonName + " not supported");
+            }
+        }
+    }
+
+    public void verifyAndSelectTriggerButton(String triggerButton) {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Select Trigger Button is displayed");
         Logger.logStep("Verify Select Trigger Button is displayed");
         selectTriggerButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Select Trigger Button");
         Logger.logStep("Click on Select Trigger Button");
         selectTriggerButton.click();
+        switch(triggerButton){
+            case MOTION : {
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Motion Button is displayed");
+                Logger.logStep("Verify Motion Button is displayed");
+                motionButton.isDisplayed();
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Motion Button");
+                Logger.logStep("Click on Motion Button");
+                motionButton.click();
+                return;
+            }
+        }
     }
 
     public void verifyAndClickMotionButton() {

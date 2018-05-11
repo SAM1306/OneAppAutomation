@@ -2,7 +2,6 @@ package page.fragment.automations;
 
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +36,7 @@ public class SHMConfigurePage extends BasePage {
     public SHMConfigurePage getSHMFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(nextButton));
-        return new SHMConfigurePage((AndroidDriver) driver);
+        return new SHMConfigurePage(driver);
     }
 
     public void verifyAndClickNextButton() {
