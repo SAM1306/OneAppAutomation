@@ -1,7 +1,9 @@
 package oneAppTests.automations;
 
 import oneAppTests.BaseAppiumTest;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
 import page.fragment.automations.AddAutomationFragmentPage;
@@ -28,27 +30,37 @@ public class SmartLightingTests extends BaseAppiumTest {
     }
 
     @BeforeTest
-    public void setUp() {
+    @Parameters({"button", "deviceButton", "triggerButton"})
+    public void setUp(String button, String deviceButton, String triggerButton) throws InterruptedException {
         primaryActivity = new PrimaryActivity(driver);
         automationsFragmentPage = new AutomationsFragmentPage(driver);
         addAutomationFragmentPage = new AddAutomationFragmentPage(driver);
         smartLightsFragmentPage = new SmartLightsFragmentPage(driver);
         toolbarPage = new ToolbarPage(driver);
+        configureSmartLighting(button, deviceButton, triggerButton);
+    }
+
+    @AfterTest
+    public void tearDown() throws InterruptedException {
+        deleteSmartLighting();
     }
 
     @Test(priority=1)
-    public void configureSmartLighting() throws InterruptedException {
+    public void verifySmartLightsInstalled(){
+        automationsFragmentPage.verifySmartLightingIsPresent();
+    }
+
+    public void configureSmartLighting(String button, String deviceButton, String triggerButton) throws InterruptedException {
         ExtentTestManager.getTest().setDescription("Automations: Configure Smart Lights Automations");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Configure Smart Lights Automations - Start");
         primaryActivity.getAutomationsButton();
         automationsFragmentPage.verifyAndClickAddAutomationButton();
-        addAutomationFragmentPage.clickSmartLightigButton();
+        addAutomationFragmentPage.clickAutomationButton(button);
         smartLightsFragmentPage.verifyAndClickNewLightingAutomationButton();
         smartLightsFragmentPage.verifyAndClickWhichDevicesToControlButton();
-        smartLightsFragmentPage.verifyAndClickOutletButton();
+        smartLightsFragmentPage.clickDeviceButton(deviceButton);
         toolbarPage.verifyAndClickDoneButton();
-        smartLightsFragmentPage.verifyAndClickSelectTriggerButton();
-        smartLightsFragmentPage.verifyAndClickMotionButton();
+        smartLightsFragmentPage.verifyAndSelectTriggerButton(triggerButton);
         toolbarPage.verifyAndClickDoneButton();
         smartLightsFragmentPage.verifyAndClickWhichMotionButton();
         smartLightsFragmentPage.verifyAndClickMotionSensorButton();
@@ -60,7 +72,6 @@ public class SmartLightingTests extends BaseAppiumTest {
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Configure Endpoint SHM Security - End");
     }
 
-    @Test(priority=2)
     public void deleteSmartLighting() throws InterruptedException {
         ExtentTestManager.getTest().setDescription("Automations: Configure Smart Lights Automations");
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Configure Smart Lights Automations - Start");

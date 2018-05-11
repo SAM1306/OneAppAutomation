@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SmartLightingTests" >
+<suite name="AutomationTests" >
     <listeners>
         <listener class-name="utility.Listeners.TestListener"/>
         <listener class-name="utility.Listeners.AnnotationTransformer"/>
     </listeners>
 
-    <test name="SmartLightingTests">
+    <test name="Catalog - Installed Automations Display">
+        <parameter name="button" value="smartLights"/>
+        <parameter name="deviceButton" value="Outlet"/>
+        <parameter name="triggerButton" value="Motion"/>
         <classes>
-            <class name="oneAppTests.automations.SmartLightingTests"/>
+            <class name="oneAppTests.automations.SmartLightingTests">
+            <methods>
+                <include name="verifySmartLightsInstalled"/>
+            </methods>
+            </class>
         </classes>
     </test>
 </suite>
