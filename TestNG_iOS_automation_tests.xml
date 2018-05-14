@@ -1,9 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite thread-count="1" name="AutomationTests">
-	<test name="Automation">
-		<classes>
-			<class name="iOS.oneappiOSTests.Automation"/>
-		</classes> 
-	</test>
+   <test name="Automation">
+       <parameter name="Automations" value="Automations"/>
+	   <parameter name="Moreoptions" value="Moreoptions"/>
+	   <parameter name="Delete" value="Delete"/>
+	   <parameter name="LocationModeNightDelete" value="LocationModeNightDelete"/>
+	   <classes>
+	   	<class name="iOS.oneappiOSTests.Automation"/>
+	   </classes> 
+    </test>
 </suite>
