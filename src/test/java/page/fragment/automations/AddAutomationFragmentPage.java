@@ -331,11 +331,17 @@ public class AddAutomationFragmentPage extends BasePage {
         Logger.logStep("Click on " + buttonName + " Button");
         switch(buttonName) {
             case SMART_HOME_MONITOR: {
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Click on " + SMART_HOME_MONITOR + " Button");
+                Logger.logStep("Click on " + SMART_HOME_MONITOR + " Button");
                 smartHomeMonitor.click();
                 return;
             }
             case SMART_LIGHTS : {
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Scroll to " + SMART_LIGHTS + " Button");
+                Logger.logStep("Scroll to` " + SMART_LIGHTS + " Button");
                 scrollTo(smartLightsApp);
+                ExtentTestManager.getTest().log(LogStatus.INFO, "Click on " + SMART_LIGHTS + " Button");
+                Logger.logStep("Click on " + SMART_LIGHTS + " Button");
                 smartLights.click();
                 return;
             }

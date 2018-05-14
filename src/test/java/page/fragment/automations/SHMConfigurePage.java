@@ -2,6 +2,7 @@ package page.fragment.automations;
 
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,6 +33,12 @@ public class SHMConfigurePage extends BasePage {
 
     @AndroidFindBy(id = "siren_duration")
     public WebElement sirenDurationTextBox;
+
+    @AndroidFindBy(id = "authorize-btn")
+    public WebElement allowButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.view.View' and @text='Any Device']")
+    public WebElement anyDeviceButton;
 
     public SHMConfigurePage getSHMFragmentPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -72,5 +79,19 @@ public class SHMConfigurePage extends BasePage {
         Logger.logStep("Adding \"" + text + "\" minute Siren Duration");
         sirenDurationTextBox.sendKeys(text);
         driver.hideKeyboard();
+    }
+
+    public void scrollAndClickAllowButton () {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Scrolling to Allow Button");
+        Logger.logStep("Scrolling to Allow Button");
+        TouchAction action = new TouchAction(driver);
+        action.longPress(allowButton).moveTo(anyDeviceButton).release().perform();
+        action.longPress(allowButton).moveTo(anyDeviceButton).release().perform();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Allow Button is Present");
+        Logger.logStep("Verify Allow Button is Present");
+        allowButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Allow Button");
+        Logger.logStep("Click on Allow Button");
+        allowButton.click();
     }
 }

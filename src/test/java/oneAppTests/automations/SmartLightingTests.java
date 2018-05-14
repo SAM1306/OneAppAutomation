@@ -16,7 +16,7 @@ import utility.Logger;
 @Test
 public class SmartLightingTests extends BaseAppiumTest {
 
-    private static final String TEST_NAME = SmartHomeMonitorTests.class.getName();
+    private static final String TEST_NAME = SmartLightingTests.class.getName();
 
     private PrimaryActivity primaryActivity;
     private AutomationsFragmentPage automationsFragmentPage;
