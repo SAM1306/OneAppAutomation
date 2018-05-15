@@ -1,14 +1,13 @@
 package iOS.pageobjects;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AutomationsPage 
+public class AutomationsPageParameterization 
 {
 	WebDriver driver;
 	public final By Automations=By.name("Automations");
 	By Addautomation=By.name("Add automation");
-	public By Customautomation=By.name("Custom automation");
+	By Customautomation=By.name("Custom automation");
 	By Whendoyouwanttousethisautomation=By.name("When do you want to use this automation?");
 	By Basedonthislocationsmode=By.name("Based on this location's mode");
 	By Night=By.name("Night");
@@ -16,8 +15,8 @@ public class AutomationsPage
 	By Whatdoyouwantthisautomationtodo=By.name("What do you want this automation to do?");
 	By SYLVANIASmartA19RGBW=By.name("SYLVANIA Smart A19 RGBW");
 	By Off=By.name("Off");
-	public By Save=By.name("Save");
-	public By LocationmodeNightAutomationtoggleenabled=By.name("Location mode, Night - Automation toggle enabled.");
+	By Save=By.name("Save");
+	By LocationmodeNightAutomationtoggleenabled=By.name("Location mode, Night - Automation toggle enabled.");
 	public By Moreoptions=By.name("More options");
 	By Delete=By.name("Delete");
 	public By LocationmodeNightDelete=By.name("Location mode, Night Delete");
@@ -25,27 +24,34 @@ public class AutomationsPage
 	//char element;
 	String element;
 	
-	public AutomationsPage(WebDriver driver)
+	public AutomationsPageParameterization(WebDriver driver)
 	{
 		this.driver=driver;
 	}
-	public void clickonAutomations()
-	{
-		driver.findElement(Automations).click();
-	}
-	public void clickonMoreoptions()
-	{
-		driver.findElement(Moreoptions).click();
-	}
-	public void clickonDelete()
-	{
-		driver.findElement(Delete).click();
-	}
-	public void clickonLocationModeNightDelete()
-	{
-		driver.findElement(LocationmodeNightDelete).click();
-	}
 	
+	//After Parameterization
+	public void clickon(String element)
+	{
+		//Using Switch
+		switch (element)
+		{
+			case "Automations":
+				driver.findElement(Automations).click();
+				break;
+				
+			case "Moreoptions":
+				driver.findElement(Moreoptions).click();
+				break;
+				
+			case "Delete":
+				driver.findElement(Delete).click();
+				break;
+				
+			case "LocationModeNightDelete":
+				driver.findElement(LocationmodeNightDelete).click();
+				break;
+		}
+	}
 	
 	public void clickonAddautomations()
 	{
@@ -105,3 +111,4 @@ public class AutomationsPage
 	
 	
 }
+

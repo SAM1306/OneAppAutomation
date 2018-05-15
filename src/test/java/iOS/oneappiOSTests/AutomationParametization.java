@@ -8,24 +8,25 @@ import org.testng.annotations.Test;
 import iOS.pageobjects.*;
 import iOS.utilities.Main;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-public class Automation extends Main
+public class AutomationParametization extends Main
 {
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 	AutomationsPage ap=new AutomationsPage(driver);
-	public Automation() throws MalformedURLException, InterruptedException 
+	AutomationsPageParameterization app=new AutomationsPageParameterization(driver);
+	
+	public AutomationParametization() throws MalformedURLException, InterruptedException 
 	{
 		super();
 	}
 	
 	//Create Automation
-	@Test
-	public void createAutomation()
+	@Parameters({"Automations"})
+	@Test(priority=1)
+	public void createAutomation(String Automations)
 	{
-		ap.clickonAutomations();
+		app.clickon(Automations);
 		ap.clickonAddautomations();
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.Customautomation));
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		ap.clickonCustomautomations();
 		ap.clickonWhendoyouwanttousethisautomation();
 		ap.clickonBasedonthislocationsmode();
@@ -37,10 +38,8 @@ public class Automation extends Main
 		ap.clickonOff();
 		ap.clickonDone();
 		ap.clickonDone();
-		//driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.Save));
 		ap.clickonSave();
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.LocationmodeNightAutomationtoggleenabled));
 		boolean actual=ap.verifyLocationmodenightautomationtoggleenabled();
 		Assert.assertSame(true, actual);
@@ -48,17 +47,17 @@ public class Automation extends Main
 	
 	//Delete Automation
 	@Parameters({"Automations","Moreoptions","Delete","LocationModeNightDelete"})
-	@Test
+	@Test(priority=2)
 	public void deleteAutomation( String Automations, String Moreoptions, String Delete,String LocationModeNightDelete) 
 	{
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.Automations));
-		ap.clickonAutomations();
+		app.clickon(Automations);
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.Moreoptions));
-		ap.clickonMoreoptions();
-		ap.clickonDelete();
+		app.clickon(Moreoptions);
+		app.clickon(Delete);
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.LocationmodeNightDelete));
-		ap.clickonLocationModeNightDelete();
-		ap.clickonDelete();
+		app.clickon(LocationModeNightDelete);
+		app.clickon(Delete);
 		wait.until(ExpectedConditions.presenceOfElementLocated(ap.LocationmodeNight));
 		boolean actual=driver.findElementByName("Location mode, Night").isDisplayed();
 		Assert.assertSame(false, actual);
