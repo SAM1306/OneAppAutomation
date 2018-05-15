@@ -8,7 +8,11 @@
 
     <test name="LocationTests">
         <classes>
-            <class name="oneAppTests.device_list.LocationTests"/>
+            <class name="oneAppTests.Locations.CreateLocationTests">
+                <methods>
+                    <include name="verifyLocationGotCreated"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
