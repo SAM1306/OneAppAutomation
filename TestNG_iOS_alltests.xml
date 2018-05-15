@@ -1,25 +1,34 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite thread-count="1" name="pages">
+<suite thread-count="1" name="AllTests">
 	<test name="Automation">
 		<classes>
-			<class name="pages.Automation"/>
+			<class name="iOS.oneappiOSTests.Automation"/>
 		</classes> 
 	</test>
-	
 	<test name="Dashboard">
 		<classes>
-			<class name="pages.Dashboard"/>
+			<class name="iOS.oneappiOSTests.Dashboard"/>
 		</classes> 
 	</test>
 	<test name="Devices">
 		<classes>
-			<class name="pages.Devices"/>
+			<class name="iOS.oneappiOSTests.Devices"/>
 		</classes> 
 	</test>
 	<test name="Scenes">
 		<classes>
-			<class name="pages.Scenes"/>
+			<class name="iOS.oneappiOSTests.Scenes"/>
+		</classes> 
+	</test>
+	<test name="Catalog">
+		<classes>
+			<class name="iOS.oneappiOSTests.Catalog"/>
+		</classes> 
+	</test>
+	<test name="Settings">
+		<classes>
+			<class name="iOS.oneappiOSTests.Settings"/>
 		</classes> 
 	</test>
 </suite>

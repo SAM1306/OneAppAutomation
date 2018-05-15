@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" name="CatalogTests">
+	<test name="Catalog">
+		<classes>
+			<class name="iOS.oneappiOSTests.Catalog"/>
+		</classes> 
+	</test>
+</suite>
