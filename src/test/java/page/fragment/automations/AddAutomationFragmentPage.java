@@ -9,11 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+import utility.events.Events;
+import utility.events.EventsFactory;
 
 import static org.testng.Assert.assertTrue;
-import static utility.Events.scrollTo;
 
 public class AddAutomationFragmentPage extends BasePage {
+
+    private Events events = EventsFactory.getEvents(driver);
 
     private static final String SCREEN_NAME = "AddAutomationScreen";
     private String smartLightsApp = "Smart Lights";
@@ -196,7 +199,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyReadyForRainIsPresent() {
-        scrollTo("Ready for Rain");
+        events.scrollTo("Ready for Rain");
         Logger.logStep("Verify Ready For Rain Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Ready For Rain Button is displayed");
         assertTrue(readyForRain.isDisplayed());
@@ -209,10 +212,10 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifySmartLightsIsPresent() {
-        scrollTo("Smart Lights");
+        events.scrollTo("Smart Lights");
         Logger.logStep("Verify Smart Lights Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Lights Button is displayed");
-        scrollTo("Smart Lights");
+        events.scrollTo("Smart Lights");
         assertTrue(smartLights.isDisplayed());
         Logger.logStep("Verify Smart Lights Developer Info is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Lights Developer Info is displayed");
@@ -223,7 +226,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyColorCoordinatorIsPresent() {
-        scrollTo("Keep me Cozy");
+        events.scrollTo("Keep me Cozy");
         Logger.logStep("Verify Color Coordinator Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Color Coordinator Button is displayed");
         assertTrue(colorCoordinator.isDisplayed());
@@ -236,7 +239,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyKeepMeCozyIsPresent() {
-        scrollTo("Thermostat Mode Director");
+        events.scrollTo("Thermostat Mode Director");
         Logger.logStep("Verify Keep me Cozy Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Keep me Cozy Button is displayed");
         assertTrue(keepMeCozy.isDisplayed());
@@ -249,7 +252,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifyThermostatModeDirectorIsPresent() {
-        scrollTo("Thermostat Mode Director");
+        events.scrollTo("Thermostat Mode Director");
         Logger.logStep("Verify Thermostat Mode Director Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Thermostat Mode Director Button is displayed");
         assertTrue(thermostatModeDirector.isDisplayed());
@@ -262,7 +265,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifySmartWindowsIsPresent() {
-        scrollTo("Smart Windows");
+        events.scrollTo("Smart Windows");
         Logger.logStep("Verify Smart Windows Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Windows Button is displayed");
         assertTrue(smartWindows.isDisplayed());
@@ -275,7 +278,7 @@ public class AddAutomationFragmentPage extends BasePage {
     }
 
     public void verifySpeakerCompanionIsPresent() {
-        scrollTo("Door Knocker");
+        events.scrollTo("Door Knocker");
         Logger.logStep("Verify Speaker Companion Button is displayed");
         ExtentTestManager.getTest().setDescription("Verify Speaker Companion Button is displayed");
         assertTrue(speakerCompanion.isDisplayed());
@@ -323,7 +326,7 @@ public class AddAutomationFragmentPage extends BasePage {
     public void clickSmartLightigButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Smart Lights Button");
         Logger.logStep("Click on Smart Lights Button");
-        scrollTo("Smart Lights");
+        events.scrollTo("Smart Lights");
         smartLights.click();
     }
 
@@ -339,7 +342,7 @@ public class AddAutomationFragmentPage extends BasePage {
             case SMART_LIGHTS : {
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Scroll to " + SMART_LIGHTS + " Button");
                 Logger.logStep("Scroll to` " + SMART_LIGHTS + " Button");
-                scrollTo(smartLightsApp);
+                events.scrollTo(smartLightsApp);
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Click on " + SMART_LIGHTS + " Button");
                 Logger.logStep("Click on " + SMART_LIGHTS + " Button");
                 smartLights.click();

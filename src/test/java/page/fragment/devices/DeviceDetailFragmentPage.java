@@ -7,11 +7,15 @@ import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+import utility.events.Events;
+import utility.events.EventsFactory;
 
 import static org.testng.AssertJUnit.assertTrue;
-import static utility.Events.scrollTo;
+
 
 public class DeviceDetailFragmentPage extends BasePage {
+
+    private Events events = EventsFactory.getEvents(driver);
     private static final String SCREEN_NAME = "DeviceDetailScreen";
 
     public DeviceDetailFragmentPage(AppiumDriver driver) {
@@ -126,7 +130,7 @@ public class DeviceDetailFragmentPage extends BasePage {
     }
 
     public void verifySengledBulbTileIsPresent() {
-        scrollTo("Sengled Element Classic");
+        events.scrollTo("Sengled Element Classic");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Sengled Bulb Tile is displayed");
         Logger.logStep("Verify Sengled Bulb Tile is displayed");
         assertTrue(sengledBulbTile.isDisplayed());
@@ -139,7 +143,7 @@ public class DeviceDetailFragmentPage extends BasePage {
     }
 
     public void verifyHomeHubTileIsPresent() {
-        //scrollTo("Home Hub");
+        events.scrollTo("Home Hub");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Home Hub Tile is displayed");
         Logger.logStep("Verify Home Hub Tile is displayed");
         assertTrue(homeHubTile.isDisplayed());

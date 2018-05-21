@@ -7,12 +7,15 @@ import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+import utility.events.Events;
+import utility.events.EventsFactory;
 
 import static org.testng.Assert.assertTrue;
-import static utility.Events.scrollTo;
+
 
 public class SupportedDevicesFragmentPage extends BasePage {
 
+    private Events events = EventsFactory.getEvents(driver);
     private static final String SCREEN_NAME = "SupportedDevicesScreen";
 
     public SupportedDevicesFragmentPage(AppiumDriver driver) {
@@ -168,14 +171,14 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyRangeButtonIsPresent() {
-        scrollTo("Range");
+        events.scrollTo("Range");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Range Button is displayed");
         Logger.logStep("Verify Range Button is displayed");
         assertTrue(rangeButton.isDisplayed());
     }
 
     public void verifyCooktopButtonIsPresent() {
-        scrollTo("Cooktop");
+        events.scrollTo("Cooktop");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Cooktop Button is displayed");
         Logger.logStep("Verify Cooktop Button is displayed");
         assertTrue(cookTopButton.isDisplayed());
@@ -242,7 +245,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyDoorbellButtonIsPresent() {
-        scrollTo("Doorbell");
+        events.scrollTo("Doorbell");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Doorbell Button is displayed");
         Logger.logStep("Verify Doorbell Button is displayed");
         assertTrue(doorBellButton.isDisplayed());
@@ -291,7 +294,7 @@ public class SupportedDevicesFragmentPage extends BasePage {
     }
 
     public void verifyThermostatButtonIsPresent() {
-        scrollTo("Thermostat");
+        events.scrollTo("Thermostat");//
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Thermostat Button is displayed");
         Logger.logStep("Verify Thermostat Button is displayed");
         assertTrue(thermostatButton.isDisplayed());

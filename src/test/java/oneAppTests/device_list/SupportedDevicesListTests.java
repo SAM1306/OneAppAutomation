@@ -9,8 +9,8 @@ import page.fragment.dashboard.SupportedDevicesFragmentPage;
 import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
-
-import static utility.Events.scrollTo;
+import utility.events.Events;
+import utility.events.EventsFactory;
 
 @Test
 public class SupportedDevicesListTests extends BaseAppiumTest {
@@ -21,6 +21,7 @@ public class SupportedDevicesListTests extends BaseAppiumTest {
     private ToolbarPage toolbarPage;
     private DashboardFragmentPage dashboardFragmentPage;
     private SupportedDevicesFragmentPage supportedDevicesFragmentPage;
+    private Events events;
 
     @Override
     public String getTestName() {
@@ -33,6 +34,7 @@ public class SupportedDevicesListTests extends BaseAppiumTest {
         toolbarPage = new ToolbarPage(driver);
         dashboardFragmentPage = new DashboardFragmentPage(driver);
         supportedDevicesFragmentPage = new SupportedDevicesFragmentPage(driver);
+        events = EventsFactory.getEvents(driver);
     }
 
     @Test(priority = 1)
@@ -57,7 +59,7 @@ public class SupportedDevicesListTests extends BaseAppiumTest {
         supportedDevicesFragmentPage.verifyMoistureSensorButtonIsPresent();
         supportedDevicesFragmentPage.verifyMotionSensorButtonIsPresent();
         supportedDevicesFragmentPage.verifyMultiFunctionalSensorButtonIsPresent();
-        scrollTo("Valve");
+        events.scrollTo("Valve");
         supportedDevicesFragmentPage.verifyOpenClosedSensorButtonIsPresent();
         supportedDevicesFragmentPage.verifyPresenceSensorButtonIsPresent();
         supportedDevicesFragmentPage.verifyADTSecurityDevicesButtonIsPresent();
