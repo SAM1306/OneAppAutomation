@@ -10,11 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+import utility.events.Events;
+import utility.events.EventsFactory;
 
 import static org.testng.Assert.assertTrue;
-import static utility.Events.scrollAndClick;
 
 public class SmartthingsSettingsFragmentPage extends BasePage {
+
+    private Events events = EventsFactory.getEvents(driver);
 
     private static final String SCREEN_NAME = "SmartthingsSettingsScreen";
 
@@ -104,7 +107,7 @@ public class SmartthingsSettingsFragmentPage extends BasePage {
     public void verifyAutoUpdateController() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Scroll and Click to Auto Update Device Controller");
         Logger.logStep("Scroll and Click to Auto Update Device Controller");
-        scrollAndClick("Auto update device controller");
+        events.scrollAndClick("Auto update device controller");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Off RadioButton is present");
         Logger.logStep("Verify Off RadioButton is present");
         assertTrue(autoUpdateDeviceControllerButtonOff.isDisplayed());
