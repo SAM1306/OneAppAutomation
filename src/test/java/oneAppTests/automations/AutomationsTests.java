@@ -13,8 +13,6 @@ import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
-import static utility.Events.scrollAndClick;
-
 @Test
 public class AutomationsTests extends BaseAppiumTest{
 
@@ -59,7 +57,7 @@ public class AutomationsTests extends BaseAppiumTest{
         shmConfigurePage.verifyAndClickSirenDurationTextBox();
         shmConfigurePage.addSirenDuration("1");
         shmConfigurePage.verifyAndClickDoneButton();
-        scrollAndClick("ALLOW");
+        shmConfigurePage.scrollAndClickAllowButton();
         addAutomationFragmentPage.getSHMFragmentPage();
         addAutomationFragmentPage.verifySHMIsCreated();
 

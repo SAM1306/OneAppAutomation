@@ -15,8 +15,6 @@ import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
 
-import static utility.Events.scrollAndClick;
-
 @Test
 public class SmartHomeMonitorTests extends BaseAppiumTest {
 
@@ -63,7 +61,7 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         shmConfigurePage.verifyAndClickSirenDurationTextBox();
         shmConfigurePage.addSirenDuration("1");
         shmConfigurePage.verifyAndClickDoneButton();
-        scrollAndClick("ALLOW");
+        shmConfigurePage.scrollAndClickAllowButton();
         addAutomationFragmentPage.getSHMFragmentPage();
         addAutomationFragmentPage.verifySHMIsCreated();
 
@@ -115,7 +113,7 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         shmConfigurePage.verifyAndClickSirenDurationTextBox();
         shmConfigurePage.addSirenDuration("5");
         shmConfigurePage.verifyAndClickDoneButton();
-        scrollAndClick("ALLOW");
+        shmConfigurePage.scrollAndClickAllowButton();
         shmFragmentPage.verifySHMPageTitleIsDisplayed();
         toolbarPage.verifyAndClickBackButton();
 
