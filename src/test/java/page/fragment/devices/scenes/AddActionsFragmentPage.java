@@ -58,12 +58,13 @@ public class AddActionsFragmentPage extends BasePage {
         doneButton.click();
     }
 
-    public void verifyAndClickSaveButton() {
+    public void verifyAndClickSaveButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Save Button is displayed");
         Logger.logStep("Verify Save Button is displayed");
         saveButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Save Button");
         Logger.logStep("Click on Save Button");
         saveButton.click();
+        Thread.sleep(4000L);
     }
 }

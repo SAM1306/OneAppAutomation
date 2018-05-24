@@ -51,14 +51,12 @@ public class AutomationsTests extends BaseAppiumTest{
         automationsFragmentPage.verifyAndClickAddAutomationButton();
         addAutomationFragmentPage.verifySHMButtonIsPresent();
         addAutomationFragmentPage.clickSHMButton();
-        shmConfigurePage.getSHMFragmentPage();
         shmConfigurePage.verifyAndClickNextButton();
         shmConfigurePage.verifyAndClickNextButton();
         shmConfigurePage.verifyAndClickSirenDurationTextBox();
         shmConfigurePage.addSirenDuration("1");
         shmConfigurePage.verifyAndClickDoneButton();
         shmConfigurePage.scrollAndClickAllowButton();
-        addAutomationFragmentPage.getSHMFragmentPage();
         addAutomationFragmentPage.verifySHMIsCreated();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");

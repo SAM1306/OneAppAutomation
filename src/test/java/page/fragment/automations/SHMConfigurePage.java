@@ -46,13 +46,14 @@ public class SHMConfigurePage extends BasePage {
         return new SHMConfigurePage(driver);
     }
 
-    public void verifyAndClickNextButton() {
+    public void verifyAndClickNextButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Next Button is displayed");
         Logger.logStep("Verify Next Button is displayed");
         nextButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Next Button");
         Logger.logStep("Click on Next Button");
         nextButton.click();
+        Thread.sleep(2000L);
     }
 
     public void verifyAndClickDoneButton() throws InterruptedException {
@@ -62,7 +63,7 @@ public class SHMConfigurePage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
         Logger.logStep("Click on Done Button");
         doneButton.click();
-        Thread.sleep(2000L);
+        Thread.sleep(6000L);
     }
 
     public void verifyAndClickSirenDurationTextBox() {
@@ -81,7 +82,7 @@ public class SHMConfigurePage extends BasePage {
         driver.hideKeyboard();
     }
 
-    public void scrollAndClickAllowButton () {
+    public void scrollAndClickAllowButton () throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Scrolling to Allow Button");
         Logger.logStep("Scrolling to Allow Button");
         TouchAction action = new TouchAction(driver);
@@ -93,5 +94,6 @@ public class SHMConfigurePage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Allow Button");
         Logger.logStep("Click on Allow Button");
         allowButton.click();
+        Thread.sleep(6000L);
     }
 }

@@ -68,7 +68,7 @@ public class PrimaryActivity extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Automations Button");
         Logger.logStep("Click on Automations Button");
         automationsButton.click();
-        Thread.sleep(4000L);
+        Thread.sleep(6000L);
     }
 
     public void verifyAndClickPopUpDeleteButton() {

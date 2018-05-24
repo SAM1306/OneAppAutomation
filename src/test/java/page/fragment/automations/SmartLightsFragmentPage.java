@@ -54,15 +54,17 @@ public class SmartLightsFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on new Lighting Automation Button");
         Logger.logStep("Click on new Lighting Automation Button");
         newLightingAutomationButton.click();
+        Thread.sleep(4000L);
     }
 
-    public void verifyAndClickWhichDevicesToControlButton() {
+    public void verifyAndClickWhichDevicesToControlButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Which devices to control Button is displayed");
         Logger.logStep("Verify Which devices to control Button is displayed");
         whichDevicesToControlButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Which devices to control Button");
         Logger.logStep("Click on Which devices to control Button");
         whichDevicesToControlButton.click();
+        Thread.sleep(4000L);
     }
 
     public void verifyAndClickOutletButton() {
@@ -74,7 +76,7 @@ public class SmartLightsFragmentPage extends BasePage {
         outletButton.click();
     }
 
-    public void clickDeviceButton(String buttonName) {
+    public void clickDeviceButton(String buttonName) throws InterruptedException {
         Logger.logStep("Click on " + buttonName + " Button");
         switch(buttonName) {
             case OUTLET : {
@@ -84,6 +86,7 @@ public class SmartLightsFragmentPage extends BasePage {
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Outlet Button");
                 Logger.logStep("Click on Outlet Button");
                 outletButton.click();
+                Thread.sleep(4000L);
                 return;
             }
             default: {
@@ -92,7 +95,7 @@ public class SmartLightsFragmentPage extends BasePage {
         }
     }
 
-    public void verifyAndSelectTriggerButton(String triggerButton) {
+    public void verifyAndSelectTriggerButton(String triggerButton) throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Select Trigger Button is displayed");
         Logger.logStep("Verify Select Trigger Button is displayed");
         selectTriggerButton.isDisplayed();
@@ -107,6 +110,7 @@ public class SmartLightsFragmentPage extends BasePage {
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Motion Button");
                 Logger.logStep("Click on Motion Button");
                 motionButton.click();
+                Thread.sleep(6000L);
                 return;
             }
         }
@@ -121,21 +125,23 @@ public class SmartLightsFragmentPage extends BasePage {
         motionButton.click();
     }
 
-    public void verifyAndClickWhichMotionButton() {
+    public void verifyAndClickWhichMotionButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Which Motion Sensors Button is displayed");
         Logger.logStep("Verify Which Motion Sensors Button is displayed");
         whichMotionSensorButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Which Motion Sensors Button");
         Logger.logStep("Click on Which Motion Sensors Button");
         whichMotionSensorButton.click();
+        Thread.sleep(4000L);
     }
 
-    public void verifyAndClickMotionSensorButton() {
+    public void verifyAndClickMotionSensorButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Motion Sensor Button is displayed");
         Logger.logStep("Verify Motion Sensor Button is displayed");
         motionSensorButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Motion Sensor Button");
         Logger.logStep("Click on Motion Sensor Button");
         motionSensorButton.click();
+        Thread.sleep(4000L);
     }
 }

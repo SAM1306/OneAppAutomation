@@ -32,11 +32,17 @@ public class AddAutomationActionsFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Notify me']")
     public WebElement notifyMeTile;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Control a device']")
+    public WebElement controlDeviceTile;
+
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Outlet']")
     public WebElement outletTile;
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/notification_message")
     public WebElement notificationMessageBox;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Done']")
+    public WebElement doneButton;
 
     public void verifyAddActionPageTitleIsDisplayed() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Action Page Title is displayed");
@@ -53,13 +59,23 @@ public class AddAutomationActionsFragmentPage extends BasePage {
         infoButton.click();
     }
 
-    public void verifyAndClickNotifyMeTile() {
+    public void verifyAndClickNotifyMeTile() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Notify Me Tile is displayed");
         Logger.logStep("Verify Notify Me Tile is displayed");
         notifyMeTile.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Notify Me Tile");
         Logger.logStep("Click on Notify Me Tile");
         notifyMeTile.click();
+        Thread.sleep(2000L);
+    }
+
+    public void verifyAndClickControlDeviceTile() {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Notify Me Tile is displayed");
+        Logger.logStep("Verify Notify Me Tile is displayed");
+        controlDeviceTile.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Notify Me Tile");
+        Logger.logStep("Click on Notify Me Tile");
+        controlDeviceTile.click();
     }
 
     public void verifyAndClickOutletTile() {
@@ -85,5 +101,15 @@ public class AddAutomationActionsFragmentPage extends BasePage {
         Logger.logStep("Adding \"" + text + "\" Notification Message");
         notificationMessageBox.sendKeys(text);
         driver.hideKeyboard();
+    }
+
+    public void verifyAndClickDoneButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Done Button is displayed");
+        Logger.logStep("Verify Done Button is displayed");
+        doneButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
+        Logger.logStep("Click on Done Button");
+        doneButton.click();
+        Thread.sleep(6000L);
     }
 }

@@ -34,13 +34,14 @@ public class MoreOptionsFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Help']")
     public WebElement helpButton;
 
-    public void verifyAndClickSettingssButton() {
+    public void verifyAndClickSettingssButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Settings Button is displayed");
         Logger.logStep("Verify Settings Button is displayed");
         settingsButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Settings Button");
         Logger.logStep("Click on Settings Button");
         settingsButton.click();
+        Thread.sleep(4000L);
     }
 
     public void verifyAndClickHelpButton() {

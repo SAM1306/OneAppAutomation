@@ -53,16 +53,13 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
 
         primaryActivity.getAutomationsButton();
         automationsFragmentPage.verifyAndClickAddAutomationButton();
-        addAutomationFragmentPage.verifySHMButtonIsPresent();
         addAutomationFragmentPage.clickSHMButton();
-        shmConfigurePage.getSHMFragmentPage();
         shmConfigurePage.verifyAndClickNextButton();
         shmConfigurePage.verifyAndClickNextButton();
         shmConfigurePage.verifyAndClickSirenDurationTextBox();
         shmConfigurePage.addSirenDuration("1");
         shmConfigurePage.verifyAndClickDoneButton();
         shmConfigurePage.scrollAndClickAllowButton();
-        addAutomationFragmentPage.getSHMFragmentPage();
         addAutomationFragmentPage.verifySHMIsCreated();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Configure Endpoint SHM Security - End");
@@ -77,20 +74,20 @@ public class SmartHomeMonitorTests extends BaseAppiumTest {
         dashboardFragmentPage.verifySHMTitleIsDisplayed();
         dashboardFragmentPage.verifyNonMonitoringTextIsDisplayed();
         dashboardFragmentPage.verifyAndClickArmedAwayButton();
-        dashboardFragmentPage.proceedSHMViewIfNecessary();
+        //dashboardFragmentPage.proceedSHMViewIfNecessary();
         dashboardFragmentPage.verifyAndClickArmedStayButton();
-        dashboardFragmentPage.proceedSHMViewIfNecessary();
+       // dashboardFragmentPage.proceedSHMViewIfNecessary();
         dashboardFragmentPage.verifyAndClickDisarmedButton();
         dashboardFragmentPage.verifyNonMonitoringTextIsDisplayed();
         dashboardFragmentPage.clickSHMTitle();
         shmFragmentPage.verifySHMPageTitleIsDisplayed();
-        dashboardFragmentPage.verifyNonMonitoringTextIsDisplayed();
-        shmFragmentPage.verifyAndClickSHMArmedAwayButton();
-        dashboardFragmentPage.proceedSHMViewIfNecessary();
+        //dashboardFragmentPage.verifyNonMonitoringTextIsDisplayed();
+        //shmFragmentPage.verifyAndClickSHMArmedAwayButton();
+        //dashboardFragmentPage.proceedSHMViewIfNecessary();
         shmFragmentPage.verifyAndClickSHMArmedStayButton();
-        dashboardFragmentPage.proceedSHMViewIfNecessary();
+        //dashboardFragmentPage.proceedSHMViewIfNecessary();
         shmFragmentPage.verifyAndClickSHMDisarmedButton();
-        dashboardFragmentPage.verifyNonMonitoringTextIsDisplayed();
+        //dashboardFragmentPage.verifyNonMonitoringTextIsDisplayed();
         toolbarPage.verifyAndClickBackButton();
         dashboardFragmentPage.verifySHMTitleIsDisplayed();
 

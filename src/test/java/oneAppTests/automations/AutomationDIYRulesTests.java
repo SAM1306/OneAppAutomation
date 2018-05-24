@@ -1,6 +1,7 @@
 package oneAppTests.automations;
 
 import oneAppTests.BaseAppiumTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import page.activity.PrimaryActivity;
@@ -47,6 +48,11 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
         addActionsFragmentPage = new AddActionsFragmentPage(driver);
     }
 
+    @AfterMethod
+    public void tearDown() throws InterruptedException {
+        deleteCustomAutomation();
+    }
+
     @Test(priority=1)
     public void addAutomationDIYRulesSpecificTime() throws InterruptedException {
         ExtentTestManager.getTest().setDescription("Automtions: Custom Automation with DIY Rules at Specific Time");
@@ -55,10 +61,9 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
         navigateToCustomAutomation();
         setSpecificTimeAutomation();
         addConditionFragmentPage.verifyAndClickCancelButton();
+        navigateToCustomAutomation();
         setSpecificTimeAutomation();
-        addConditionFragmentPage.verifyAndClickDoneButton();
         addActionCustomAutomation();
-        deleteCustomAutomation();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Custom Automation with DIY Rules at Specific Time - End");
     }
@@ -71,10 +76,9 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
         navigateToCustomAutomation();
         setSunriseTimeAutomation();
         addConditionFragmentPage.verifyAndClickCancelButton();
+        navigateToCustomAutomation();
         setSunriseTimeAutomation();
-        addConditionFragmentPage.verifyAndClickDoneButton();
         addActionCustomAutomation();
-        deleteCustomAutomation();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Custom Automation with DIY Rulesrise during Sunrise - End");
     }
@@ -87,10 +91,9 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
         navigateToCustomAutomation();
         setSunsetTimeAutomation();
         addConditionFragmentPage.verifyAndClickCancelButton();
+        navigateToCustomAutomation();
         setSunsetTimeAutomation();
-        addConditionFragmentPage.verifyAndClickDoneButton();
         addActionCustomAutomation();
-        deleteCustomAutomation();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Custom Automation with DIY Rules during Sunset - End");
     }
@@ -99,16 +102,14 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
         primaryActivity.getAutomationsButton();
         automationsFragmentPage.verifyAndClickAddAutomationButton();
         addAutomationFragmentPage.verifyAndClickCustomAutomationButton();
-        customAutomationFragmentPage.verifyAndClickAddConditionButton();
         addConditionFragmentPage.verifyAddConditionPageTitleIsDisplayed();
     }
 
-    public void setSpecificTimeAutomation() {
+    public void setSpecificTimeAutomation() throws InterruptedException {
         addConditionFragmentPage.verifyAndClickTimeOfDayTile();
-        addConditionFragmentPage.verifyAndClickTimeOfDayMenu();
-        addConditionFragmentPage.verifyAndClickSpecificTimeButton();
-        addConditionFragmentPage.clickSetSpecificTime();
+        addConditionFragmentPage.verifyAndClickSpecificTimeRadioButton();
         addConditionFragmentPage.verifyAndClickWeekendButton();
+        toolbarPage.verifyAndClickSmartAppNextButton();
     }
 
     public void deleteCustomAutomation() throws InterruptedException {
@@ -119,38 +120,33 @@ public class AutomationDIYRulesTests extends BaseAppiumTest {
         primaryActivity.verifyAndClickPopUpDeleteButton();
     }
 
-    public void addActionCustomAutomation() {
-        toolbarPage.verifyAndClickBackButton();
+    public void addActionCustomAutomation() throws InterruptedException {
         customAutomationFragmentPage.verifyAndClickAddActionButton();
         addAutomationActionsFragmentPage.verifyAddActionPageTitleIsDisplayed();
-        addAutomationActionsFragmentPage.verifyAndClickInfoButton();
-        primaryActivity.verifyAndClickOKButton();
         addAutomationActionsFragmentPage.verifyAndClickNotifyMeTile();
         addAutomationActionsFragmentPage.verifyAndClickNotificationBox();
         addAutomationActionsFragmentPage.addNotificationMessage(notificationMessage);
-        toolbarPage.verifyAndClickDoneButton();
+        addAutomationActionsFragmentPage.verifyAndClickDoneButton();
+        customAutomationFragmentPage.verifyAndClickAddActionButton();
+        addAutomationActionsFragmentPage.verifyAndClickControlDeviceTile();
         addAutomationActionsFragmentPage.verifyAndClickOutletTile();
         addActionsFragmentPage.verifyAndClickOnRadioButton();
-        toolbarPage.verifyAndClickDoneButton();
-        toolbarPage.verifyAndClickBackButton();
+        toolbarPage.verifyAndClickSmartAppNextButton();
         toolbarPage.verifyAndClickSaveButton();
+        primaryActivity.verifyAndClickOKButton();
     }
 
-    public void setSunriseTimeAutomation() {
+    public void setSunriseTimeAutomation() throws InterruptedException {
         addConditionFragmentPage.verifyAndClickTimeOfDayTile();
-        addConditionFragmentPage.verifyAndClickTimeOfDayMenu();
-        addConditionFragmentPage.verifyAndClickSpecificTimeButton();
-        addConditionFragmentPage.verifyAndClickSunriseButton();
-        addConditionFragmentPage.clickSetTime();
+        addConditionFragmentPage.verifyAndClickSunriseRadioButton();
         addConditionFragmentPage.verifyAndClickWeekendButton();
+        toolbarPage.verifyAndClickSmartAppNextButton();
     }
 
-    public void setSunsetTimeAutomation() {
+    public void setSunsetTimeAutomation() throws InterruptedException {
         addConditionFragmentPage.verifyAndClickTimeOfDayTile();
-        addConditionFragmentPage.verifyAndClickTimeOfDayMenu();
-        addConditionFragmentPage.verifyAndClickSpecificTimeButton();
-        addConditionFragmentPage.verifyAndClickSunsetButton();
-        addConditionFragmentPage.clickSetTime();
+        addConditionFragmentPage.verifyAndClickSunsetRadioButton();
         addConditionFragmentPage.verifyAndClickWeekendButton();
+        toolbarPage.verifyAndClickSmartAppNextButton();
     }
 }

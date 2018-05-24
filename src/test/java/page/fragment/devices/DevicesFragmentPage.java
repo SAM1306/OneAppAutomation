@@ -42,7 +42,7 @@ public class DevicesFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Add room']")
     public WebElement addRoomButton;
 
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/mode_name_new")
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/mode_item_button")
     public WebElement createdScene;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.ImageView[2]")
@@ -84,13 +84,14 @@ public class DevicesFragmentPage extends BasePage {
         assertTrue(deviceListFilterImage.isDisplayed());
     }
 
-    public void verifyAndClickMoreOptionsButton() {
+    public void verifyAndClickMoreOptionsButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify More Options Button is displayed");
         Logger.logStep("Verify More Options Button is displayed");
         moreOptionsButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on More Options Button");
         Logger.logStep("Click on More Options Button");
         moreOptionsButton.click();
+        Thread.sleep(2000L);
     }
 
     public void verifyAndClickAddSceneButton() {

@@ -61,7 +61,6 @@ public class AutomationsFragmentPage extends BasePage {
     }
 
     public void verifyAndClickAddAutomationButton() throws InterruptedException {
-        Thread.sleep(4000L);
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Automation Button is displayed");
         Logger.logStep("Verify Add Automation Button is displayed");
         if (isAddAutomationPresent()){
@@ -69,10 +68,12 @@ public class AutomationsFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Automation Button");
         Logger.logStep("Click on Add Automation Button");
         addAutomationButton.click();
-        } else{
+            Thread.sleep(4000L);
+        }else{
             ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Button");
             Logger.logStep("Click on Add Button");
-           addButton.click();
+            addButton.click();
+            Thread.sleep(4000L);
         }
     }
 

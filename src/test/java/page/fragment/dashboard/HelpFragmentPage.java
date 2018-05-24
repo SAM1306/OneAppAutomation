@@ -31,7 +31,7 @@ public class HelpFragmentPage extends BasePage {
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/help_faq")
     public WebElement faq;
 
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/help_ask_questions")
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/help_ask_a_question")
     public WebElement emailCustomerService;
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/help_call_customer_service")
