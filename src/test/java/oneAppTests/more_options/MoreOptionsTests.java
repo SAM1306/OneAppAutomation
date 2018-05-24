@@ -66,7 +66,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         primaryActivity.getDashboardButton();
         dashboardFragmentPage.verifyAndClickMoreOptionsButton();
         moreOptionsFragmentPage.verifyAndClickSettingssButton();
-        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
+        //smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifySamsungAccountTextIsDisplayed();
         toolbarPage.verifyAndClickBackButton();
         dashboardFragmentPage.verifySmartthingsLogoIsPresent();
@@ -82,7 +82,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         primaryActivity.getDashboardButton();
         dashboardFragmentPage.verifyAndClickMoreOptionsButton();
         moreOptionsFragmentPage.verifyAndClickSettingssButton();
-        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
+        //smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifyWifiAndBluetoothAutoOnAndToggable();
         toolbarPage.verifyAndClickBackButton();
 
@@ -97,7 +97,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         primaryActivity.getDashboardButton();
         dashboardFragmentPage.verifyAndClickMoreOptionsButton();
         moreOptionsFragmentPage.verifyAndClickSettingssButton();
-        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
+        //smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifyUseLocationInformationIsPresentAndToggable();
         toolbarPage.verifyAndClickBackButton();
 
@@ -112,7 +112,7 @@ public class MoreOptionsTests extends BaseAppiumTest {
         primaryActivity.getDashboardButton();
         dashboardFragmentPage.verifyAndClickMoreOptionsButton();
         moreOptionsFragmentPage.verifyAndClickSettingssButton();
-        smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
+        //smartthingsSettingsFragmentPage.getSmartthingsSettingsFragmentPage();
         smartthingsSettingsFragmentPage.verifyAutoUpdateController();
         toolbarPage.verifyAndClickBackButton();
         toolbarPage.verifyAndClickBackButton();

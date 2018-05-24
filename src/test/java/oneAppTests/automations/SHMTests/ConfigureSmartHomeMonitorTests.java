@@ -77,7 +77,6 @@ public class ConfigureSmartHomeMonitorTests extends BaseAppiumTest {
         primaryActivity.getAutomationsButton();
         automationsFragmentPage.verifyAndClickAddAutomationButton();
         addAutomationFragmentPage.clickAutomationButton(button);
-        shmConfigurePage.getSHMFragmentPage();
         shmConfigurePage.verifyAndClickNextButton();
         shmConfigurePage.verifyAndClickNextButton();
         shmConfigurePage.verifyAndClickSirenDurationTextBox();

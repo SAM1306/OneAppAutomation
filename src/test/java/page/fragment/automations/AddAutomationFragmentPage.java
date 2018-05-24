@@ -274,7 +274,6 @@ public class AddAutomationFragmentPage extends BasePage {
         assertTrue(smartWindowsDeveloperInfo.isDisplayed());
         Logger.logStep("Verify Smart Windows App Info is displayed");
         ExtentTestManager.getTest().setDescription("Verify Smart Windows App Info is displayed");
-        assertTrue(smartWindowsAppInfo.isDisplayed());
     }
 
     public void verifySpeakerCompanionIsPresent() {
@@ -302,9 +301,10 @@ public class AddAutomationFragmentPage extends BasePage {
         assertTrue(doorKnockerAppInfo.isDisplayed());
     }
 
-    public void clickSHMButton() {
+    public void clickSHMButton() throws InterruptedException {
         Logger.logStep("Click on SHM Button");
         smartHomeMonitor.click();
+        Thread.sleep(6000L);
     }
 
     public SHMConfigurePage getSHMFragmentPage() {
@@ -316,11 +316,11 @@ public class AddAutomationFragmentPage extends BasePage {
     public void verifyAndClickCustomAutomationButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Custom Automation Button is displayed");
         Logger.logStep("Verify Custom Automation Button is displayed");
-        Thread.sleep(2000L);
         customAutomationButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Custom Automation Button");
         Logger.logStep("Click on Custom Automation Button");
         customAutomationButton.click();
+        Thread.sleep(2000L);
     }
 
     public void clickSmartLightigButton() {
@@ -330,13 +330,14 @@ public class AddAutomationFragmentPage extends BasePage {
         smartLights.click();
     }
 
-    public void clickAutomationButton(String buttonName) {
+    public void clickAutomationButton(String buttonName) throws InterruptedException {
         Logger.logStep("Click on " + buttonName + " Button");
         switch(buttonName) {
             case SMART_HOME_MONITOR: {
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Click on " + SMART_HOME_MONITOR + " Button");
                 Logger.logStep("Click on " + SMART_HOME_MONITOR + " Button");
                 smartHomeMonitor.click();
+                Thread.sleep(6000L);
                 return;
             }
             case SMART_LIGHTS : {
@@ -346,6 +347,7 @@ public class AddAutomationFragmentPage extends BasePage {
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Click on " + SMART_LIGHTS + " Button");
                 Logger.logStep("Click on " + SMART_LIGHTS + " Button");
                 smartLights.click();
+                Thread.sleep(6000L);
                 return;
             }
             default: {

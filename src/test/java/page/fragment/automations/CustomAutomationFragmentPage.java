@@ -26,24 +26,28 @@ public class CustomAutomationFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Add condition\"])[1]")
     public WebElement addConditionButton;
 
-    @AndroidFindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Add condition\"])[2]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
+            "android.widget.LinearLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/" +
+            "android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout")
     public WebElement addActionButton;
 
-    public void verifyAndClickAddConditionButton() {
+    public void verifyAndClickAddConditionButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Condition Button is displayed");
         Logger.logStep("Verify Add Condition Button is displayed");
         addConditionButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Condition Button");
         Logger.logStep("Click on Add Condition Button");
         addConditionButton.click();
+        Thread.sleep(2000L);
     }
 
-    public void verifyAndClickAddActionButton() {
+    public void verifyAndClickAddActionButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Action Button is displayed");
         Logger.logStep("Verify Add Action Button is displayed");
-        addConditionButton.isDisplayed();
+        addActionButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Add Action Button");
         Logger.logStep("Click on Add Action Button");
-        addConditionButton.click();
+        addActionButton.click();
+        Thread.sleep(2000L);
     }
 }

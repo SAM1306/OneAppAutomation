@@ -74,13 +74,15 @@ public class SmartthingsSettingsFragmentPage extends BasePage {
         assertTrue(samsungAccount.isDisplayed());
     }
 
-    public void verifyWifiAndBluetoothAutoOnAndToggable() {
+    public void verifyWifiAndBluetoothAutoOnAndToggable() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Wi-Fi and Bluetooth auto on is present and can be toggled");
         Logger.logStep("Verify Wi-Fi and Bluetooth auto on is present");
+
         assertTrue(wifiAndBluetoothAutoOn.isDisplayed());
         ExtentTestManager.getTest().log(LogStatus.INFO, "Toggle Wi-Fi and Bluetooth auto on to off");
         Logger.logStep("Toggle Wi-Fi and Bluetooth auto on to off");
         wifiAndBluetoothAutoOnToggleSwitch.click();
+        events.scrollTo("Auto update device controller");
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify message when Wi-Fi and Bluetooth toggled off");
         Logger.logStep("Verify message when Wi-Fi and Bluetooth toggled off");
         assertTrue(wifiAndBluetoothAutoOnOffMessage.isDisplayed());

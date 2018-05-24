@@ -43,6 +43,12 @@ public class ToolbarPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='NEXT']")
     public WebElement nextButton;
 
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Next']")
+    public WebElement smartAppNextButton;
+
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Save']")
+    public WebElement smartAppSaveButton;
+
     public void verifyAndClickBackButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Navigate Back Button is displayed");
         Logger.logStep("Verify Back Button is displayed");
@@ -62,13 +68,14 @@ public class ToolbarPage extends BasePage {
         Thread.sleep(3000L);
     }
 
-    public void verifyAndClickSaveButton() {
+    public void verifyAndClickSaveButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Save Button is displayed");
         Logger.logStep("Verify Save Button is displayed");
         saveButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Save Button");
         Logger.logStep("Click on Save Button");
         saveButton.click();
+        Thread.sleep(4000L);
     }
 
     public void verifyAndClickCancelButton() {
@@ -89,21 +96,43 @@ public class ToolbarPage extends BasePage {
         addButton.click();
     }
 
-    public void verifyAndClickDoneButton() {
+    public void verifyAndClickDoneButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Done Button is displayed");
         Logger.logStep("Verify Done Button is displayed");
         doneButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
         Logger.logStep("Click on Done Button");
         doneButton.click();
+        Thread.sleep(6000L);
     }
 
-    public void verifyAndClickNextButton() {
+    public void verifyAndClickNextButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Next Button is displayed");
         Logger.logStep("Verify Next Button is displayed");
         nextButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Next Button");
         Logger.logStep("Click on Next Button");
         nextButton.click();
+        Thread.sleep(2000L);
+    }
+
+    public void verifyAndClickSmartAppNextButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Next Button is displayed");
+        Logger.logStep("Verify Next Button is displayed");
+        smartAppNextButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Next Button");
+        Logger.logStep("Click on Next Button");
+        smartAppNextButton.click();
+        Thread.sleep(2000L);
+    }
+
+    public void verifyAndClickSmartAppSaveButton() throws InterruptedException {
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Save Button is displayed");
+        Logger.logStep("Verify Save Button is displayed");
+        smartAppSaveButton.isDisplayed();
+        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Save Button");
+        Logger.logStep("Click on Save Button");
+        smartAppSaveButton.click();
+        Thread.sleep(6000L);
     }
 }

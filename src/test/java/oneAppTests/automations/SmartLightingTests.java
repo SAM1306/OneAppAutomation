@@ -81,7 +81,6 @@ public class SmartLightingTests extends BaseAppiumTest {
         automationsFragmentPage.verifyAndClickSmartLightingButton();
         automationsFragmentPage.verifyAndClickDeleteButton();
         automationsFragmentPage.verifyAndClicConfirmkDeleteButton();
-        automationsFragmentPage.verifyAddAutomationButtonIsPresent();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Configure Endpoint SHM Security - End");
     }

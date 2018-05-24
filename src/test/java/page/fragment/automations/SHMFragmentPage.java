@@ -45,13 +45,14 @@ public class SHMFragmentPage extends BasePage {
         Logger.logStep("Verify SHM page title is displayed");
         assertTrue(shmPageTitle.isDisplayed());
     }
-    public void verifyAndClickSettingsButton() {
+    public void verifyAndClickSettingsButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Settings Button is displayed");
         Logger.logStep("Verify Settings Button is displayed");
         settingsSHMButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Settings Button");
         Logger.logStep("Click on Settings Button");
         settingsSHMButton.click();
+        Thread.sleep(4000L);
     }
 
     public void verifyAndClickSHMArmedStayButton() {

@@ -7,8 +7,12 @@ import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+import utility.events.Events;
+import utility.events.EventsFactory;
 
 public class AddConditionFragmentPage extends BasePage {
+
+    private Events events = EventsFactory.getEvents(driver);
 
     private static final String SCREEN_NAME = "AutomationScreen";
 
@@ -29,20 +33,28 @@ public class AddConditionFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Based on the time of day']")
     public WebElement timeOFDayTile;
 
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/time_picker_button_sunrise")
+    /*
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Sunrise]")
     public WebElement sunriseButton;
 
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/time_picker_button_sunset")
+    @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Sunset']")
+    public WebElement sunsetButton;
+    */
+
+    @AndroidFindBy(xpath = "hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
+            "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
+            "android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/" +
+            "android.widget.LinearLayout[3]/android.widget.LinearLayout")
+    public WebElement sunriseButton;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
+            "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
+            "android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/" +
+            "android.widget.LinearLayout[4]/android.widget.LinearLayout")
     public WebElement sunsetButton;
 
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/time_picker_cancel")
+    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/cancel_menu")
     public WebElement cancelButton;
-
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/time_picker_done")
-    public WebElement doneButton;
-
-    @AndroidFindBy(id = "com.samsung.android.oneconnect:id/time_picker_spinner")
-    public WebElement timeOFDayMenu;
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/time_picker_saturday")
     public WebElement saturdayButton;
@@ -53,37 +65,13 @@ public class AddConditionFragmentPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Specific time']")
     public WebElement specificTimeButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/" +
-            "android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/" +
-            "android.widget.TimePicker/android.widget.LinearLayout/android.widget.LinearLayout/" +
-            "android.widget.NumberPicker[2]/android.widget.Button[4]")
-    public WebElement setSpecificTimeButton;
-
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/" +
-            "android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/" +
-            "android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout/" +
-            "android.widget.NumberPicker/android.widget.Button[4]")
-    public WebElement setTimeButton;
-
     public void verifyAddConditionPageTitleIsDisplayed() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Add Condition Page Title is displayed");
         Logger.logStep("Verify Add Condition Page Title is displayed");
         addConditionPageTitle.isDisplayed();
     }
 
-    public void clickSetTime() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Add time for Automation to run");
-        Logger.logStep("Add time for Automation to run");
-        setTimeButton.click();
-    }
-
-    public void clickSetSpecificTime() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Add time for Automation to run");
-        Logger.logStep("Add time for Automation to run");
-        setSpecificTimeButton.click();
-    }
-
-    public void verifyAndClickTimeOfDayTile() {
+    public void verifyAndClickTimeOfDayTile() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Time of Day tile is displayed");
         Logger.logStep("Verify Time of Day tile is displayed");
         timeOFDayTile.isDisplayed();
@@ -92,7 +80,7 @@ public class AddConditionFragmentPage extends BasePage {
         timeOFDayTile.click();
     }
 
-    public void verifyAndClickSunriseButton() {
+    public void verifyAndClickSunriseRadioButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Sunrise Button is displayed");
         Logger.logStep("Verify Sunrise Button is displayed");
         sunriseButton.isDisplayed();
@@ -101,7 +89,7 @@ public class AddConditionFragmentPage extends BasePage {
         sunriseButton.click();
     }
 
-    public void verifyAndClickSunsetButton() {
+    public void verifyAndClickSunsetRadioButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Sunset Button is displayed");
         Logger.logStep("Verify Sunset Button is displayed");
         sunsetButton.isDisplayed();
@@ -110,36 +98,20 @@ public class AddConditionFragmentPage extends BasePage {
         sunsetButton.click();
     }
 
-    public void verifyAndClickCancelButton() {
+    public void verifyAndClickCancelButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Cancel Button is displayed");
         Logger.logStep("Verify Cancel Button is displayed");
         cancelButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Cancel Button");
         Logger.logStep("Click on Cancel Button");
         cancelButton.click();
-    }
-
-    public void verifyAndClickDoneButton() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "VerifyDone Button is displayed");
-        Logger.logStep("Verify Done Button is displayed");
-        doneButton.isDisplayed();
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Done Button");
-        Logger.logStep("Click on Done Button");
-        doneButton.click();
-    }
-
-    public void verifyAndClickTimeOfDayMenu() {
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Time of Day Menu is displayed");
-        Logger.logStep("Verify Time of Day Menu is displayed");
-        timeOFDayMenu.isDisplayed();
-        ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Time of Day Menu");
-        Logger.logStep("Click on Time of Day Menu");
-        timeOFDayMenu.click();
+        Thread.sleep(2000L);
     }
 
     public void verifyAndClickWeekendButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Days are displayed");
         Logger.logStep("Verify Days is displayed");
+        events.scrollTo("Repeat");
         saturdayButton.isDisplayed();
         sundayButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Saturday and Sunday");
@@ -148,7 +120,7 @@ public class AddConditionFragmentPage extends BasePage {
         sundayButton.click();
     }
 
-    public void verifyAndClickSpecificTimeButton() {
+    public void verifyAndClickSpecificTimeRadioButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Specific Time Button is displayed");
         Logger.logStep("Verify Specific Time Button is displayed");
         specificTimeButton.isDisplayed();

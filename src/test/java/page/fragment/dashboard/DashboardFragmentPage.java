@@ -102,13 +102,14 @@ public class DashboardFragmentPage extends BasePage {
         moreOptions.isDisplayed();
     }
 
-    public void verifyAndClickMoreOptionsButton() {
+    public void verifyAndClickMoreOptionsButton() throws InterruptedException {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify More Options Button is displayed");
         Logger.logStep("Verify More Options Button is displayed");
         moreOptions.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on More Options Button");
         Logger.logStep("Click on More Options Button");
         moreOptions.click();
+        Thread.sleep(4000L);
     }
 
     public void verifySceneInfoButton() throws InterruptedException {
@@ -147,6 +148,7 @@ public class DashboardFragmentPage extends BasePage {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click SHM title");
         Logger.logStep("Click SHM title");
         shmTitle.click();
+        Thread.sleep(2000L);
     }
 
     public void verifyNonMonitoringTextIsDisplayed() throws InterruptedException {
