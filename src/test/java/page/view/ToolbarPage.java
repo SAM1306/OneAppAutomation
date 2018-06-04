@@ -3,6 +3,7 @@ package page.view;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
@@ -38,6 +39,7 @@ public class ToolbarPage extends BasePage {
     public WebElement addButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='DONE']")
+    @iOSFindBy(accessibility = "Done")
     public WebElement doneButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='NEXT']")

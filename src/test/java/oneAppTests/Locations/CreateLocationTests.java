@@ -10,6 +10,10 @@ import page.fragment.devices.locations.AddLocationFragmentPage;
 import page.view.ToolbarPage;
 import utility.ExtentReports.ExtentTestManager;
 import utility.Logger;
+import utility.events.Events;
+import utility.events.EventsFactory;
+
+import static com.sun.javafx.font.PrismFontFactory.isAndroid;
 
 public class CreateLocationTests extends BaseAppiumTest {
 
@@ -21,6 +25,7 @@ public class CreateLocationTests extends BaseAppiumTest {
     private PrimaryActivity primaryActivity;
     private AddLocationFragmentPage addLocationFragmentPage;
     private ToolbarPage toolbarPage;
+    private Events events;
 
     @Override
     public String getTestName() {
@@ -33,6 +38,7 @@ public class CreateLocationTests extends BaseAppiumTest {
         devicesFragmentPage = new DevicesFragmentPage(driver);
         addLocationFragmentPage = new AddLocationFragmentPage(driver);
         toolbarPage = new ToolbarPage(driver);
+        events = EventsFactory.getEvents(driver);
         createLocation();
     }
 
@@ -42,7 +48,9 @@ public class CreateLocationTests extends BaseAppiumTest {
     }
 
     @Test(priority = 1)
-    public void verifyLocationGotCreated() {
+    public void verifyLocationGotCreated() throws InterruptedException {
+
+        primaryActivity.getDevicesButton();
         devicesFragmentPage.verifyCreatedLocationIsDisplayed();
     }
 
@@ -56,8 +64,20 @@ public class CreateLocationTests extends BaseAppiumTest {
         devicesFragmentPage.verifyAndClickOfficeLocationButton();
         devicesFragmentPage.verifyAndClickMoreOptionsButton();
         devicesFragmentPage.verifyAndClickEditButton();
+        if (isAndroid){
         addLocationFragmentPage.verifyAndClickDeleteButton();
         addLocationFragmentPage.verifyAndClickRemoveButton();
+        } else {
+            //events.scrollTo("Remove location");
+//            Dimension size = driver.manage().window().getSize();
+//            JavascriptExecutor js = (JavascriptExecutor) driver;
+//            HashMap<String, String> scrollObject = new HashMap<String, String>();
+//            scrollObject.put("direction", "down");
+//            js.executeScript("mobile: scroll", scrollObject);
+
+            addLocationFragmentPage.verifyAndClickDeleteButton();
+            addLocationFragmentPage.verifyAndClickRemoveButton();
+        }
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Delete Location Test - End");
     }
@@ -72,7 +92,11 @@ public class CreateLocationTests extends BaseAppiumTest {
         devicesFragmentPage.verifyAndClickAddLocationButton();
         addLocationFragmentPage.verifyAndClickLocationNameTextBox();
         addLocationFragmentPage.addLocationName(locationName);
-        toolbarPage.verifyAndClickSaveButton();
+        if (isAndroid){
+            toolbarPage.verifyAndClickSaveButton();
+        } else {
+            toolbarPage.verifyAndClickDoneButton();
+        }
         devicesFragmentPage.verifyCreatedLocationIsDisplayed();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Create Location Test - End");
