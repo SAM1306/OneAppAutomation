@@ -5,7 +5,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.appium.java_client.remote.MobilePlatform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
 
@@ -51,15 +50,14 @@ public class TestCaseSetup {
         switch (platform) {
 
             case "IOS":
-                caps.setCapability(MobileCapabilityType.APP, new File(TestCaseSetup.readProperty("app.ios.path")).getAbsolutePath());
-                caps.setCapability(MobileCapabilityType.DEVICE_NAME, TestCaseSetup.readProperty("device.ios.name"));
-                caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, TestCaseSetup.readProperty("platform.ios.version"));
-                caps.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
-                caps.setCapability(MobileCapabilityType.PLATFORM, MobilePlatform.IOS);
 
-                if ( Boolean.parseBoolean(TestCaseSetup.readProperty("platform.ios.xcode8"))) {
-                    caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
-                }
+                caps.setCapability("deviceName", System.getProperty("deviceName"));
+                caps.setCapability("automationName", System.getProperty("automationName"));
+                caps.setCapability("platformName", System.getProperty("platformName"));
+                caps.setCapability("udid", System.getProperty("udid"));
+                caps.setCapability("noReset", System.getProperty("noReset"));
+                caps.setCapability("automationName", System.getProperty("automationName"));
+                caps.setCapability("app", System.getProperty("app"));
 
                 driver = new IOSDriver<RemoteWebElement>(toUrl(completeURL), caps);
                 break;

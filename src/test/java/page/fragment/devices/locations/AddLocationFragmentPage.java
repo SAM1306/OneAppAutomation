@@ -3,6 +3,7 @@ package page.fragment.devices.locations;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
@@ -23,12 +24,15 @@ public class AddLocationFragmentPage extends BasePage {
     }
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/add_location_name_edit_text")
+    @iOSFindBy(xpath = "//*[@type='XCUIElementTypeTextField' and @value='Name']")
     public WebElement locationNameTextBox;
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/remove_place_button")
+    @iOSFindBy(accessibility = "Remove location")
     public WebElement deleteLocationButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Remove']")
+    @iOSFindBy(accessibility = "Remove")
     public WebElement removeLocationButton;
 
 
