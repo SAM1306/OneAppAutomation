@@ -3,6 +3,7 @@ package page.activity;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
 import utility.ExtentReports.ExtentTestManager;
@@ -24,12 +25,15 @@ public class PrimaryActivity extends BasePage {
     }
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Dashboard']")
+    @iOSFindBy(accessibility = "Dashboard")
     public WebElement dashboardButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Devices' and @resource-id='com.samsung.android.oneconnect:id/tab_text']")
+    @iOSFindBy(accessibility = "Devices")
     public WebElement devicesButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Automations']")
+    @iOSFindBy(accessibility = "Automations")
     public WebElement automationsButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.Button' and @text='Delete']")

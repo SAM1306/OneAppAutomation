@@ -51,7 +51,7 @@ public class AutomationCatalogTests extends BaseAppiumTest {
         addAutomationFragmentPage.verifySmartWindowsIsPresent();
         addAutomationFragmentPage.verifySpeakerCompanionIsPresent();
         addAutomationFragmentPage.verifyDoorKnockerIsPresent();
-        toolbarPage.verifyAndClickBackButton();
+//        toolbarPage.verifyAndClickBackButton();
 
         Logger.logAction(" \"" + TEST_NAME + "\"  Test: Add SHM Automation - End");
     }

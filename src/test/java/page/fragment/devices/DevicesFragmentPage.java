@@ -4,6 +4,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -34,6 +35,7 @@ public class DevicesFragmentPage extends BasePage {
     public WebElement deviceListFilterImage;
 
     @AndroidFindBy(accessibility = "More options")
+    @iOSFindBy(xpath = "//XCUIElementTypeNavigationBar/XCUIElementTypeButton[3]")
     public WebElement moreOptionsButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Add scene']")
@@ -46,24 +48,29 @@ public class DevicesFragmentPage extends BasePage {
     public WebElement createdScene;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.ImageView[2]")
+    @iOSFindBy(xpath = "//XCUIElementTypeNavigationBar/XCUIElementTypeButton[2]")
     public WebElement deviceDropdown;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Home']")
     public WebElement homeLocationButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Add location']")
+    @iOSFindBy(accessibility = "Add location")
     public WebElement addLocationButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='All devices']")
     public WebElement allDevicesButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Office']")
+    @iOSFindBy(accessibility = "Office")
     public WebElement officeLocationButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Edit']")
+    @iOSFindBy(accessibility = "Edit")
     public WebElement editButton;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView' and @text='Office']")
+    @iOSFindBy(xpath = "//XCUIElementTypeNavigationBar/XCUIElementTypeButton[2]")
     public WebElement locationName;
 
     public DevicesFragmentPage getDevicesFragmentPage() {

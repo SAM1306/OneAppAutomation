@@ -3,6 +3,7 @@ package page.fragment.automations;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import page.BasePage;
@@ -28,6 +29,7 @@ public class AutomationsFragmentPage extends BasePage {
     public WebElement automationsTitle;
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_fragment_add_rule")
+    @iOSFindBy(accessibility = "Add automation")
     public WebElement addAutomationButton;
 
     @AndroidFindBy(id = "com.samsung.android.oneconnect:id/rule_fragment_how_to_use")
