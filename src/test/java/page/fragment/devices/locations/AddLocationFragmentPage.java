@@ -55,6 +55,7 @@ public class AddLocationFragmentPage extends BasePage {
     public void verifyAndClickDeleteButton() {
         ExtentTestManager.getTest().log(LogStatus.INFO, "Verify Delete Button is displayed");
         Logger.logStep("Verify Delete Button is displayed");
+
         deleteLocationButton.isDisplayed();
         ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Delete Button");
         Logger.logStep("Click on Delete Button");

@@ -2,6 +2,11 @@ package utility.events;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
+
+import java.util.HashMap;
 
 public class IOSEvents implements Events {
 
@@ -17,10 +22,16 @@ public class IOSEvents implements Events {
 
     @Override
     public void scrollTo(String text) {
-//        JavascriptExecutor js = driver;
-//        HashMap scrollObject = new HashMap();
-//        scrollObject.put("direction", "down");
-//        scrollObject.put("name", text);
-//        js.executeScript("mobile: scroll", scrollObject);
+        try {
+            Thread.sleep(2000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        JavascriptExecutor js = driver;
+        HashMap scrollObject = new HashMap();
+        scrollObject.put("direction", "down");
+        WebElement element = driver.findElementByAccessibilityId(text);
+        scrollObject.put("element", ((RemoteWebElement) element).getId());
+        js.executeScript("mobile: swipe", scrollObject);
     }
 }

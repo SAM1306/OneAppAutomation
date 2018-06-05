@@ -68,13 +68,7 @@ public class CreateLocationTests extends BaseAppiumTest {
         addLocationFragmentPage.verifyAndClickDeleteButton();
         addLocationFragmentPage.verifyAndClickRemoveButton();
         } else {
-            //events.scrollTo("Remove location");
-//            Dimension size = driver.manage().window().getSize();
-//            JavascriptExecutor js = (JavascriptExecutor) driver;
-//            HashMap<String, String> scrollObject = new HashMap<String, String>();
-//            scrollObject.put("direction", "down");
-//            js.executeScript("mobile: scroll", scrollObject);
-
+            events.scrollTo("Remove location");
             addLocationFragmentPage.verifyAndClickDeleteButton();
             addLocationFragmentPage.verifyAndClickRemoveButton();
         }
